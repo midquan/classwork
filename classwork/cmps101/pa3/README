@@ -1,0 +1,25 @@
+Michael Quan 
+midquan
+Programing Assignment 3
+Tests ListADT operations
+
+Sparse.java 
+Used to parse inputs and push the outputs onto a file. 
+
+Matrix.java
+Matrix ADT with an Entry Inner class using an array of Linked Lists. Features many functions to 
+help with adding and subtracting matrices.
+
+List.java
+Previous assignment's List ADT changed to accept Objects instead of ints. 
+
+MatrixTest.java
+Tests Matrix's functions to help to check to see if its working or not
+
+ListTest.java
+Tests List's functions to help to check to see if its working or not.
+
+Additional Note:
+My program did not function as I wanted it to. I was repeatedly getting a null pointer exception.
+Whenever I called changeEntry. So many of the tests and inputs do not work. However much of my 
+code should work as intended if the bug is fixed.

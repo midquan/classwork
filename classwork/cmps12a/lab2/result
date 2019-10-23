@@ -1,0 +1,21 @@
+/afs/cats.ucsc.edu/users/i/midquan/cs12a/lab2
+
+Access list for public is
+Normal rights:
+  system:operator rlidwk
+  system:authuser rlid
+  system:anyuser rl
+  midquan rlidwka
+
+Access list for private is
+Normal rights:
+  midquan rlidwka
+
+total 7
+-rw-r--r--. 1 midquan users  427 Sep 30 14:52 HelloWorld.class
+drwxr-xr-x. 2 midquan users 2048 Oct  8 03:54 private
+-rwx------. 1 midquan users  200 Oct  8 04:21 prog
+drwxr-xr-x. 2 midquan users 2048 Oct  8 03:54 public
+-rw-r--r--. 1 midquan users  236 Oct  8 04:21 result
+
+Hello, world!

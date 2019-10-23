@@ -1,0 +1,38 @@
+100700     10566 Feb  9 13:26 testdir/futuretimes
+100600      1040 Feb  9 13:26 testdir/futuretimes.c
+100600       326 Feb  9 13:26 testdir/futuretimes.c.log
+100600      2028 Feb  9 13:26 testdir/futuretimes.lis
+100600     28334 Feb  9 13:26 testdir/futuretimes.pdf
+100600     20989 Feb  9 13:26 testdir/futuretimes.ps
+100600       567 Feb  9 13:25 testdir/HEADER.html
+100700     16332 Feb  9 13:26 testdir/mktimestamp
+100600      1875 Feb  9 13:26 testdir/mktimestamp.c
+100600       325 Feb  9 13:26 testdir/mktimestamp.c.log
+100600      2369 Feb  9 13:26 testdir/mktimestamp.lis
+100600     34454 Feb  9 13:26 testdir/mktimestamp.pdf
+100600     25932 Feb  9 13:26 testdir/mktimestamp.ps
+100700       585 Feb  9 13:26 testdir/mstat.perl
+100700     10378 Mar  2 15:07 testdir/now
+100600       413 Mar  2 15:07 testdir/now.c
+100600       269 Feb  9 13:26 testdir/now.c.log
+ 40700      2048 Mar  2 15:07 testdir/RCS
+100700     11567 Feb  9 13:26 testdir/showlink
+100600      1601 Feb  9 13:26 testdir/showlink.c
+100600       304 Feb  9 13:26 testdir/showlink.c.log
+100600       230 Feb  9 13:26 testdir/showlink.lis
+100600     27024 Feb  9 13:26 testdir/showlink.pdf
+100600     19545 Feb  9 13:26 testdir/showlink.ps
+100700     14963 Feb  9 13:26 testdir/strftime
+100600      1396 Feb  9 13:26 testdir/strftime.c
+100600       305 Feb  9 13:26 testdir/strftime.c.log
+120755        81 Feb  9 13:27 testdir/testdata -> /afs/cats.ucsc.edu/courses/cmps012b-wm/Labs-cmps012m/lab8c-unixprog-stat/testdata
+120755        10 Feb  9 13:27 testdir/this-is-a-symlink -> mstat.perlucsc.edu/courses/cmps012b-wm/Labs-cmps012m/lab8c-unixprog-stat/testdata
+100600        58 Dec 31  1969 testdir/timestamp.0000000000000000
+100600        58 Jul 24  2015 testdir/timestamp.0000000055B2ADEC
+100600        58 Feb  9 13:28 testdir/timestamp.0000000056BA59EC
+100600        58 Aug 27 14:28 testdir/timestamp.0000000057C205EC
+100600        58 Jan 18 19:14 testdir/timestamp.000000007FFFFFFF
+100600        58 Dec 31  1969 testdir/timestamp.00000000FFFFFFFF
+100600        60 Dec 31  1969 testdir/timestamp.000000FFFFFFFFFF
+100600        58 Dec 13  1901 testdir/timestamp.FFFFFFFF80000000
+120755        81 Mar  3 01:40 testdir -> /afs/cats.ucsc.edu/courses/cmps012b-wm/Labs-cmps012m/lab8c-unixprog-stat/testdata

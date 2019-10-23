@@ -1,0 +1,4 @@
+#!/bin/bash
+# $Id: mk,v 1.2 2016-02-08 08:53:50-08 - - $
+# Michael Quan midquan
+gcc -g -O0 -Wall -Wextra -std=gnu99 cmatch.c -o cmatch 

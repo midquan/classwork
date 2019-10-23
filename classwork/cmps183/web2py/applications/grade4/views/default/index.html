@@ -1,0 +1,109 @@
+{{extend 'layout.html'}}
+
+{{block head}}
+
+<script src="{{=URL('static', 'js/vue.js')}}"></script>
+<script src="https://checkout.stripe.com/checkout.js"></script>
+<script>
+
+  var user_images_url = "{{=URL('api', 'get_user_images')}}";
+  var add_image_url = "{{=URL('api', 'add_image', user_signature=True)}}";
+  var users_url = "{{=URL('api', 'get_users',  user_signature=True)}}";
+  var current_images_url = "{{=URL('api', 'get_images_from_user', user_signature=True)}}";
+  var other_images_url = "{{=URL('api', 'get_images_from_other', user_signature=True)}}";
+  var price_url = "{{=URL('api', 'price', user_signature=True)}}";
+  var add_cart_url = "{{=URL('api', 'add_cart')}}";
+  var out_cart_url = "{{=URL('api', 'out_cart')}}";
+  var purchase_url = "{{=URL('api', 'purchase', hmac_key=session.hmac_key)}}"
+</script>
+
+{{end}}
+
+<div class="main_content">
+
+  {{if auth.user is not None:}}
+
+  <div id="vue-div" class="display:none">
+    <div class="container padded">
+      <div class="image_space threequarters">
+       <div v-if="!is_checkout">
+        <div v-if="self_page">
+          <div id="uploader_div" style="display:none">
+            Upload an image file: <input id="file_input" type="file"  accept="image/jpeg">
+            <input v-model="image_price" type="number">
+            <button v-on:click="upload_file">Upload</button>
+          </div>
+
+          <button v-if="!is_uploading" v-on:click="open_uploader"><i class="fa fa-plus"></i></button>
+          <button v-if="is_uploading"  v-on:click="close_uploader">Close</button>
+        </div>
+
+        <div class="image_container">
+          <ul class="container">
+            <li v-for="image in user_images" class="card lifted padded quarter">
+              <img v-bind:src="image.image_url" height="200px" width="200px" class="padded"/>
+               <input v-model="image.price" type="number" v-on:blur="price(image._idx)"/>
+               <i v-if="!image.is_incart" class="fa fa-shopping-cart"></i>
+              <i v-if="image.is_incart" class="fa fa-check"></i>
+              <button v-if="!image.is_incart" v-on:click="add_cart(image._idx)">Add to cart</button>
+              <button v-if="image.is_incart" v-on:click="out_cart(image._idx)">Remove from cart</button>
+            </li> 
+          </ul>
+        </div>
+      </div>
+
+      <div v-if="is_checkout">
+        <div class="image_container">
+          <ul class="container">
+            <li v-for="image in user_images" class="card lifted padded quarter">
+              <img v-if="image.is_incart" v-bind:src="image.image_url" height="200px" width="200px" class="padded"/>
+              <p v-if="image.is_incart">Price: ${image.price}</p>
+            </li> 
+          </ul>
+        </div>
+
+        <div>
+           rice: $ ${cart_total}
+          <button class="btn blue" v-on:click="buy"><i class="fa fa-lg fa-credit-card"></i>  Pay</button>
+        </div>
+      </div>
+    </div>
+
+      <div class="user_space quarter right">
+        <!-- Right part of the page -->
+          <div v-if="!is_checkout">
+            <button v-on:click="is_checkingout">CHECKOUT</button>
+          </div>
+          <div v-if="is_checkout">
+            <button v-on:click="isnt_checkingout">Back to shop</button>
+          </div>
+        <table class="fill" id="user_selector">
+          <tbody>
+           
+
+              <tr v-for="users in auth_user" class="user class">
+
+              <td v-if="users.email == '{{=auth.user.email}}'" v-on:click="get_images_from_user(users.email)" >{{=auth.user.first_name}} {{=auth.user.last_name}} 
+              </td>
+            </tr>
+
+              <tr v-for="users in auth_user" class="user class">
+               <td v-if="users.email != '{{=auth.user.email}}'" v-on:click="get_images_from_other(users.email)">${users.first_name} ${users.last_name}
+               </td>
+              </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  {{else:}}
+   <h1 class="main_title">Welcome!</h1>
+    <p class="explanation">You can upload images.
+        Login to use it.</p>
+    <div class="login_button">
+        <a href="{{=URL('default', 'user')}}" class="btn">Login</a>
+    </div>  
+    {{pass}}
+
+<script src="{{=URL('static', 'js/default_index.js')}}"></script>

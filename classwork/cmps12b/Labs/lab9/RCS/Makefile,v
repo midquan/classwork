@@ -1,0 +1,120 @@
+head	1.2;
+access;
+symbols;
+locks;
+comment	@# @;
+
+
+1.2
+date	2016.03.10.13.28.59;	author -;	state -;
+branches;
+next	1.1;
+
+1.1
+date	2016.03.10.08.38.24;	author -;	state -;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.2
+log
+@-
+@
+text
+@# $ID$
+
+GCC      = gcc -g -O0 -Wall -Wextra -std=gnu11
+MKDEPS   = gcc -MM
+
+EXECBINS = numsort linesort
+LIBSRC   = numsort.c linesort.c inssort.h inssort.c
+OBJECTS  = ${EXECBINS:=.o} numsort.o linesort.o inssort.o 
+SOURCES  = ${LIBSRC} ${EXECBINS:=.c} Makefile README
+DEPFILE  = Makefile.deps
+SUBMIT   = submit cmps012b-wm.w16 lab9
+
+all: ${EXECBINS}
+
+numsort: numsort.o inssort.o
+	${GCC} -o $@@ $^ -lm
+
+linesort: linesort.o inssort.o
+	${GCC} -o $@@ $^ -lm
+
+%.o: %.c
+	${GCC} -c $<
+
+ci: ${SOURCES}
+	checksource ${SOURCES}
+	cid + ${SOURCES}
+
+%.out: %
+	$< >$@@ 2>&1
+
+${DEPFILE}:
+	${MKDEPS} ${SOURCES} >${DEPFILE}
+
+dep:
+	- rm ${DEPFILE}
+	make --no-print-directory ${DEPFILE}
+
+submit: ${SOURCES}
+	${SUBMIT} ${SOURCES}
+
+include ${DEPFILE}
+@
+
+
+1.1
+log
+@-
+@
+text
+@d1 41
+a41 41
+# $ID$
+
+GCC      = gcc -g -O0 -Wall -Wextra -std=gnu11
+MKDEPS   = gcc -MM
+
+EXECBINS = numsort linesort
+LIBSRC   = numsort.c linesort.c inssort.h inssort.c
+OBJECTS  = ${EXECBINS:=.o} numsort.o linesort.o inssort.o 
+SOURCES  = ${LIBSRC} ${EXECBINS:=.c} Makefile README
+DEPFILE  = Makefile.deps
+SUBMIT   = submit cmps012b-wm.w16 lab9
+
+all: ${EXECBINS}
+
+numsort: numsort.o inssort.o
+	${GCC} -o $@@ $^ -lm
+
+linesort: linesort.o inssort.o
+	${GCC} -o $@@ $^ -lm
+
+%.o: %.c
+	${GCC} -c $<
+
+ci: ${SOURCES}
+	checksource ${SOURCES}
+	cid + ${SOURCES}
+
+%.out: %
+	$< >$@@ 2>&1
+
+${DEPFILE}:
+	${MKDEPS} ${SOURCES} >${DEPFILE}
+
+dep:
+	- rm ${DEPFILE}
+	make --no-print-directory ${DEPFILE}
+
+submit: ${SOURCES}
+	${SUBMIT} ${SOURCES}
+
+include ${DEPFILE}
+@

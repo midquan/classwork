@@ -1,0 +1,3 @@
+airport: airport not found
+Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: 1
+	at airport.main(airport.java:50)

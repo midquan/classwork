@@ -1,0 +1,25 @@
+# $Id: test1.in,v 1.1 2013-01-31 16:53:16-08 - - $
+#
+# Longer set of test data.
+#
+lax
+SJC
+SFO
+MIA
+NYC
+san
+SAT
+IAD
+ZZ
+dfW
+JFK
+NOP
+Denver
+Can your program handle junk like this line and just print an error?
+Remember that input consists of only ONE airport code per line.
+Also, do your stderr output and stdout output properly intermix
+when running in redirected mode?
+BOS
+Atl
+BIS
+Fai

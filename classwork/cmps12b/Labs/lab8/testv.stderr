@@ -1,0 +1,21 @@
+==17308== Memcheck, a memory error detector
+==17308== Copyright (C) 2002-2013, and GNU GPL'd, by Julian Seward et al.
+==17308== Using Valgrind-3.10.1 and LibVEX; rerun with -h for copyright info
+==17308== Command: mstat Makefile Makefile.mak mk.build mk.test mstat mstat.c mstat.perl RCS README test1.status test1.stderr test1.stdout test2.status test2.stderr test2.stdout test3.status test3.stderr test3.stdout testdir
+==17308== 
+==17308== Conditional jump or move depends on uninitialised value(s)
+==17308==    at 0x4E7DAB4: vfprintf (in /usr/lib64/libc-2.17.so)
+==17308==    by 0x4E86C98: printf (in /usr/lib64/libc-2.17.so)
+==17308==    by 0x400A40: print_stat (mstat.c:45)
+==17308==    by 0x400B27: main (mstat.c:67)
+==17308== 
+==17308== 
+==17308== HEAP SUMMARY:
+==17308==     in use at exit: 0 bytes in 0 blocks
+==17308==   total heap usage: 42 allocs, 42 frees, 6,401 bytes allocated
+==17308== 
+==17308== All heap blocks were freed -- no leaks are possible
+==17308== 
+==17308== For counts of detected and suppressed errors, rerun with: -v
+==17308== Use --track-origins=yes to see where uninitialised values come from
+==17308== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 1 from 1)

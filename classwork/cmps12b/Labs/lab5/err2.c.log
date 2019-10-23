@@ -1,0 +1,4 @@
+err2.c: In function ‘main’:
+err2.c:6:14: warning: initialization makes pointer from integer without a cast
+    char *p = 20;
+              ^

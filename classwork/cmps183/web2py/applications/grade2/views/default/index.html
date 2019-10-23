@@ -1,0 +1,200 @@
+{{extend 'layout.html'}} {{block head}}
+
+<script src="{{=URL('static', 'js/vue.js')}}"></script>
+<script src="https://checkout.stripe.com/checkout.js"></script>
+<script>
+  // Define your URLs here.
+  var user_info_URL = "{{=URL('api', 'user_info', user_signature=False, hash_vars=False)}}";
+  var add_image_URL = "{{=URL('api', 'add_image', user_signature=True)}}";
+  var get_images_URL = "{{=URL('api', 'get_images', user_signature=True)}}";
+  var set_user_list_URL = "{{=URL('api', 'set_user_list', user_signature=True)}}"
+  var edit_image_price_URL = "{{=URL('api', 'edit_image_price', user_signature=True)}}"
+  var set_image_price_URL = "{{=URL('api', 'set_image_price', user_signature=True)}}"
+  var image_url_to_cart_URL = "{{=URL('api', 'image_url_to_cart', user_signature=True)}}"
+  var purchase_URL = "{{=URL('api', 'purchase', hmac_key=session.hmac_key)}}"
+</script> {{end}}
+
+<div class="main_content">
+  <div id="vue-div" class="display:none">
+    <!-- Your code goes here.  Remember to call $("#vue-div").show() once you get the data for the first time. -->
+
+    <div class="container padded">
+
+      <div class="image_space threequarters">
+        <!-- Left part of the page -->
+
+        <div v-if="!logged_in">
+          <p style="font-weight: bold">Please log in to upload an image.</p>
+          <br>
+          <p style="text-decoration: underline">For graders:</p>
+          <p>Can use email: "first@test.com" and password: "test" (name: First Account)</p>
+          <p>Can use email: "second@test.com" and password: "test" (name: Second Account)</p>
+          <p>Can use email: "test@test.com" and password: "test" (name: FirstName LastName) [0 images though]</p>
+        </div>
+
+
+        <div style="font-size: 9px; text-align: center" v-if="logged_in">
+          <i class="fa fa-asterisk"></i>
+          One flexi is equivalent to one US dollar
+        </div>
+
+        <div style="overflow: auto">
+          <div v-if="self_page" style="float: left">
+            <div class="zero_image_msg" v-if="!user_has_image && logged_in">
+              <p> You have no images. Upload an image to be on the list on the right</p>
+            </div>
+
+            <!-- Code to upload files, with control buttons -->
+            <div id="uploader_div" style="display:none">
+              Upload an image file:
+              <input id="file_input" type="file" accept="image/jpeg">
+              <input id="price_input" type="number" placeholder="enter the price" step="0.01" style="width: 15em">
+              <button v-on:click="upload_file">Submit</button>
+            </div>
+
+            <button v-if="!is_uploading && logged_in" v-on:click="open_uploader">
+              <i class="fa fa-plus"></i>
+            </button>
+            <button v-if="is_uploading && logged_in" v-on:click="close_uploader">Cancel</button>
+          </div>
+
+          <div class="checkout_button" v-if="logged_in" v-on:click="go_checkout" style="float: right">
+            <button>
+              Checkout
+              <i class="fa fa-shopping-cart" style="padding-left: 5px"></i>
+              ${ids_in_cart.length}
+            </button>
+          </div>
+        </div>
+
+        <div class="blink_text" v-if="logged_in && (images.length <= 0)">
+          Click a user!
+        </div>
+
+        <div class="image_container" v-if="!is_checkout">
+          <!-- Put here the code to display the images -->
+
+          <ul class="display container">
+
+            <!-- <li v-for="image in images" class="card lifted padded quarter"> -->
+            <li v-for="image in images" class=" lifted quarter tile container">
+              <!-- show the name of the user the image belongs to -->
+              <p class="image_info"> ${image.user_first_name} ${image.user_last_name}</p>
+              <!-- display image -->
+              <img v-bind:src="image.image_url" height="200px" width="200px" class="padded image_display" />
+
+              <div class="price_container padded threequarters" v-if="(image.user_email == logged_in_user_email)">
+                <!-- <p v-if="!image.being_edited" v-on:click="edit_price(image._idx)" class="image_price"> $${image.price}</p> -->
+                <p v-if="!image.being_edited && (image.price == 1)" v-on:click="edit_price(image._idx)" class="image_price">
+                  ${image.price} flexi
+                </p>
+                <p v-if="(!image.being_edited) && image.price != 1 " v-on:click="edit_price(image._idx)" class="image_price">
+                  ${image.price} flexis
+                </p>
+                <input type="number" v-if="image.being_edited" v-model="image.price" v-on:blur="set_price(image._idx,image.price)">
+              </div>
+
+              <div class="price_container padded threequarters" v-if="!(image.user_email == logged_in_user_email)">
+                <!-- <p class="image_price"> $${image.price}</p> -->
+                <!-- <p class="image_price"> $${image.price}</p> -->
+                <p class="image_price" v-if="image.price == 1"> ${image.price} flexi</p>
+                <p class="image_price" v-if="image.price != 1"> ${image.price} flexis</p>
+
+              </div>
+
+              <div v-if="logged_in" class="cart_icon quarter">
+                <!-- if not in cart -->
+                <i v-if="!(ids_in_cart.includes(image.id))" v-on:click="add_to_cart(image.id)" class="fa fa-shopping-cart"> </i>
+                <!-- if in cart -->
+                <i v-if="ids_in_cart.includes(image.id)" v-on:click="add_to_cart(image.id,false)" class="fa fa-check"></i>
+              </div>
+
+              <div v-if="!logged_in" class="cart_icon quarter">
+                <i v-if="!(ids_in_cart.includes(image.id))" v-on:click="add_to_cart_not_logged_in(image.id)" class="fa fa-shopping-cart">
+                </i>
+              </div>
+
+              <!-- show date image was uploaded -->
+              <p class="image_info"> ${image.created_on} </p>
+            </li>
+
+          </ul>
+        </div>
+
+        <!-- display images that are in the cart -->
+        <div class="cart_images" v-if="is_checkout">
+          <div style="text-align: center">IMAGES IN YOUR CART</div>
+
+          <div v-if="cart.length < 1">
+            You have nothing in your cart
+          </div>
+
+          <ul class="display container">
+            <li v-for="image in cart" class=" lifted quarter tile container">
+              <p class="image_info"> ${image.user_first_name} ${image.user_last_name}</p>
+              <!-- display image -->
+              <img v-bind:src="image.image_url" height="200px" width="200px" class="padded image_display" />
+
+              <div class="price_container padded threequarters" v-if="(image.user_email == logged_in_user_email)">
+                <!-- <p v-if="!image.being_edited" v-on:click="edit_price(image._idx)" class="image_price"> $${image.price}</p> -->
+                <p v-if="!image.being_edited" v-on:click="edit_price(image._idx)" class="image_price"> ${image.price} flexies</p>
+                <input type="number" v-if="image.being_edited" v-model="image.price" v-on:blur="set_price(image._idx,image.price)">
+              </div>
+
+              <div class="price_container padded" v-if="!(image.user_email == logged_in_user_email)">
+                <!-- <p class="image_price"> $${image.price}</p> -->
+                <!-- <p class="image_price"> $${image.price}</p> -->
+                <p class="image_price" v-if="image.price == 1"> ${image.price} flexi</p>
+                <p class="image_price" v-if="image.price != 1"> ${image.price} flexis</p>
+              </div>
+
+              <!-- show date image was uploaded -->
+              <p class="image_info"> ${image.created_on} </p>
+
+            </li>
+          </ul>
+
+          <div class="total_sum_display">
+            <p v-if="total_sum == 1"> Total sum: ${total_sum} flexi *</p>
+            <p v-if="total_sum != 1"> Total sum: ${total_sum} flexies *</p>
+          </div>
+
+          <div class="cancel_checkout" v-if="logged_in">
+            <button v-on:click="go_back">Cancel Checkout</button>
+          </div>
+          <div class="pay_button" v-if="logged_in">
+            <button v-on:click="pay">
+              <i class="fa fa-lg fa-credit-card"></i>
+              Pay
+            </button>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div class="user_space quarter right">
+        <!-- Right part of the page -->
+        <table class="fill" id="user_selector">
+          <div class="userbar_title">
+            <div> USERS</div>
+            <div style="font-size: 10"> (must have at least one image to show on the list)</div>
+          </div>
+          <tbody class="user_names" v-for="user in user_list">
+            <tr class="center">
+              <!-- if the name is the one for the logged in user -->
+              <td v-on:click="get_user_images(user.user_email)" v-if="user.user_email==logged_in_user_email">You: ${user.user_first_name} ${user.user_last_name}</td>
+              <!-- for all other users -->
+              <td v-on:click="get_user_images(user.user_email)" v-if="!(user.user_email==logged_in_user_email)">${user.user_first_name} ${user.user_last_name}</td>
+            </tr>
+            <!-- Then, one row for each person. -->
+          </tbody>
+        </table>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <script src="{{=URL('static', 'js/default_index.js')}}"></script>

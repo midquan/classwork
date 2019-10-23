@@ -1,0 +1,57 @@
+Script started on Wed 10 Feb 2016 08:38:27 PM PST
+[?1034hbash-4.2$ ./environ
+MANPATH=/opt/rh/devtoolset-3/root/usr/share/man:/opt/rh/rh-java-common/root/usr/share/man::/var/cfengine/share/man 
+XDG_SESSION_ID=19032 
+HOSTNAME=unix2.lt.ucsc.edu 
+SELINUX_ROLE_REQUESTED= 
+GNUPLOT_DEFAULT_GDFONT=LiberationSans-Regular 
+SHELL=/bin/bash 
+TERM=xterm 
+HISTSIZE=1000 
+SSH_CLIENT=169.233.239.30 62126 22 
+IDL_DIR=/usr/local/envi/idl82 
+PERL5LIB=/afs/cats.ucsc.edu/users/i/midquan/perl5/lib/perl5:/opt/rh/devtoolset-3/root//usr/lib64/perl5/vendor_perl:/opt/rh/devtoolset-3/root/usr/lib/perl5:/opt/rh/devtoolset-3/root//usr/share/perl5/vendor_perl 
+SELINUX_USE_CURRENT_RANGE= 
+cmps012b=/afs/cats.ucsc.edu/courses/cmps012b-wm 
+QTDIR=/usr/lib64/qt-3.3 
+PERL_MB_OPT=--install_base /afs/cats.ucsc.edu/users/i/midquan/perl5 
+QTINC=/usr/lib64/qt-3.3/include 
+SSH_TTY=/dev/pts/70 
+JAVACONFDIRS=/opt/rh/devtoolset-3/root/etc/java:/opt/rh/rh-java-common/root/etc/java 
+X_SCLS=rh-java-common  
+QT_GRAPHICSSYSTEM_CHECKED=1 
+USER=midquan 
+PCP_DIR=/opt/rh/devtoolset-3/root 
+LS_COLORS=rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=01;05;37;41:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.Z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.jpg=01;35:*.jpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.axv=01;35:*.anx=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=01;36:*.au=01;36:*.flac=01;36:*.mid=01;36:*.midi=01;36:*.mka=01;36:*.mp3=01;36:*.mpc=01;36:*.ogg=01;36:*.ra=01;36:*.wav=01;36:*.axa=01;36:*.oga=01;36:*.spx=01;36:*.xspf=01;36: 
+LD_LIBRARY_PATH=/opt/rh/devtoolset-3/root/usr/lib64:/opt/rh/devtoolset-3/root/usr/lib 
+GDFONTPATH=/usr/share/fonts/liberation 
+XDG_CONFIG_DIRS=/opt/rh/devtoolset-3/root/etc/xdg:/opt/rh/rh-java-common/root/etc/xdg:/etc/xdg 
+PATH=/usr/lib64/qt-3.3/bin:/afs/cats.ucsc.edu/users/i/midquan/perl5/bin:/opt/rh/devtoolset-3/root/usr/bin:/opt/rh/rh-java-common/root/usr/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/var/cfengine/bin:/usr/local/texlive/2012/bin/x86_64-linux:/usr/local/python3/bin:/usr/local/codebench/bin:/afs/cats.ucsc.edu/users/i/midquan/bin:.:/afs/cats.ucsc.edu/courses/cmps012b-wm/bin:/afs/cats.ucsc.edu/courses/cmps012b-wm/bin 
+MAIL=/var/spool/mail/midquan 
+PWD=/afs/cats.ucsc.edu/users/i/midquan/private/cmps012b/Labs/lab5 
+LANG=en_US.UTF-8 
+KDEDIRS=/usr 
+SELINUX_LEVEL_REQUESTED= 
+EXELIS_DIR=/usr/local/envi 
+KRB5CCNAME=KEYRING:persistent:210377 
+HISTCONTROL=ignoredups 
+SSH_ASKPASS=/usr/libexec/openssh/gnome-ssh-askpass 
+HOME=/afs/cats.ucsc.edu/users/i/midquan 
+SHLVL=2 
+PERL_LOCAL_LIB_ROOT=:/afs/cats.ucsc.edu/users/i/midquan/perl5 
+LOGNAME=midquan 
+PYTHONPATH=/opt/rh/devtoolset-3/root/usr/lib64/python2.7/site-packages:/opt/rh/devtoolset-3/root/usr/lib/python2.7/site-packages:/opt/rh/rh-java-common/root/usr/lib/python2.7/site-packages 
+CVS_RSH=ssh 
+QTLIB=/usr/lib64/qt-3.3/lib 
+SSH_CONNECTION=169.233.239.30 62126 128.114.104.56 22 
+XDG_DATA_DIRS=/opt/rh/devtoolset-3/root/usr/share::/usr/local/share:/usr/share 
+LESSOPEN=||/usr/bin/lesspipe.sh %s 
+INFOPATH=/opt/rh/devtoolset-3/root/usr/share/info:/usr/local/texlive/2012/texmf/doc/info 
+XDG_RUNTIME_DIR=/run/user/210377 
+QT_PLUGIN_PATH=/usr/lib64/kde4/plugins:/usr/lib/kde4/plugins 
+PERL_MM_OPT=INSTALL_BASE=/afs/cats.ucsc.edu/users/i/midquan/perl5 
+_=./environ 
+bash-4.2$ exit
+exit
+
+Script done on Wed 10 Feb 2016 08:38:34 PM PST

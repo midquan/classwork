@@ -1,0 +1,13 @@
+#errors.txt
+#Michael Quan
+#midquan
+#Lab 6
+#Errors for LetterHome.class
+
+
+#1 Error, On #4 it should be "book"" not "books".
+#2 Error, On #5 - 2 is missing a period at the end of the sentence.
+#3 Error, On #2 - 4 has "hot" instead of the intended "cold"
+#4 Error, On #3 - 3 has "last weekend" instead of the intended "next weekend".
+#5 Error, If you put the first int as something outside of the expected letter then the intended output says "x is a valid sentence code", 
+where x is the number either x>5 || x<1. 

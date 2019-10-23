@@ -1,0 +1,14 @@
+Definition of done
+100% tested and running
+	No errors on runtime or compile time
+	No bugs in operation
+Documented
+	Correctly commented
+	No magic numbers or unnamed variables
+Peer reviewed
+	At least 2 other team members must confirm code is up to par
+	Must be peer reviewed before merge
+Merged on develop branch
+	Code must be merged into develop branch to be considered finish
+Follows style guide
+	Code must conform with style guide

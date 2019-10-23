@@ -1,0 +1,662 @@
+head	1.18;
+access;
+symbols;
+locks;
+comment	@ * @;
+
+
+1.18
+date	2016.02.19.12.01.53;	author -;	state -;
+branches;
+next	1.17;
+
+1.17
+date	2016.02.19.10.42.56;	author -;	state -;
+branches;
+next	1.16;
+
+1.16
+date	2016.02.19.10.15.41;	author -;	state -;
+branches;
+next	1.15;
+
+1.15
+date	2016.02.19.10.04.33;	author -;	state -;
+branches;
+next	1.14;
+
+1.14
+date	2016.02.19.09.26.35;	author -;	state -;
+branches;
+next	1.13;
+
+1.13
+date	2016.02.19.01.40.29;	author -;	state -;
+branches;
+next	1.12;
+
+1.12
+date	2016.02.19.01.21.29;	author -;	state -;
+branches;
+next	1.11;
+
+1.11
+date	2016.02.19.01.19.38;	author -;	state -;
+branches;
+next	1.10;
+
+1.10
+date	2016.02.19.01.16.50;	author -;	state -;
+branches;
+next	1.9;
+
+1.9
+date	2016.02.19.01.15.14;	author -;	state -;
+branches;
+next	1.8;
+
+1.8
+date	2016.02.19.01.13.44;	author -;	state -;
+branches;
+next	1.7;
+
+1.7
+date	2016.02.19.01.12.22;	author -;	state -;
+branches;
+next	1.6;
+
+1.6
+date	2016.02.19.01.00.38;	author -;	state -;
+branches;
+next	1.5;
+
+1.5
+date	2016.02.19.01.00.12;	author -;	state -;
+branches;
+next	1.4;
+
+1.4
+date	2016.02.19.00.59.22;	author -;	state -;
+branches;
+next	1.3;
+
+1.3
+date	2016.02.19.00.59.07;	author -;	state -;
+branches;
+next	1.2;
+
+1.2
+date	2016.02.19.00.56.34;	author -;	state -;
+branches;
+next	1.1;
+
+1.1
+date	2016.02.19.00.02.24;	author -;	state -;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.18
+log
+@-
+@
+text
+@// $Id: nsort.c,v 1.17 2016-02-19 02:42:56-08 - - $
+// Michael Quan midquan
+
+#include <assert.h>
+#include <libgen.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <stdbool.h>
+#include <string.h>
+#include <unistd.h>
+
+typedef struct node_t node_t;
+typedef struct list_t list_t;
+typedef struct options options;
+struct list_t{
+   node_t *head;
+};
+struct node_t {
+   double number;
+   node_t *link;
+};
+struct options{
+   bool debug_mode;
+};
+
+char *progname = NULL;
+int exit_status = EXIT_SUCCESS;
+
+void scan_options (int argc, char **argv, options *opts){
+   opts->debug_mode = false;
+   opterr = false;
+   for(;;){
+      int opt = getopt (argc, argv, "d");
+      if (opt == EOF) break;
+      switch (opt){
+         case 'd':
+            opts->debug_mode = true;
+            break;
+         default:
+            exit_status = EXIT_FAILURE;
+            fflush(NULL);
+            fprintf(stderr, "%s: -%c: invalid option\n",
+               progname, optopt);
+            fflush(NULL);
+            break;
+      }
+   }
+}
+
+void insert_ascending(list_t *list, double num){
+   node_t *curr = NULL;
+   node_t *prev = NULL;
+   curr = list->head;
+   
+   while(curr != NULL){
+      if (curr->number > num) break;
+      prev = curr;
+      curr = curr->link;
+   }
+   
+   node_t *temp = malloc(sizeof(struct node_t));
+   assert(temp != NULL);
+   temp->number = num;
+   temp->link = curr;
+   if (prev == NULL) list->head = temp;
+   else prev->link = temp;
+}
+
+int main (int argc, char **argv) {
+   options opts;
+   progname = basename (argv[0]);
+   scan_options(argc, argv, &opts);
+
+   char err_buffer[256];
+   char err_buf_fmt[16];
+   sprintf(err_buf_fmt, "%%%lds", sizeof err_buffer -1);
+   
+   list_t *list = malloc(sizeof(struct list_t));
+   assert(list != NULL);
+   list->head = NULL;
+
+   for(;;){
+      double number;
+      int scancount = scanf ("%lg", &number);
+      if (scancount == EOF) {
+         break;
+      }
+      //add to node
+      else if (scancount == 1){
+         insert_ascending(list, number);
+      }else{
+         scancount = scanf (err_buf_fmt, err_buffer);
+         assert (scancount == 1);
+         fflush(NULL);
+         fprintf (stderr, "%s: bad number \"%s\"\n", progname,
+            err_buffer);
+         fflush(NULL);
+         exit_status = EXIT_FAILURE;
+      }
+   } 
+   node_t *curr = NULL;
+   for(curr = list->head; curr != NULL;curr = curr->link) {
+      if(opts.debug_mode){
+         fprintf(stderr,"%p -> struct node {item=%.15g, link= %p}\n",
+            curr,curr->number,curr->link);
+      }else{
+          printf ("%24.15g\n", curr->number);
+      }
+   }
+   while(list->head != NULL){
+      curr = list->head;
+      list->head = curr->link;
+      free(curr);
+   }
+
+   free(list);
+   return exit_status;
+}
+@
+
+
+1.17
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: nsort.c,v 1.16 2016-02-19 02:15:41-08 - - $
+d104 2
+a105 2
+         fprintf (stderr, "%p -> struct node {item= %.15g, link = %p}\n",
+            curr, curr->number, curr->link);
+@
+
+
+1.16
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: nsort.c,v 1.15 2016-02-19 02:04:33-08 - - $
+d12 2
+a13 2
+typedef struct node node;
+typedef struct list list;
+d15 4
+a18 1
+struct node {
+d20 1
+a20 4
+   node *link;
+};
+struct list{
+   node *head;
+d31 1
+d50 3
+a52 3
+void insert_ascending(list *list, double num){
+   node *curr = NULL;
+   node *prev = NULL;
+d61 1
+a61 1
+   node *temp = malloc(sizeof(struct node));
+a69 1
+   (void) argc;
+d78 1
+a78 1
+   list *list = malloc(sizeof(struct list));
+d85 1
+a85 2
+      //print
+      if ((scancount = EOF)) {
+d101 2
+a102 1
+   for(node *curr = list->head; curr != NULL;curr = curr->link) {
+d111 1
+a111 1
+      node *curr = list->head;
+@
+
+
+1.15
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: nsort.c,v 1.14 2016-02-19 01:26:35-08 - - $
+a11 1
+int exit_status = EXIT_SUCCESS;
+d27 2
+d45 2
+@
+
+
+1.14
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: nsort.c,v 1.13 2016-02-18 17:40:29-08 - - $
+d10 1
+d23 41
+d66 5
+a70 4
+   bool debug_mode = false;
+   char *progname = basename (argv[0]);
+   int check = strcmp (argv[1], "-d");
+   if(check == 0) debug_mode = true;
+d83 1
+a83 1
+      if (scancount = EOF) {
+d99 7
+a105 4
+   if(debug_mode = true){
+      debug(list);
+   }else{
+      reg_print(list);
+a115 34
+
+void debug(list *list){
+   //printf("Works debug");
+   for(node *curr = list->head; curr != NULL;curr = curr->link) {
+      fprintf (stderr, "%p -> struct node {item= %.15g, link = %p}\n",
+         curr, curr->number, curr->link);
+   }
+} 
+
+void reg_print(list *list){
+   for(node *curr = list->head; curr != NULL;curr = curr->link) {
+      printf ("%24.15g\n", curr->number);
+   }
+}
+
+void insert_ascending(list *list, double num){
+   node *curr = NULL;
+   node *prev = NULL;
+   curr = list->head;
+   
+   while(curr != NULL){
+      if (curr->number > num) break;
+      prev = curr;
+      curr = curr->link;
+   }
+   
+   node *temp = malloc(sizeof(struct node));
+   assert(temp != NULL);
+   temp->number = num;
+   temp->link = curr;
+   if (prev == NULL) list->head = temp;
+   else prev->link = temp;
+}
+
+@
+
+
+1.13
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: nsort.c,v 1.12 2016-02-18 17:21:29-08 - - $
+d13 2
+d19 3
+a27 1
+   node *head = NULL;
+d31 4
+a34 3
+   if(debug_mode = true){
+      debug();
+   }
+d41 1
+a41 6
+         //debug mode
+         if (debug_mode = true){
+             debug(head);
+         }else{
+             reg_print(head);
+         }
+d44 2
+a45 2
+      else if (scancount = 1){
+         insert_ascending(head, number);
+d49 1
+d52 2
+a53 1
+         break;
+d56 12
+d71 1
+a71 1
+void debug(node *head){
+d73 1
+a73 1
+   for(node *curr = head; curr != NULL;curr = curr->link) {
+d79 2
+a80 2
+void reg_print(node *head){
+   for(node *curr = head; curr != NULL;curr = curr->link) {
+d84 2
+a85 1
+insert_ascending(node *list, double num){
+d87 2
+a88 1
+   node *prev = list->link;
+d97 1
+a97 1
+   assert(temp!=NULL);
+d100 1
+a100 1
+   if (prev == NULL) list = temp;
+@
+
+
+1.12
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: nsort.c,v 1.11 2016-02-18 17:19:38-08 - - $
+d27 3
+a29 1
+   if(debug_mode = true) debug();
+d37 5
+a41 2
+         if (debug_mode = true) debug();
+         else reg_print();
+d48 3
+a50 2
+         fflush (NULL);
+         fprintf (stderr, "%s: bad number \"%s\"\n");
+d57 6
+a62 2
+void debug(node *numnode){
+   printf("Works debug");
+d65 5
+@
+
+
+1.11
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: nsort.c,v 1.10 2016-02-18 17:16:50-08 - - $
+d66 1
+d69 2
+a70 2
+   if (*prev == NULL) list = temp;
+   else *prev->link = temp;
+@
+
+
+1.10
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: nsort.c,v 1.9 2016-02-18 17:15:14-08 - - $
+d66 2
+a67 1
+   temp->number = curr;
+@
+
+
+1.9
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: nsort.c,v 1.8 2016-02-18 17:13:44-08 - - $
+d28 1
+a28 1
+/*
+d47 1
+a47 2
+   }
+*/ 
+d55 1
+a55 1
+/*insert_ascending(node *list, double num){
+d65 1
+a65 1
+   node temp = malloc(sizeof(struct node));
+d70 1
+a70 1
+*/
+@
+
+
+1.8
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: nsort.c,v 1.7 2016-02-18 17:12:22-08 - - $
+d25 1
+a25 1
+   char err_buff_fmt[16];
+d27 2
+a28 1
+
+d47 2
+a48 1
+   } 
+d56 1
+a56 1
+insert_ascending(node *list, double num){
+d71 1
+@
+
+
+1.7
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: nsort.c,v 1.6 2016-02-18 17:00:38-08 - - $
+d64 1
+a64 1
+   node temp = malloc(sizeof(list)+1);
+@
+
+
+1.6
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: nsort.c,v 1.5 2016-02-18 17:00:12-08 - - $
+d21 2
+a22 2
+   int deb = strcmp (argv[1], "-d");
+   if(deb == 0) debug_mode = true;
+d24 3
+d40 2
+a41 2
+      }else if (scancount = NULL){
+         exit_status = EXIT_FAILURE;
+@
+
+
+1.5
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: nsort.c,v 1.4 2016-02-18 16:59:22-08 - - $
+d57 2
+a58 2
+      prev = *curr;
+      curr = *curr->link;
+@
+
+
+1.4
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: nsort.c,v 1.3 2016-02-18 16:59:07-08 - - $
+d57 2
+a58 2
+      *prev = curr;
+      curr = curr->link;
+@
+
+
+1.3
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: nsort.c,v 1.2 2016-02-18 16:56:34-08 - - $
+d56 1
+a56 1
+      if (curr->number > num) break
+@
+
+
+1.2
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: nsort.c,v 1.1 2016-02-18 16:02:24-08 - - $
+d57 1
+a57 1
+      prev = curr;
+d63 2
+a64 2
+   if (prev == NULL) list = temp;
+   else prev->link = temp;
+@
+
+
+1.1
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: nsort.c,v 1.1 2011-04-29 19:46:42-07 - - $
+d11 1
+d21 4
+a24 4
+   char *deb = strcmp (argv[1], "-d");
+   if(deb != NULL) debug_mode = true;
+   double number;
+   int scancount = scanf ("%lg", &number);
+d26 2
+d36 6
+a41 1
+      
+a42 2
+      else if (
+
+d44 1
+d47 3
+a49 1
+void debug(void){
+d51 15
+a65 1
+} 
+@

@@ -1,0 +1,591 @@
+head	1.22;
+access;
+symbols;
+locks;
+comment	@# @;
+
+
+1.22
+date	2016.02.17.17.41.56;	author -;	state -;
+branches;
+next	1.21;
+
+1.21
+date	2016.02.17.17.21.56;	author -;	state -;
+branches;
+next	1.20;
+
+1.20
+date	2016.02.17.17.13.00;	author -;	state -;
+branches;
+next	1.19;
+
+1.19
+date	2016.02.17.17.12.43;	author -;	state -;
+branches;
+next	1.18;
+
+1.18
+date	2016.02.17.17.12.10;	author -;	state -;
+branches;
+next	1.17;
+
+1.17
+date	2016.02.17.17.01.15;	author -;	state -;
+branches;
+next	1.16;
+
+1.16
+date	2016.02.17.17.00.58;	author -;	state -;
+branches;
+next	1.15;
+
+1.15
+date	2016.02.17.16.52.23;	author -;	state -;
+branches;
+next	1.14;
+
+1.14
+date	2016.02.17.16.48.27;	author -;	state -;
+branches;
+next	1.13;
+
+1.13
+date	2016.02.17.16.28.23;	author -;	state -;
+branches;
+next	1.12;
+
+1.12
+date	2016.02.17.15.53.56;	author -;	state -;
+branches;
+next	1.11;
+
+1.11
+date	2016.02.17.15.40.05;	author -;	state -;
+branches;
+next	1.10;
+
+1.10
+date	2016.02.17.15.38.18;	author -;	state -;
+branches;
+next	1.9;
+
+1.9
+date	2016.02.17.15.37.23;	author -;	state -;
+branches;
+next	1.8;
+
+1.8
+date	2016.02.17.15.34.09;	author -;	state -;
+branches;
+next	1.7;
+
+1.7
+date	2016.02.17.15.33.39;	author -;	state -;
+branches;
+next	1.6;
+
+1.6
+date	2016.02.17.15.32.23;	author -;	state -;
+branches;
+next	1.5;
+
+1.5
+date	2016.02.17.15.31.52;	author -;	state -;
+branches;
+next	1.4;
+
+1.4
+date	2016.02.17.15.23.17;	author -;	state -;
+branches;
+next	1.3;
+
+1.3
+date	2016.02.17.15.19.27;	author -;	state -;
+branches;
+next	1.2;
+
+1.2
+date	2016.02.17.15.13.20;	author -;	state -;
+branches;
+next	1.1;
+
+1.1
+date	2012.02.07.23.43.17;	author -;	state -;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.22
+log
+@-
+@
+text
+@// $Id: treemap.java,v 1.21 2016-02-17 09:21:56-08 - - $
+// Michael Quan midquan
+// Development version of treemap.
+// To be deleted and replaced by an actual implementation that
+// does *NOT* use java.util.TreeMap.
+
+import static java.lang.System.*;
+
+class treemap {
+
+   class tree {
+      String key;
+      String value;
+      tree left;
+      tree right;
+      
+      //Extra constructor for new trees
+      public tree(String key, String value,tree left, tree right){
+         this.key = key;
+         this.value = value;
+         this.left = left;
+         this.right = right;
+      }
+   }
+   tree root = null;
+
+   //Binary search to find a given value
+   public String get (String key) {
+      tree curr = root;
+      while (curr != null){
+         int cmp = curr.key.compareTo(key);
+         if(cmp > 0) curr = curr.left;
+         else if(cmp < 0) curr = curr.right;
+         else return curr.value;
+      }
+      return null;
+   }
+
+   //Creates a unbalanced tree with given values
+   public String put (String key, String value) {
+      tree temp = new tree(key,value,null,null);
+      if (root == null) {
+         root = temp;
+         return null;
+      }
+
+      tree prev = null;
+      tree curr = root;
+      boolean shift_lf = true;
+      while ( curr != null) {
+         int cmp = curr.key.compareTo(key);
+         prev = curr;
+         if (cmp > 0){
+            curr = curr.left;
+            shift_lf = true;
+         }
+         else if (cmp < 0){
+            curr = curr.right;
+            shift_lf = false;
+         }
+         else{
+            String previous = curr.key;
+            curr.key = key;
+            return previous;
+         }
+      }
+      if (shift_lf) prev.left = temp;
+      else prev.right = temp;
+     
+      return null;
+
+   }
+   
+   //Debug methods to help with problems in database/tree
+   public void debug_tree () {
+      debug_tree_recur (root, 0);
+   }
+
+   private void debug_tree_recur (tree node, int depth) {
+      if (node != null){
+         debug_tree_recur(node.left, depth+1);
+         out.printf("%3d \"%s\" \"%s\" %s %s%n", depth, node.key,
+            node.value,node.left,node.right);
+         debug_tree_recur(node.right, depth+1);            
+      }
+   }
+
+}
+@
+
+
+1.21
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: treemap.java,v 1.20 2016-02-17 09:13:00-08 - - $
+d27 1
+d39 1
+d73 2
+a74 1
+
+@
+
+
+1.20
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: treemap.java,v 1.19 2016-02-17 09:12:43-08 - - $
+d16 2
+a17 1
+   
+a36 10
+   /*public String find(tree node, String key) {
+      if(node == null) return null;
+      int cmp = key.compareTo(node.key);
+      if (cmp < 0) return find(node.left,key);
+      else if(cmp > 0) return find(node.right,key);
+      else return node.value;
+   }
+   */
+   
+   
+d51 1
+a51 1
+         if ( cmp > 0){
+a69 12
+            
+     // root = do_put(root, key, value);
+     // return root.value;
+   }
+
+   /*public tree do_put(tree node, String key, String value){
+      if(node == null) return new tree(key,value,null,null);
+      int cmp = key.compareTo(node.key);
+      if (cmp > 0) node.left = do_put(node.left,key,value);
+      else if (cmp < 0) node.right = do_put(node.right,key,value);
+      else node.value = value;
+      return node;
+a70 1
+   */
+@
+
+
+1.19
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: treemap.java,v 1.18 2016-02-17 09:12:10-08 - - $
+d54 1
+a54 1
+      tree prev = null
+@
+
+
+1.18
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: treemap.java,v 1.17 2016-02-17 09:01:15-08 - - $
+d73 1
+@
+
+
+1.17
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: treemap.java,v 1.16 2016-02-17 09:00:58-08 - - $
+d32 1
+d34 1
+a34 2
+      if (curr == null) return null;
+      else return curr.value;
+d48 33
+a80 2
+      root = do_put(root, key, value);
+      return root.value;
+d83 1
+a83 1
+   public tree do_put(tree node, String key, String value){
+d91 1
+@
+
+
+1.16
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: treemap.java,v 1.15 2016-02-17 08:52:23-08 - - $
+d34 1
+a34 1
+      else return curr.value
+@
+
+
+1.15
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: treemap.java,v 1.14 2016-02-17 08:48:27-08 - - $
+d27 1
+a27 2
+      return find(root, key.toUpperCase());
+      /* tree curr = root;
+a31 1
+         else return curr.value;
+d33 2
+a34 2
+      return null;
+      */
+d36 1
+a36 1
+   public String find(tree node, String key) {
+d43 1
+@
+
+
+1.14
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: treemap.java,v 1.13 2016-02-17 08:28:23-08 - - $
+d17 1
+a17 1
+      public tree(String key, String value){
+d20 2
+a21 2
+         this.left = null;
+         this.right = null;
+d54 1
+a54 1
+      if(node == null) return new tree(key,value);
+@
+
+
+1.13
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: treemap.java,v 1.12 2016-02-17 07:53:56-08 - - $
+d27 2
+a28 1
+      tree curr = root;
+d36 1
+d38 9
+@
+
+
+1.12
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: treemap.java,v 1.11 2016-02-17 07:40:05-08 - - $
+d27 8
+a34 9
+      return bin_search (root, key);
+   }
+
+   public String bin_search(tree node, String key){
+      if(node == null) return null;
+      int cmp = key.compareTo(node.key);
+      if(cmp > 0) return bin_search(node.right, key);
+      else if(cmp < 0) return bin_search(node.left, key);
+      else return node.value;
+@
+
+
+1.11
+log
+@-
+@
+text
+@d1 2
+a2 2
+// $Id: treemap.java,v 1.10 2016-02-17 07:38:18-08 - - $
+
+@
+
+
+1.10
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: treemap.java,v 1.9 2016-02-17 07:37:23-08 - - $
+d16 7
+a22 6
+   }
+   tree(String key, String value){
+      this.key = key;
+      this.value = value;
+      this.left = null;
+      this.right = null;
+@
+
+
+1.9
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: treemap.java,v 1.8 2016-02-17 07:34:09-08 - - $
+d17 1
+a17 1
+   treemap(String key, String value){
+d43 1
+a43 1
+      if(node == null) return new tree(key,value,null,null);
+@
+
+
+1.8
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: treemap.java,v 1.7 2016-02-17 07:33:39-08 - - $
+d16 6
+@
+
+
+1.7
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: treemap.java,v 1.6 2016-02-17 07:32:23-08 - - $
+d20 1
+a20 1
+      return tree.bin_search (root, key);
+@
+
+
+1.6
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: treemap.java,v 1.5 2016-02-17 07:31:52-08 - - $
+d54 1
+a54 1
+         debug_tre recur(node.right, depth+1);            
+@
+
+
+1.5
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: treemap.java,v 1.4 2016-02-17 07:23:17-08 - - $
+d52 1
+a52 1
+         out.printf("%3d \"%s\" \"%s\" %s %s%n, depth, node.key,
+@
+
+
+1.4
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: treemap.java,v 1.3 2016-02-17 07:19:27-08 - - $
+d36 1
+a36 1
+   public tree do_put(tree node, String key, String value)(
+@
+
+
+1.3
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: treemap.java,v 1.2 2016-02-17 07:13:20-08 - - $
+d50 6
+@
+
+
+1.2
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: treemap.java,v 1.1 2012-02-07 15:43:17-08 - - $
+d22 1
+d30 1
+d35 9
+a43 1
+   publid tree do_put(
+@
+
+
+1.1
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: treemap.java,v 1.1 2010-01-28 21:05:23-08 - - $
+a18 3
+   java.util.TreeMap <String, String> tree
+         = new java.util.TreeMap <String, String> ();
+
+d20 8
+a27 1
+      return tree.get (key);
+a28 1
+
+d30 2
+a31 1
+      return tree.put (key, value);
+d33 1
+@

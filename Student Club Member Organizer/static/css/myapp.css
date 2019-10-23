@@ -1,0 +1,74 @@
+/* line 1, ../sass/_main.scss */
+
+
+div.buttons {
+    width: 300px;
+    background: gray;
+    overflow-y: auto;
+
+}
+
+div.buttons > a {
+    width: 100px;
+    height: 100px;
+    float: left;
+    background: lightgray;   
+    margin: 15px;
+}
+
+.user_space {
+  width:50%;
+  border-radius: 15px;
+  padding: 40px;
+  background: #8da8d3;
+  position: relative;
+  height: 100%;
+}
+
+.social_space {
+  padding:50px;
+  font-size: 200%;
+}
+
+.home_button_bar {
+  padding-top: 50px;
+  padding-left: 150px;
+}
+
+.announcement_space {
+  padding-left:30px;
+  padding-right: :30px;
+}
+
+.memo {
+  padding:15px;
+}
+
+.memo_text {
+  border-radius: 15px;
+  padding: 40px;
+  background: #8da8d3;
+}
+ 
+.memo_title {
+  font-weight: bold;
+  font-size: 200%;
+}
+
+.button_list {
+  padding:15px;
+}
+
+.sign_in_form {
+  font-size:300%;
+  padding-top: 50px;
+}
+
+a {
+    text-decoration:none;
+    color:inherit;
+}
+
+
+
+

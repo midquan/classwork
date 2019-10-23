@@ -1,0 +1,265 @@
+head	1.11;
+access;
+symbols;
+locks;
+comment	@# @;
+
+
+1.11
+date	2016.01.28.04.01.47;	author -;	state -;
+branches;
+next	1.10;
+
+1.10
+date	2016.01.28.04.00.56;	author -;	state -;
+branches;
+next	1.9;
+
+1.9
+date	2016.01.12.05.51.08;	author -;	state -;
+branches;
+next	1.8;
+
+1.8
+date	2016.01.12.05.50.15;	author -;	state -;
+branches;
+next	1.7;
+
+1.7
+date	2015.01.14.01.11.23;	author -;	state -;
+branches;
+next	1.6;
+
+1.6
+date	2015.01.14.01.10.31;	author -;	state -;
+branches;
+next	1.5;
+
+1.5
+date	2013.10.12.02.17.55;	author -;	state -;
+branches;
+next	1.4;
+
+1.4
+date	2013.09.25.23.39.14;	author -;	state -;
+branches;
+next	1.3;
+
+1.3
+date	2013.09.25.23.35.10;	author -;	state -;
+branches;
+next	1.2;
+
+1.2
+date	2013.09.25.23.26.26;	author -;	state -;
+branches;
+next	1.1;
+
+1.1
+date	2013.09.25.23.21.50;	author -;	state -;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.11
+log
+@-
+@
+text
+@#!/bin/sh
+# $Id: mk,v 1.10 2016-01-27 20:00:56-08 - - $
+# Michael Quan midquan
+gcc -g -O0 -Wall -Wextra -std=gnu11 crpn.c -o crpn
+@
+
+
+1.10
+log
+@-
+@
+text
+@d1 3
+a3 2
+#! /bin/sh
+# $Id$
+@
+
+
+1.9
+log
+@-
+@
+text
+@d1 3
+a3 24
+#!/bin/sh
+# $Id: mk,v 1.8 2016-01-11 21:50:15-08 - - $
+
+cid $0 jrpn.java crpn.c
+mkc jrpn.java
+
+for test in ../.score/test*.rpn
+do
+   basename=${test##.*/}
+   prefix=j${basename%.*}
+   java -jar jrpn <$test >$prefix.output 2>&1
+   echo STATUS = $? >$prefix.status
+   catnv $test $prefix.output $prefix.status >$prefix.lis
+   rm $prefix.output $prefix.status
+done
+
+mkc crpn.c
+./crpn <../.score/test1.rpn >ctest1.output 2>&1
+echo STATUS = $? >ctest1.status
+
+catnv ../.score/test1.rpn ctest1.output ctest1.status >ctest1.lis
+rm ctest1.output ctest1.status
+
+mkpspdf -s12 Listing.ps jrpn.java* j*.lis crpn.c* c*.lis $0
+@
+
+
+1.8
+log
+@-
+@
+text
+@d2 1
+a2 1
+# $Id: mk,v 1.7 2015-01-13 17:11:23-08 - - $
+d11 1
+a11 1
+   ./jrpn <$test >$prefix.output 2>&1
+@
+
+
+1.7
+log
+@-
+@
+text
+@d2 1
+a2 1
+# $Id: mk,v 1.6 2015-01-13 17:10:31-08 - - $
+d13 1
+a13 1
+   morecat $test $prefix.output $prefix.status >$prefix.lis
+d21 1
+a21 2
+morecat ../.score/test1.rpn ctest1.output ctest1.status \
+ 	 	 	 	 	 	 	 	>ctest1.lis
+@
+
+
+1.6
+log
+@-
+@
+text
+@d2 1
+a2 1
+# $Id: mk,v 1.5 2013-10-11 19:17:55-07 - - $
+d21 2
+a22 1
+morecat ../.score/test1.rpn ctest1.output ctest1.status >ctest1.lis
+@
+
+
+1.5
+log
+@-
+@
+text
+@d2 2
+a3 1
+# $Id: mk,v 1.4 2013-09-25 16:39:14-07 - - $
+d6 1
+d16 1
+d20 1
+d23 2
+a24 1
+mkpspdf -s12 Listing.ps jrpn.java* j*.lis crpn.c* c*.lis
+@
+
+
+1.4
+log
+@-
+@
+text
+@d2 1
+a2 1
+# $Id: mk,v 1.3 2013-09-25 16:35:10-07 - - $
+d19 1
+a19 1
+mkpspdf Listing.ps jrpn.java* j*.lis crpn.c* c*.lis
+@
+
+
+1.3
+log
+@-
+@
+text
+@d2 1
+a2 1
+# $Id: mk,v 1.2 2013-09-25 16:26:26-07 - - $
+d8 5
+a12 2
+   output=j${basename%.*}.output
+   (./jrpn <$test; echo ------------; echo STATUS = $?)  >$output 2>&1
+d15 5
+a19 2
+(./crpn <../.score/test1.rpn; echo status = $?) >ctest1.output 2>&1
+mkpspdf Listing.ps jrpn.java* j*.output crpn.c* c*.output
+@
+
+
+1.2
+log
+@-
+@
+text
+@d2 1
+a2 1
+# $Id: mk,v 1.1 2013-09-25 16:21:50-07 - - $
+d9 1
+a9 1
+   (./jrpn <$test; echo status = $?)  >$output 2>&1
+@
+
+
+1.1
+log
+@-
+@
+text
+@d2 1
+a2 1
+# $Id: mklis,v 1.3 2013-01-22 18:35:49-08 - - $
+d7 3
+a9 3
+   base=${test##.*/}
+   prefix=${base%.*}
+   echo $test $prefix
+a10 4
+exit
+
+ooo
+runprog -x jrpn.lis -0 ../.score/test1.rpn ./jrpn
+d12 2
+a13 9
+runprog -x crpn.lis -0 ../.score/test1.rpn ./crpn
+mkpspdf Listing.ps jrpn.java* jrpn.lis* crpn.c* crpn.lis*
+#!/bin/sh
+# $Id: mk.tests,v 1.1 2013-04-09 20:49:06-07 - - $
+ulimit -f 10
+for test in test*rpn
+do
+   ./jrpn <$test 1>$test.output 2>&1
+done
+@

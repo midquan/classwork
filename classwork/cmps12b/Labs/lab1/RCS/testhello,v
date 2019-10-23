@@ -1,0 +1,52 @@
+head	1.2;
+access;
+symbols;
+locks;
+comment	@# @;
+
+
+1.2
+date	2016.01.15.10.03.35;	author -;	state -;
+branches;
+next	1.1;
+
+1.1
+date	2016.01.15.09.56.15;	author -;	state -;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.2
+log
+@-
+@
+text
+@#!/bin/bash
+# $Id: testhello,v 1.1 2016-01-15 01:56:15-08 - - $
+# Michael Quan midquan
+hello >test1.out 2>test1.err
+echo $? >test1.status
+hello world >test2.out 2>test2.err
+echo $? >test2.status
+@
+
+
+1.1
+log
+@-
+@
+text
+@d2 1
+a2 1
+# $Id$
+d4 1
+a4 1
+hello >test1.out>test1.err
+d6 1
+a6 1
+hello world >test2.out>test2.err
+@

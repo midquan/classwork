@@ -1,0 +1,206 @@
+head	1.7;
+access;
+symbols;
+locks;
+comment	@ * @;
+
+
+1.7
+date	2016.02.26.09.07.22;	author -;	state -;
+branches;
+next	1.6;
+
+1.6
+date	2016.02.26.09.06.24;	author -;	state -;
+branches;
+next	1.5;
+
+1.5
+date	2016.02.26.09.05.57;	author -;	state -;
+branches;
+next	1.4;
+
+1.4
+date	2016.02.26.08.49.47;	author -;	state -;
+branches;
+next	1.3;
+
+1.3
+date	2016.02.26.08.49.27;	author -;	state -;
+branches;
+next	1.2;
+
+1.2
+date	2016.02.26.08.47.43;	author -;	state -;
+branches;
+next	1.1;
+
+1.1
+date	2016.02.26.08.20.27;	author -;	state -;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.7
+log
+@-
+@
+text
+@// $Id: queue.c,v 1.6 2016-02-26 01:06:24-08 - - $
+
+#include <assert.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+#include "queue.h"
+
+#define STUBPRINTF(...) fprintf (stderr, __VA_ARGS__);
+
+typedef struct queue_node queue_node;
+struct queue_node {
+   queue_item_t item;
+   queue_node *link;
+};
+
+struct queue {
+   queue_node *front;
+   queue_node *rear;
+};
+
+queue *new_queue (void) {
+   queue *this = malloc (sizeof (struct queue));
+   assert(this != NULL);
+   this->front = NULL;
+   this->rear = NULL;
+   return this;
+}
+
+void free_queue (queue *this) {
+   assert (isempty_queue (this));
+   free (this);
+}
+
+void insert_queue (queue *this, queue_item_t item) {
+   queue_node *insert = malloc(sizeof (queue_node));
+   assert(insert != NULL);
+   insert->item = item;
+   insert->link = NULL;
+   if (this->front == NULL) this->front = insert;
+      else this->rear->link = insert;
+   this->rear = insert; 
+}
+
+queue_item_t remove_queue (queue *this) {
+   queue_node *remove = NULL;
+   remove = this->front;
+   this->front = this->front->link;
+   queue_item_t remove_item = remove->item;
+   free(remove);
+   return remove_item; 
+}
+
+bool isempty_queue (queue *this) {
+   return this->front == NULL;
+}
+
+@
+
+
+1.6
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: queue.c,v 1.5 2016-02-26 01:05:57-08 - - $
+d48 1
+a48 1
+   remove = remove->front;
+@
+
+
+1.5
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: queue.c,v 1.4 2016-02-26 00:49:47-08 - - $
+d51 1
+a51 1
+   free(temp);
+@
+
+
+1.4
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: queue.c,v 1.3 2016-02-26 00:49:27-08 - - $
+d47 2
+a48 4
+   assert(! isempty_queue(this));
+   queue_node *remove = this->front;
+   free(this->front->item);
+   free(this->front);
+d50 3
+a52 1
+   return remove->item; 
+@
+
+
+1.3
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: queue.c,v 1.2 2016-02-26 00:47:43-08 - - $
+d50 1
+a50 1
+   free(this->item);
+@
+
+
+1.2
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: queue.c,v 1.1 2016-02-26 00:20:27-08 - - $
+d47 1
+a47 1
+   assert(! isempty_queue(this);
+@
+
+
+1.1
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: queue.c,v 1.10 2014-02-27 12:12:24-08 - - $
+d43 1
+a43 1
+   
+d47 6
+a52 3
+   assert (! isempty_queue (this));
+   STUBPRINTF ("return NULL\n");
+   return NULL;
+@

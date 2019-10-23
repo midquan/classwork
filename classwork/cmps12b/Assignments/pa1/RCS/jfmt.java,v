@@ -1,0 +1,1212 @@
+head	1.48;
+access;
+symbols;
+locks;
+comment	@# @;
+
+
+1.48
+date	2016.01.20.20.16.12;	author -;	state -;
+branches;
+next	1.47;
+
+1.47
+date	2016.01.20.20.08.57;	author -;	state -;
+branches;
+next	1.46;
+
+1.46
+date	2016.01.20.19.59.43;	author -;	state -;
+branches;
+next	1.45;
+
+1.45
+date	2016.01.20.17.29.48;	author -;	state -;
+branches;
+next	1.44;
+
+1.44
+date	2016.01.20.16.33.14;	author -;	state -;
+branches;
+next	1.43;
+
+1.43
+date	2016.01.20.16.13.29;	author -;	state -;
+branches;
+next	1.42;
+
+1.42
+date	2016.01.20.15.58.10;	author -;	state -;
+branches;
+next	1.41;
+
+1.41
+date	2016.01.20.14.05.19;	author -;	state -;
+branches;
+next	1.40;
+
+1.40
+date	2016.01.20.13.52.34;	author -;	state -;
+branches;
+next	1.39;
+
+1.39
+date	2016.01.20.13.51.38;	author -;	state -;
+branches;
+next	1.38;
+
+1.38
+date	2016.01.20.13.48.49;	author -;	state -;
+branches;
+next	1.37;
+
+1.37
+date	2016.01.20.13.44.32;	author -;	state -;
+branches;
+next	1.36;
+
+1.36
+date	2016.01.20.13.24.00;	author -;	state -;
+branches;
+next	1.35;
+
+1.35
+date	2016.01.20.13.22.03;	author -;	state -;
+branches;
+next	1.34;
+
+1.34
+date	2016.01.20.13.14.10;	author -;	state -;
+branches;
+next	1.33;
+
+1.33
+date	2016.01.20.13.04.58;	author -;	state -;
+branches;
+next	1.32;
+
+1.32
+date	2016.01.20.12.41.16;	author -;	state -;
+branches;
+next	1.31;
+
+1.31
+date	2016.01.20.12.30.37;	author -;	state -;
+branches;
+next	1.30;
+
+1.30
+date	2016.01.20.12.25.24;	author -;	state -;
+branches;
+next	1.29;
+
+1.29
+date	2016.01.20.12.16.35;	author -;	state -;
+branches;
+next	1.28;
+
+1.28
+date	2016.01.20.11.54.18;	author -;	state -;
+branches;
+next	1.27;
+
+1.27
+date	2016.01.20.11.44.16;	author -;	state -;
+branches;
+next	1.26;
+
+1.26
+date	2016.01.20.11.39.15;	author -;	state -;
+branches;
+next	1.25;
+
+1.25
+date	2016.01.20.11.36.06;	author -;	state -;
+branches;
+next	1.24;
+
+1.24
+date	2016.01.20.11.34.46;	author -;	state -;
+branches;
+next	1.23;
+
+1.23
+date	2016.01.20.11.27.40;	author -;	state -;
+branches;
+next	1.22;
+
+1.22
+date	2016.01.20.09.57.12;	author -;	state -;
+branches;
+next	1.21;
+
+1.21
+date	2016.01.20.09.52.46;	author -;	state -;
+branches;
+next	1.20;
+
+1.20
+date	2016.01.20.09.47.31;	author -;	state -;
+branches;
+next	1.19;
+
+1.19
+date	2016.01.20.09.44.43;	author -;	state -;
+branches;
+next	1.18;
+
+1.18
+date	2016.01.20.09.44.17;	author -;	state -;
+branches;
+next	1.17;
+
+1.17
+date	2016.01.20.09.41.53;	author -;	state -;
+branches;
+next	1.16;
+
+1.16
+date	2016.01.20.09.40.33;	author -;	state -;
+branches;
+next	1.15;
+
+1.15
+date	2016.01.20.09.39.49;	author -;	state -;
+branches;
+next	1.14;
+
+1.14
+date	2016.01.20.09.38.20;	author -;	state -;
+branches;
+next	1.13;
+
+1.13
+date	2016.01.20.09.26.44;	author -;	state -;
+branches;
+next	1.12;
+
+1.12
+date	2016.01.20.09.26.09;	author -;	state -;
+branches;
+next	1.11;
+
+1.11
+date	2016.01.20.09.22.56;	author -;	state -;
+branches;
+next	1.10;
+
+1.10
+date	2016.01.20.09.21.37;	author -;	state -;
+branches;
+next	1.9;
+
+1.9
+date	2016.01.20.08.55.47;	author -;	state -;
+branches;
+next	1.8;
+
+1.8
+date	2016.01.20.08.54.11;	author -;	state -;
+branches;
+next	1.7;
+
+1.7
+date	2016.01.20.08.53.39;	author -;	state -;
+branches;
+next	1.6;
+
+1.6
+date	2016.01.20.08.52.35;	author -;	state -;
+branches;
+next	1.5;
+
+1.5
+date	2016.01.20.08.51.26;	author -;	state -;
+branches;
+next	1.4;
+
+1.4
+date	2016.01.20.08.47.12;	author -;	state -;
+branches;
+next	1.3;
+
+1.3
+date	2016.01.20.08.05.39;	author -;	state -;
+branches;
+next	1.2;
+
+1.2
+date	2016.01.20.08.01.24;	author -;	state -;
+branches;
+next	1.1;
+
+1.1
+date	2016.01.20.07.43.04;	author -;	state -;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.48
+log
+@-
+@
+text
+@// $Id: jfmt.java,v 1.47 2016-01-20 12:08:57-08 - - $
+// Michael Quan midquan
+// Starter code for the jfmt utility.  This program is similar
+// to the example code jcat.java, which iterates over all of its
+// input files, except that this program shows how to use
+// String.split to extract non-whitespace sequences of characters
+// from each line.
+//
+
+import java.io.*;
+import java.util.Iterator;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Scanner;
+import static java.lang.System.*;
+
+
+class jfmt {
+   // Static variables keeping the general status of the program.
+   public static final String JAR_NAME = get_jarname();
+   public static final int EXIT_SUCCESS = 0;
+   public static final int EXIT_FAILURE = 1;
+   public static int exit_status = EXIT_SUCCESS;
+   public static int width = 65;
+   // A basename is the final component of a pathname.
+   // If a java program is run from a jar, the classpath is the
+   // pathname of the jar.
+   static String get_jarname() {
+      String jarpath = getProperty ("java.class.path");
+      int lastslash = jarpath.lastIndexOf ('/');
+      if (lastslash < 0) return jarpath;
+      return jarpath.substring (lastslash + 1);
+   }
+
+
+   // Formats a single file.
+   static void format (Scanner infile) {
+      // Read each line from the opened file, one after the other.
+      // Stop the loop at end of file.
+      List<String> words = new LinkedList<String>();
+      for (int linenr = 1; infile.hasNextLine(); ++linenr) {
+         String line = infile.nextLine();
+         // Create a LinkedList of Strings.
+
+         // Split the line into words around white space and iterate
+         // over the words.
+         for (String word: line.split ("\\s+")) {
+
+            // Skip an empty word if such is found.
+            if (word.length() == 0) continue;
+            words.add (word);
+            
+         }
+      }
+      print_paragraph(words);
+      out.printf("%n");
+   }
+   static void print_paragraph(List<String> words){
+      int count = 0;
+      for(String word: words){
+         if(count == 0){
+            out.printf("%s",word);
+            count += word.length();
+         }  
+         else{
+            count += 1 + word.length();
+            if(count>width){
+               out.printf("%n");
+               out.printf(word);
+               count = word.length();
+            }
+            else out.printf(" %s",word);
+         }
+      }  
+      words.clear();
+   }   
+
+
+   // Main function scans arguments and opens/closes files.
+   public static void main (String[] args) {
+      if (args.length == 0) {
+         // There are no filenames given on the command line.
+         err.printf ("Usage: jfmt [-width] [filename...]");
+         err.printf ("%n");
+         System.exit(1);
+      }
+      else {
+         /*
+         if(args[0].equals("-\\d+")){
+            String begin = args[0];
+            String num = begin.substring(1,begin.length()-1);
+            width = Integer.parseInt(num);
+         }
+         */
+         // Iterate over each filename given on the command line.
+         for (int argix = 0; argix < args.length; ++argix) {
+            String filename = args[argix];
+            if (filename.substring(0).equals ("-")) {
+               // Treat a filename of "-" to mean System.in.
+               String begin = args[0];
+               String num = begin.substring(1,begin.length()-1);
+               width = Integer.parseInt(num);
+               out.printf ("FILE: -%n");
+               format (new Scanner (in));
+            }else {
+               // Open the file and read it, or error out.
+               try {
+                  Scanner infile = new Scanner (new File (filename));
+                 // out.printf ("FILE: %s%n", filename);
+                  format (infile);
+                  infile.close();
+               }catch (IOException error) {
+                  exit_status = EXIT_FAILURE;
+                  err.printf ("%s: %s%n", JAR_NAME,
+                              error.getMessage());
+               }
+            }
+         }
+      }
+      out.printf("%n");
+      exit (exit_status);
+   }
+
+}
+@
+
+
+1.47
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: jfmt.java,v 1.46 2016-01-20 11:59:43-08 - - $
+d52 1
+a52 1
+
+d56 1
+a63 1
+            //words.remove(0);
+@
+
+
+1.46
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: jfmt.java,v 1.44 2016-01-20 08:33:14-08 - - $
+d83 3
+a85 2
+         out.printf ("Usage: jfmt [-width] [filename...]");
+         format (new Scanner (in));
+d98 1
+a98 1
+            if (filename.equals ("-")) {
+d100 3
+a102 5
+               if(args[0].equals("-\\d+")){
+                  String begin = args[0];
+                  String num = begin.substring(1,begin.length()-1);
+                  width = Integer.parseInt(num);
+               }
+@
+
+
+1.45
+log
+@-
+@
+text
+@a75 1
+      out.printf("%d",width);
+d83 2
+a84 2
+         err.printf ("Usage: jfmt [-width] [filename...]");
+         System.exit(1);
+d97 3
+a99 1
+			   if(args[0].equals("-\\d+")){
+d103 1
+a103 3
+            }
+            if (filename.equals ("-")) {
+               // Treat a filename of "-" to mean System.in.
+@
+
+
+1.44
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: jfmt.java,v 1.43 2016-01-20 08:13:29-08 - - $
+d84 2
+a85 2
+         out.printf ("Usage: jfmt [-width] [filename...]");
+         format (new Scanner (in));
+d88 1
+d94 1
+d98 5
+@
+
+
+1.43
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: jfmt.java,v 1.42 2016-01-20 07:58:10-08 - - $
+d40 1
+a42 2
+         //out.printf ("line %3d: [%s]%n", linenr, line);
+
+a43 1
+         List<String> words = new LinkedList<String>();
+a50 2
+            // out.printf ("...[%s]%n", word);
+            // Append the word to the end of the linked list.
+a53 5
+         //out.printf ("list:");
+         print_paragraph(words);
+         // Use iterator syntax to print out all of the words.
+        // for (String word: words) out.printf (" %s", word);
+         //out.printf ("%n");
+d55 1
+d76 1
+d84 1
+a84 1
+         out.printf ("FILE: -%n");
+d115 1
+@
+
+
+1.42
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: jfmt.java,v 1.41 2016/01/20 14:05:19 - - $
+d82 1
+a82 2
+      }
+      out.printf("%n");  
+a92 4
+      }else if(args[0].equals("-\\d+")){
+         String begin = args[0];
+         String num = begin.substring(1,begin.length()-1);
+         width = Integer.parseInt(num);
+d95 5
+@
+
+
+1.41
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: jfmt.java,v 1.40 2016-01-20 05:52:34-08 - - $
+d24 1
+a24 1
+
+a73 1
+            int width = 30;
+d94 6
+a99 1
+      }else {
+@
+
+
+1.40
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: jfmt.java,v 1.39 2016-01-20 05:51:38-08 - - $
+d74 1
+a74 1
+            int width =65;
+d81 1
+a81 1
+            else out.printf("%s",word);
+d83 2
+a84 1
+      }  
+@
+
+
+1.39
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: jfmt.java,v 1.38 2016-01-20 05:48:49-08 - - $
+d70 2
+a71 2
+            count += fir.length();
+            words.remove(0);
+@
+
+
+1.38
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: jfmt.java,v 1.37 2016-01-20 05:44:32-08 - - $
+d67 8
+a74 9
+      if(count == 0){
+         String fir = words.get(0);
+         out.printf("%s",fir);
+         count += fir.length();
+         words.remove(0);
+      }
+      else{
+         int width =65;
+         for(String word: words){
+d83 1
+a83 1
+      }
+@
+
+
+1.37
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: jfmt.java,v 1.36 2016-01-20 05:24:00-08 - - $
+d73 10
+a82 8
+      int width =65;
+      for(String word: words){
+         out.printf(" %s", word);
+         count += word.length();
+         if(count>width){
+            out.printf("%n");
+            out.printf(word);
+            count = word.length();
+@
+
+
+1.36
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: jfmt.java,v 1.35 2016-01-20 05:22:03-08 - - $
+d58 1
+a59 2
+         //out.printf ("list:");
+
+a66 1
+      String text = "";
+d70 1
+a70 1
+         text += fir;
+d76 1
+a76 2
+         text += (" " + word);
+         count = text.length();
+d80 1
+a80 2
+            count = 0;
+            text = word;
+@
+
+
+1.35
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: jfmt.java,v 1.34 2016-01-20 05:14:10-08 - - $
+d72 1
+a72 1
+         test += fir;
+d79 1
+a79 1
+         count = text.length;
+d84 1
+a84 1
+            text += word;
+@
+
+
+1.34
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: jfmt.java,v 1.33 2016-01-20 05:04:58-08 - - $
+d68 1
+d72 1
+a72 1
+         count += fir.length();
+d78 2
+a79 2
+         count += word.length();
+         count++;
+d83 2
+a84 1
+            count = word.length();
+@
+
+
+1.33
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: jfmt.java,v 1.32 2016-01-20 04:41:16-08 - - $
+d77 2
+a78 1
+         count += word.length()+1;
+@
+
+
+1.32
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: jfmt.java,v 1.31 2016-01-20 04:30:37-08 - - $
+d76 2
+a81 5
+         }
+         else{
+            out.printf(" " + word);
+            count += word.length()+1;
+            out.printf("%d",count);
+@
+
+
+1.31
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: jfmt.java,v 1.30 2016-01-20 04:25:24-08 - - $
+d78 1
+a78 1
+            out.printf("%s",word);
+d82 1
+a82 1
+            out.printf(" %s",word);
+d84 1
+a84 1
+            //out.printf("%d",count);
+@
+
+
+1.30
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: jfmt.java,v 1.29 2016-01-20 04:16:35-08 - - $
+d76 1
+a76 1
+         if(count>width && count != 0){
+@
+
+
+1.29
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: jfmt.java,v 1.28 2016-01-20 03:54:18-08 - - $
+d68 1
+a68 1
+      if(words.size()>0){
+d84 1
+a84 1
+            out.printf("%d",count);
+@
+
+
+1.28
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: jfmt.java,v 1.27 2016-01-20 03:44:16-08 - - $
+d78 7
+a84 1
+            count = 0;
+a85 3
+         out.printf(" %s",word);
+         count += word.length()+1;
+        // out.printf("%d",count);
+@
+
+
+1.27
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: jfmt.java,v 1.26 2016-01-20 03:39:15-08 - - $
+d67 1
+d69 3
+a71 1
+         out.printf("%s",words.get(0));
+a73 1
+      int count = 0; 
+a77 1
+            out.printf("%d",count);
+d82 1
+@
+
+
+1.26
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: jfmt.java,v 1.25 2016-01-20 03:36:06-08 - - $
+d72 1
+a72 1
+      int width =25;
+d76 1
+@
+
+
+1.25
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: jfmt.java,v 1.24 2016-01-20 03:34:46-08 - - $
+d79 1
+a79 1
+         count += word.length();
+@
+
+
+1.24
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: jfmt.java,v 1.23 2016-01-20 03:27:40-08 - - $
+d74 4
+a77 1
+         if(count>width && count != 0)out.printf("%n");
+d79 1
+a79 1
+         count += word.length;
+@
+
+
+1.23
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: jfmt.java,v 1.22 2016-01-20 01:57:12-08 - - $
+d70 3
+a72 1
+      } 
+d74 1
+d76 1
+@
+
+
+1.22
+log
+@-
+@
+text
+@d1 2
+a2 2
+// $Id: jfmt.java,v 1.21 2016-01-20 01:52:46-08 - - $
+//
+d67 1
+a67 1
+      if(words.size()>0{
+d69 2
+a70 1
+         words.remove(0); 
+@
+
+
+1.21
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: jfmt.java,v 1.20 2016-01-20 01:47:31-08 - - $
+d67 5
+a71 4
+      
+      for(int i=0;i<words.size();++i){
+         String j = words.get(i);
+         out.printf("%s ",j);
+@
+
+
+1.20
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: jfmt.java,v 1.19 2016-01-20 01:44:43-08 - - $
+d66 1
+a66 1
+   static void print_paragraph(List words_){
+d68 2
+a69 2
+      for(int i=0;i<words_.size();++i){
+         String j = words_.get(i);
+d72 1
+a72 1
+      words_.clear();
+@
+
+
+1.19
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: jfmt.java,v 1.18 2016-01-20 01:44:17-08 - - $
+d67 1
+d69 1
+a69 1
+         String j = words_.element(i);
+@
+
+
+1.18
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: jfmt.java,v 1.17 2016-01-20 01:41:53-08 - - $
+d68 1
+a68 1
+         String j = words. element(i);
+@
+
+
+1.17
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: jfmt.java,v 1.16 2016-01-20 01:40:33-08 - - $
+d68 2
+a69 1
+         out.printf("%s ",words_(i));
+@
+
+
+1.16
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: jfmt.java,v 1.15 2016-01-20 01:39:49-08 - - $
+d68 1
+a68 1
+         out.printf("%s ",words_);
+@
+
+
+1.15
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: jfmt.java,v 1.14 2016-01-20 01:38:20-08 - - $
+d67 1
+a67 1
+      for(i=0;i<words_.size();i++){
+@
+
+
+1.14
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: jfmt.java,v 1.13 2016-01-20 01:26:44-08 - - $
+d67 1
+a67 1
+      for(i=0;i<words_.length,i++){
+@
+
+
+1.13
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: jfmt.java,v 1.12 2016-01-20 01:26:09-08 - - $
+d67 4
+a70 2
+      out.printf("%s ",words_);
+      words_.remove(0);
+@
+
+
+1.12
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: jfmt.java,v 1.11 2016-01-20 01:22:56-08 - - $
+d62 2
+a63 2
+         for (String word: words) out.printf (" %s", word);
+         out.printf ("%n");
+@
+
+
+1.11
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: jfmt.java,v 1.10 2016-01-20 01:21:37-08 - - $
+d68 1
+a68 1
+      word_.removeFirst();
+@
+
+
+1.10
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: jfmt.java,v 1.9 2016-01-20 00:55:47-08 - - $
+d66 1
+a66 1
+   static void print_paragraph(LinkedList words_){
+@
+
+
+1.9
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: jfmt.java,v 1.8 2016-01-20 00:54:11-08 - - $
+d58 1
+d62 3
+a64 3
+        // for (String word: words)// out.printf (" %s", word);
+         //out.printf ("%n");
+     // }
+d66 4
+@
+
+
+1.8
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: jfmt.java,v 1.7 2016-01-20 00:53:39-08 - - $
+d61 1
+a61 1
+         for (String word: words)// out.printf (" %s", word);
+d63 1
+a63 1
+      }
+@
+
+
+1.7
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: jfmt.java,v 1.6 2016-01-20 00:52:35-08 - - $
+d63 1
+a63 1
+      //}
+@
+
+
+1.6
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: jfmt.java,v 1.5 2016-01-20 00:51:26-08 - - $
+d62 2
+a63 2
+         out.printf ("%n");
+      }
+@
+
+
+1.5
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: jfmt.java,v 1.4 2016-01-20 00:47:12-08 - - $
+d62 1
+a62 1
+        // out.printf ("%n");
+@
+
+
+1.4
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: jfmt.java,v 1.3 2016-01-20 00:05:39-08 - - $
+d61 2
+a62 2
+         for (String word: words) out.printf (" %s", word);
+         out.printf ("%n");
+@
+
+
+1.3
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: jfmt.java,v 1.2 2016-01-20 00:01:24-08 - - $
+d42 1
+a42 1
+         out.printf ("line %3d: [%s]%n", linenr, line);
+d53 1
+a53 1
+            out.printf ("...[%s]%n", word);
+d58 1
+a58 1
+         out.printf ("list:");
+d85 1
+a85 1
+                  out.printf ("FILE: %s%n", filename);
+@
+
+
+1.2
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: jfmt.java,v 1.1 2016-01-19 23:43:04-08 - - $
+d11 1
+a11 1
+import java.util.Iterator
+@
+
+
+1.1
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: jfmt.java,v 1.1 2015-12-11 17:02:48-08 - - $
+d11 1
+d16 1
+@

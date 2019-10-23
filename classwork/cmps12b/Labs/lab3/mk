@@ -1,0 +1,4 @@
+#!/bin/sh
+# $Id: mk,v 1.11 2016-01-27 20:01:47-08 - - $
+# Michael Quan midquan
+gcc -g -O0 -Wall -Wextra -std=gnu11 crpn.c -o crpn

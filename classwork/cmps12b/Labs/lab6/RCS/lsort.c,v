@@ -1,0 +1,211 @@
+head	1.2;
+access;
+symbols;
+locks;
+comment	@ * @;
+
+
+1.2
+date	2016.02.19.12.01.50;	author -;	state -;
+branches;
+next	1.1;
+
+1.1
+date	2016.02.19.10.49.48;	author -;	state -;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.2
+log
+@-
+@
+text
+@// $Id: lsort.c,v 1.1 2016-02-19 02:49:48-08 - - $
+// Michael Quan midquan
+
+#include <assert.h>
+#include <libgen.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <stdbool.h>
+#include <string.h>
+#include <unistd.h>
+
+typedef struct node_t node_t;
+typedef struct list_t list_t;
+typedef struct options options;
+struct list_t{
+   node_t *head;
+};
+struct node_t {
+   char *value;
+   node_t *link;
+};
+struct options{
+   bool debug_mode;
+};
+
+char *progname = NULL;
+int exit_status = EXIT_SUCCESS;
+
+void scan_options (int argc, char **argv, options *opts){
+   opts->debug_mode = false;
+   opterr = false;
+   for(;;){
+      int opt = getopt (argc, argv, "d");
+      if (opt == EOF) break;
+      switch (opt){
+         case 'd':
+            opts->debug_mode = true;
+            break;
+         default:
+            exit_status = EXIT_FAILURE;
+            fflush(NULL);
+            fprintf(stderr, "%s: -%c: invalid option\n",
+               progname, optopt);
+            fflush(NULL);
+            break;
+      }
+   }
+}
+
+void insert_ascending(list_t *list, char *val){
+   node_t *curr = NULL;
+   node_t *prev = NULL;
+   curr = list->head;
+   
+   while(curr != NULL){
+      if (strcmp(curr->value, val) > 0) break;
+      prev = curr;
+      curr = curr->link;
+   }
+   
+   node_t *temp = malloc(sizeof(struct node_t));
+   assert(temp != NULL);
+   temp->value = val;
+   temp->link = curr;
+   if (prev == NULL) list->head = temp;
+   else prev->link = temp;
+}
+
+int main (int argc, char **argv) {
+   options opts;
+   progname = basename (argv[0]);
+   scan_options(argc, argv, &opts);
+
+   list_t *list = malloc(sizeof(struct list_t));
+   assert(list != NULL);
+   list->head = NULL;
+   char buffer[82];
+   int linenr;
+
+   for(linenr = 1;;++linenr){
+      char *gotline = fgets(buffer, sizeof buffer, stdin);
+      if(gotline == NULL) break;
+
+      char *nlpos = strchr(buffer, '\n');
+      if (nlpos != NULL){
+         *nlpos = '\0';
+      }else{
+         exit_status = EXIT_FAILURE;
+         fflush(NULL);
+         fprintf(stderr, "%s: %d: unterminated line: %s\n",
+            progname, linenr, buffer);
+         fflush(NULL);
+      }
+      char *value = strdup(buffer);
+      assert(value != NULL); 
+      insert_ascending(list,value);
+   }
+   node_t *curr = NULL; 
+   for(curr = list->head; curr != NULL;curr = curr->link) {
+      if(opts.debug_mode){
+         fprintf(stderr,"%s: %p -> node {\n"
+                 "    string= %p->\"%s\",\n"
+                 "    link= %p }\n",
+            progname,curr,curr->value,curr->value,curr->link);
+      }else{
+          printf ("%s\n", curr->value);
+      }
+
+   while(list->head != NULL){
+      curr = list->head;
+      list->head = curr->link;
+      free(curr);
+   }
+
+   free(list);
+   return exit_status;
+   }
+}
+@
+
+
+1.1
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: nsort.c,v 1.17 2016-02-19 02:42:56-08 - - $
+d19 1
+a19 1
+   double number;
+d50 1
+a50 1
+void insert_ascending(list_t *list, double num){
+d56 1
+a56 1
+      if (curr->number > num) break;
+d63 1
+a63 1
+   temp->number = num;
+a73 4
+   char err_buffer[256];
+   char err_buf_fmt[16];
+   sprintf(err_buf_fmt, "%%%lds", sizeof err_buffer -1);
+   
+d77 2
+d80 7
+a86 9
+   for(;;){
+      double number;
+      int scancount = scanf ("%lg", &number);
+      if (scancount == EOF) {
+         break;
+      }
+      //add to node
+      else if (scancount == 1){
+         insert_ascending(list, number);
+d88 1
+a88 2
+         scancount = scanf (err_buf_fmt, err_buffer);
+         assert (scancount == 1);
+d90 2
+a91 2
+         fprintf (stderr, "%s: bad number \"%s\"\n", progname,
+            err_buffer);
+a92 1
+         exit_status = EXIT_FAILURE;
+d94 5
+a98 2
+   } 
+   node_t *curr = NULL;
+d101 4
+a104 2
+         fprintf(stderr,"%p -> struct node {item= %.15g, link = %p}\n"
+            ,curr, curr->number, curr->link);
+d106 1
+a106 1
+          printf ("%24.15g\n", curr->number);
+d108 1
+a108 1
+   }
+d117 1
+@

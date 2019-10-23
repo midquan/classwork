@@ -1,0 +1,419 @@
+head	1.13;
+access;
+symbols;
+locks;
+comment	@ * @;
+
+
+1.13
+date	2016.03.12.13.38.01;	author -;	state -;
+branches;
+next	1.12;
+
+1.12
+date	2016.03.12.13.24.27;	author -;	state -;
+branches;
+next	1.11;
+
+1.11
+date	2016.03.12.13.05.31;	author -;	state -;
+branches;
+next	1.10;
+
+1.10
+date	2016.03.12.12.49.57;	author -;	state -;
+branches;
+next	1.9;
+
+1.9
+date	2016.03.12.12.32.04;	author -;	state -;
+branches;
+next	1.8;
+
+1.8
+date	2016.03.12.12.22.14;	author -;	state -;
+branches;
+next	1.7;
+
+1.7
+date	2016.03.12.12.09.11;	author -;	state -;
+branches;
+next	1.6;
+
+1.6
+date	2016.03.12.12.08.50;	author -;	state -;
+branches;
+next	1.5;
+
+1.5
+date	2016.03.12.12.01.11;	author -;	state -;
+branches;
+next	1.4;
+
+1.4
+date	2016.03.12.11.51.22;	author -;	state -;
+branches;
+next	1.3;
+
+1.3
+date	2016.03.12.11.36.39;	author -;	state -;
+branches;
+next	1.2;
+
+1.2
+date	2016.03.12.11.26.48;	author -;	state -;
+branches;
+next	1.1;
+
+1.1
+date	2016.03.12.10.13.24;	author -;	state -;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.13
+log
+@-
+@
+text
+@// $Id: hashset.c,v 1.12 2016-03-12 05:24:27-08 - - $
+// Michael Quan midquan
+
+#include <assert.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+#include "debug.h"
+#include "hashset.h"
+#include "strhash.h"
+
+#define HASH_NEW_SIZE 15
+
+typedef struct hashnode hashnode;
+struct hashnode {
+   char *word;
+   hashnode *link;
+};
+
+struct hashset {
+   size_t size;
+   size_t load;
+   hashnode **chains;
+};
+
+hashset *new_hashset (void) {
+   hashset *this = malloc (sizeof (struct hashset));
+   assert (this != NULL);
+   this->size = HASH_NEW_SIZE;
+   this->load = 0;
+   size_t sizeof_chains = this->size * sizeof (hashnode *);
+   this->chains = malloc (sizeof_chains);
+   assert (this->chains != NULL);
+   memset (this->chains, 0, sizeof_chains);
+   DEBUGF ('h', "%p -> struct hashset {size = %zd, chains=%p}\n",
+                this, this->size, this->chains);
+   return this;
+}
+
+void double_hashset (hashset *this){
+   size_t old = this->size;
+   this->size = (2 * old) + 1;
+   this->load = 0;
+   size_t chain_size = this->size * sizeof (hashnode *);
+   hashnode **chains = malloc(chain_size);
+   assert(chains != NULL);
+   memset(chains, 0, chain_size);
+   for(size_t index = 0; index < old; index++){
+      hashnode *node = this->chains[index];
+      while(node != NULL){
+         int hash_index = strhash(node->word) % this->size;
+         hashnode *temp = malloc(sizeof(struct hashnode));
+         assert(temp != NULL);
+         temp->word = strdup(node->word);
+         temp->link = (chains[hash_index] == NULL ? NULL :
+            chains[hash_index]);
+         chains[hash_index] = temp;
+         free(node->word);
+         hashnode *oldnode = node;
+         node = node->link;
+         free(oldnode); 
+      }
+   }
+   free(this->chains);
+   this->chains = chains;
+}
+
+void free_hashset (hashset *this) {
+   //DEBUGF ('h', "free (%p)\n", this);
+   for(size_t index = 0; index < this->size; index++) {
+      hashnode *head = NULL;
+      head = this->chains[index];
+      while(head != NULL){
+         hashnode *temp = NULL;
+         temp = head;
+         head = head->link;
+         free(temp->word);
+         free(temp);
+      }
+   }
+   free(this->chains);
+   free(this);
+}
+
+void put_hashset (hashset *this, const char *item) {
+   //STUBPRINTF ("hashset=%p, item=%s\n", this, item);
+   if(this->load * 2 > this->size) double_hashset(this);
+   int hash_index = strhash (item) % this->size;
+   hashnode *head = this->chains[hash_index];
+
+   if(has_hashset(this,item)) return;
+   hashnode *temp = malloc(sizeof(struct hashnode));\
+   assert(temp != NULL);
+   temp->word = strdup(item);
+   assert(temp->word != NULL);
+   temp->link = (head == NULL ? NULL : this->chains[hash_index]);
+   this->chains[hash_index] = temp;
+   this->load++;
+}
+
+bool has_hashset (hashset *this, const char *item) {
+   //STUBPRINTF ("hashset=%p, item=%s\n", this, item);
+   int hash_index = strhash (item) % this->size;
+   hashnode *node = NULL;
+   for(node = this->chains[hash_index]; node != NULL;
+         node = node->link) {
+      if(strcmp(node->word, item) == 0) return true;
+   }
+   return false;
+}
+
+void print_hash(hashset *this) {
+   size_t array[this->size];
+   memset(array, 0, this->size * sizeof(size_t));
+   printf("%5zd words in the hash set\n", this->load);
+   printf("%5zd size of the hash array\n", this->size);
+   for(size_t index = 0; index < this->size; index++) {
+      hashnode *node = this->chains[index];
+      size_t length = 0;
+      while(node != NULL){
+         length++;
+         node = node->link;
+      }
+      if(length > 0) array[length]++;
+   }
+   for(size_t index = 0; index < this->size; index++){
+      if(array[index] != 0)
+         printf("%5zd chains of size %5zd\n", array[index], index);
+   }
+}
+
+bool overload_hashset(hashset *this) {
+   return this->load * 2 > this->size;
+}
+
+void dump_hash(hashset *this){
+   for(size_t index = 0; index < this->size;index++){
+      hashnode *node = this->chains[index];
+      int count = 0;
+      while(node != NULL) {
+         if(count == 0){
+            printf("array[%10zd] = %20lu \"%s\"\n",
+               index, strhash(node->word), node->word);
+         }else{
+            printf("                  = %20lu \"%s\"\n",
+               strhash(node->word), node->word);
+            node = node->link;
+            count++;
+         }
+      }
+   }
+}
+@
+
+
+1.12
+log
+@-
+@
+text
+@d1 2
+a2 1
+// $Id: hashset.c,v 1.11 2016-03-12 05:05:31-08 - - $
+@
+
+
+1.11
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: hashset.c,v 1.10 2016-03-12 04:49:57-08 - - $
+d74 1
+a74 1
+         hasnode *temp = NULL;
+d132 4
+d145 1
+a145 1
+            printf("                  = %20lu \"s\"\n",
+@
+
+
+1.10
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: hashset.c,v 1.9 2016-03-12 04:32:04-08 - - $
+d41 25
+a65 1
+   size_t old_size = this->size;
+d70 13
+a82 1
+   for(size_t index = 0; index < this->size;
+@
+
+
+1.9
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: hashset.c,v 1.8 2016-03-12 04:22:14-08 - - $
+d45 2
+a46 1
+   DEBUGF ('h', "free (%p)\n", this);
+@
+
+
+1.8
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: hashset.c,v 1.7 2016-03-12 04:09:11-08 - - $
+d55 2
+a56 1
+   hashnode *temp = malloc(sizeof(struct hashnode));
+@
+
+
+1.7
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: hashset.c,v 1.6 2016-03-12 04:08:50-08 - - $
+d72 20
+@
+
+
+1.6
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: hashset.c,v 1.5 2016-03-12 04:01:11-08 - - $
+d84 1
+a84 1
+               strhash(node->word), node->word));
+@
+
+
+1.5
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: hashset.c,v 1.4 2016-03-12 03:51:22-08 - - $
+d41 1
+a41 1
+   size_t old_size = this->size
+d58 1
+a58 1
+   temp->link = (head == NULL ? NULL : this->chains[hash_indexi]);
+d84 2
+a85 2
+               strhash(node->word, node->word);
+            node = node->link
+@
+
+
+1.4
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: hashset.c,v 1.3 2016-03-12 03:36:39-08 - - $
+d75 15
+a89 1
+
+@
+
+
+1.3
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: hashset.c,v 1.2 2016-03-12 03:26:48-08 - - $
+d74 3
+@
+
+
+1.2
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: hashset.c,v 1.1 2016-03-12 02:13:24-08 - - $
+d51 1
+a51 1
+   int hash_index = strhash (word) % this->size;
+d65 7
+a71 2
+
+   return true;
+@
+
+
+1.1
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: hashset.c,v 1.9 2014-05-15 20:01:08-07 - - $
+d40 4
+d49 12
+a60 1
+   STUBPRINTF ("hashset=%p, item=%s\n", this, item);
+d64 2
+a65 1
+   STUBPRINTF ("hashset=%p, item=%s\n", this, item);
+@

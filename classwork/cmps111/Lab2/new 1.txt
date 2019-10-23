@@ -1,0 +1,17 @@
+   // if(new_priority < thread_get_priority()){
+    //         thread_yield();	 
+    //}
+    
+    
+    
+   	old_level = intr_disable();
+	if(priority > thread_get_priority()){
+		thread_yield();	 
+	}
+    
+    
+    
+       /* if(new_priority > thread_current()->priority){
+        thread_yield();
+        next_thread_to_run();
+    }

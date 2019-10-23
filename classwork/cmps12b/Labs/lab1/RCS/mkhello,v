@@ -1,0 +1,32 @@
+head	1.1;
+access;
+symbols;
+locks;
+comment	@# @;
+
+
+1.1
+date	2016.01.15.09.45.38;	author -;	state -;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.1
+log
+@-
+@
+text
+@#!/bin/bash
+# $Id$
+# Michael Quan midquan
+cid hello.java
+javac hello.java
+echo Main-class: hello >Manifest
+jar cvfm hello Manifest hello.class
+chmod +x hello
+rm Manifest hello.class
+@

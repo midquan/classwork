@@ -1,0 +1,46 @@
+head	1.2;
+access;
+symbols;
+locks;
+comment	@# @;
+
+
+1.2
+date	2016.02.08.16.53.50;	author -;	state -;
+branches;
+next	1.1;
+
+1.1
+date	2016.02.08.16.50.01;	author -;	state -;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.2
+log
+@-
+@
+text
+@#!/bin/bash
+# $Id: mk,v 1.1 2016-02-08 08:50:01-08 - - $
+#Michael Quan midquan
+gcc -g -O0 -Wall -Wextra -std=gnu99 cmatch.c -o cmatch 
+@
+
+
+1.1
+log
+@-
+@
+text
+@d2 1
+a2 1
+# $Id:$
+d4 1
+a4 1
+gcc -g -O0 -Wall -Wextra -std=gnu11 cmatch.c -o cmatch 
+@

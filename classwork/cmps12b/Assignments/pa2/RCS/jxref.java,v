@@ -1,0 +1,1015 @@
+head	1.44;
+access;
+symbols;
+locks;
+comment	@# @;
+
+
+1.44
+date	2016.02.02.11.56.32;	author -;	state -;
+branches;
+next	1.43;
+
+1.43
+date	2016.02.02.11.27.49;	author -;	state -;
+branches;
+next	1.42;
+
+1.42
+date	2016.02.02.11.26.16;	author -;	state -;
+branches;
+next	1.41;
+
+1.41
+date	2016.02.02.11.21.44;	author -;	state -;
+branches;
+next	1.40;
+
+1.40
+date	2016.02.02.11.21.18;	author -;	state -;
+branches;
+next	1.39;
+
+1.39
+date	2016.02.02.11.14.13;	author -;	state -;
+branches;
+next	1.38;
+
+1.38
+date	2016.02.02.11.00.03;	author -;	state -;
+branches;
+next	1.37;
+
+1.37
+date	2016.02.02.10.58.45;	author -;	state -;
+branches;
+next	1.36;
+
+1.36
+date	2016.02.02.10.37.52;	author -;	state -;
+branches;
+next	1.35;
+
+1.35
+date	2016.02.02.10.36.50;	author -;	state -;
+branches;
+next	1.34;
+
+1.34
+date	2016.02.02.10.35.46;	author -;	state -;
+branches;
+next	1.33;
+
+1.33
+date	2016.02.02.10.33.46;	author -;	state -;
+branches;
+next	1.32;
+
+1.32
+date	2016.02.02.10.32.30;	author -;	state -;
+branches;
+next	1.31;
+
+1.31
+date	2016.02.02.09.50.09;	author -;	state -;
+branches;
+next	1.30;
+
+1.30
+date	2016.02.02.09.44.56;	author -;	state -;
+branches;
+next	1.29;
+
+1.29
+date	2016.02.02.09.43.54;	author -;	state -;
+branches;
+next	1.28;
+
+1.28
+date	2016.02.02.09.42.54;	author -;	state -;
+branches;
+next	1.27;
+
+1.27
+date	2016.02.02.09.42.03;	author -;	state -;
+branches;
+next	1.26;
+
+1.26
+date	2016.02.02.09.40.30;	author -;	state -;
+branches;
+next	1.25;
+
+1.25
+date	2016.02.02.09.39.42;	author -;	state -;
+branches;
+next	1.24;
+
+1.24
+date	2016.02.02.09.35.56;	author -;	state -;
+branches;
+next	1.23;
+
+1.23
+date	2016.02.02.08.59.00;	author -;	state -;
+branches;
+next	1.22;
+
+1.22
+date	2016.02.02.08.49.31;	author -;	state -;
+branches;
+next	1.21;
+
+1.21
+date	2016.02.02.08.46.52;	author -;	state -;
+branches;
+next	1.20;
+
+1.20
+date	2016.02.02.08.45.53;	author -;	state -;
+branches;
+next	1.19;
+
+1.19
+date	2016.02.02.08.45.21;	author -;	state -;
+branches;
+next	1.18;
+
+1.18
+date	2016.02.02.07.30.05;	author -;	state -;
+branches;
+next	1.17;
+
+1.17
+date	2016.02.02.07.23.07;	author -;	state -;
+branches;
+next	1.16;
+
+1.16
+date	2016.02.02.07.22.26;	author -;	state -;
+branches;
+next	1.15;
+
+1.15
+date	2016.02.02.07.11.32;	author -;	state -;
+branches;
+next	1.14;
+
+1.14
+date	2016.02.02.07.10.43;	author -;	state -;
+branches;
+next	1.13;
+
+1.13
+date	2016.02.02.03.36.49;	author -;	state -;
+branches;
+next	1.12;
+
+1.12
+date	2016.02.02.03.35.15;	author -;	state -;
+branches;
+next	1.11;
+
+1.11
+date	2016.02.02.03.34.35;	author -;	state -;
+branches;
+next	1.10;
+
+1.10
+date	2016.02.02.03.11.52;	author -;	state -;
+branches;
+next	1.9;
+
+1.9
+date	2016.01.13.01.37.33;	author -;	state -;
+branches;
+next	1.8;
+
+1.8
+date	2013.10.17.00.10.32;	author -;	state -;
+branches;
+next	1.7;
+
+1.7
+date	2013.10.12.02.24.18;	author -;	state -;
+branches;
+next	1.6;
+
+1.6
+date	2013.10.11.02.13.03;	author -;	state -;
+branches;
+next	1.5;
+
+1.5
+date	2013.01.25.03.40.36;	author -;	state -;
+branches;
+next	1.4;
+
+1.4
+date	2013.01.25.03.22.48;	author -;	state -;
+branches;
+next	1.3;
+
+1.3
+date	2013.01.25.03.17.34;	author -;	state -;
+branches;
+next	1.2;
+
+1.2
+date	2013.01.25.03.16.43;	author -;	state -;
+branches;
+next	1.1;
+
+1.1
+date	2013.01.25.03.05.09;	author -;	state -;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.44
+log
+@-
+@
+text
+@// $Id: jxref.java,v 1.43 2016-02-02 03:27:49-08 - - $
+// Michael Quan midquan
+// Jourdyn Calhoun jacalhou
+import java.io.*;
+import java.util.Iterator;
+import java.util.Map.Entry;
+import java.util.NoSuchElementException;
+import java.util.Scanner;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+import static java.lang.System.*;
+
+class jxref {
+   private static final String STDIN_FILENAME = "-";
+   private static final String REGEX = "\\w+([-'.:/]\\w+)*";
+   private static final Pattern PATTERN = Pattern.compile(REGEX);
+
+   private static void xref_file (String filename, Scanner file){
+      listmap map = new listmap();
+      for (int linenr = 1; file.hasNextLine(); ++linenr) {
+         String line = file.nextLine();
+         Matcher match = PATTERN.matcher (line);
+         while (match.find()) {
+            String word = match.group();
+            //FIXME
+            map.insert(word, linenr);
+         }
+      }
+      //Creates semi-colon spacing and puts filename 
+      for (int i= 0; i<65; i++){
+         if(i==32) out.printf("%n%s%n", filename);
+         else out.printf(":");
+      }
+      out.printf("%n");
+
+      for (Entry<String, intqueue> entry: map) {
+         //FIXME
+         out.printf("%s [%d]",entry.getKey(),
+            entry.getValue().getcount()); 
+         //Iterates to print multiple line numbers
+         for (Iterator<Integer> ln_iterator=entry.getValue().iterator();
+               ln_iterator.hasNext();) {
+            out.printf(" %d", ln_iterator.next());
+         }
+         out.printf("%n");
+      }
+         
+      
+   }
+
+ 
+   // For each filename, open the file, cross reference it,
+   // and print.
+   private static void xref_filename (String filename) {
+      if (filename.equals (STDIN_FILENAME)) {
+         xref_file (filename, new Scanner (System.in));
+      }else {
+         try {
+            Scanner file = new Scanner (new File (filename));
+            xref_file (filename, file);
+            file.close();
+         }catch (IOException error) {
+            misc.warn (error.getMessage());
+         }
+      }
+   }
+
+   // Main function scans arguments to cross reference files.
+   public static void main (String[] args) {
+      if (args.length == 0) {
+         xref_filename (STDIN_FILENAME);
+      }else {
+         for (String filename: args) {
+            xref_filename (filename);
+         }
+      }
+      exit (misc.exit_status);
+   }
+
+}
+
+@
+
+
+1.43
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: jxref.java,v 1.42 2016-02-02 03:26:16-08 - - $
+d29 1
+a29 1
+
+d40 1
+a40 1
+         
+@
+
+
+1.42
+log
+@-
+@
+text
+@d1 3
+a3 2
+// $Id: jxref.java,v 1.41 2016-02-02 03:21:44-08 - - $
+// Michael Quan midquan Jourdyn Calhoun jacalhou
+@
+
+
+1.41
+log
+@-
+@
+text
+@d1 2
+a2 2
+// $Id: jxref.java,v 1.40 2016-02-02 03:21:18-08 - - $
+//
+@
+
+
+1.40
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: jxref.java,v 1.39 2016-02-02 03:14:13-08 - - $
+a17 1
+      misc.trace ("filename", filename);
+a20 1
+         misc.trace (filename, linenr, line);
+@
+
+
+1.39
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: jxref.java,v 1.38 2016-02-02 03:00:03-08 - - $
+a25 1
+            misc.trace ("word", word);
+@
+
+
+1.38
+log
+@-
+@
+text
+@d1 2
+a2 2
+// $Id: jxref.java,v 1.37 2016-02-02 02:58:45-08 - - $
+
+d27 1
+a27 1
+            //FIXED!!!!
+a38 2
+         //misc.trace ("STUB", entry,
+           //          entry.getKey(), entry.getValue());
+@
+
+
+1.37
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: jxref.java,v 1.36 2016-02-02 02:37:52-08 - - $
+d45 1
+a45 1
+         for (Iterator<Integer> ln_iterator = entry.getValue().iterator();
+@
+
+
+1.36
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: jxref.java,v 1.35 2016-02-02 02:36:50-08 - - $
+d42 1
+a42 1
+          out.printf("%s [%d]",entry.getKey(),
+d45 1
+a45 1
+      for (Iterator<Integer> ln_iterator = entry.getValue().iterator();
+@
+
+
+1.35
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: jxref.java,v 1.34 2016-02-02 02:35:46-08 - - $
+d42 2
+a43 1
+          out.printf("%s [%d]",entry.getKey(),entry.getValue().getcount()); 
+@
+
+
+1.34
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: jxref.java,v 1.33 2016-02-02 02:33:46-08 - - $
+d42 1
+a42 1
+         out.printf("%s [%d]",entry.getKey(),entry.getValue().getcount()); 
+d44 1
+a44 1
+         for (Iterator<Integer> ln_iterator = entry.getValue().iterator();
+@
+
+
+1.33
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: jxref.java,v 1.32 2016-02-02 02:32:30-08 - - $
+d32 1
+a32 1
+      for (int i= 0; i<64; i++){
+@
+
+
+1.32
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: jxref.java,v 1.9 2016-01-12 17:37:33-08 - - $
+d33 2
+a34 2
+        if(i==32) out.printf("%n%s%n", filename);
+      else out.printf(":");
+d51 1
+a51 1
+      }
+@
+
+
+1.31
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: jxref.java,v 1.30 2016-02-02 01:44:56-08 - - $
+d31 7
+d39 2
+a40 2
+         misc.trace ("STUB", entry,
+                     entry.getKey(), entry.getValue());
+d42 9
+a50 1
+         entry.getValue().print();
+@
+
+
+1.30
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: jxref.java,v 1.29 2016-02-02 01:43:54-08 - - $
+d35 1
+a35 1
+         entry.getValue().print(intqueue);
+@
+
+
+1.29
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: jxref.java,v 1.28 2016-02-02 01:42:54-08 - - $
+d35 1
+a35 1
+         entry.getValue().print();
+@
+
+
+1.28
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: jxref.java,v 1.27 2016-02-02 01:42:03-08 - - $
+d35 1
+a35 1
+         entry.getValue().print;
+@
+
+
+1.27
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: jxref.java,v 1.26 2016-02-02 01:40:30-08 - - $
+d35 1
+a35 2
+         node temp  = new node(entry.getValue());
+         temp.print();
+@
+
+
+1.26
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: jxref.java,v 1.25 2016-02-02 01:39:42-08 - - $
+d35 2
+a36 2
+         new node() = entry.getValue();
+         node.print();
+@
+
+
+1.25
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: jxref.java,v 1.24 2016-02-02 01:35:56-08 - - $
+d35 1
+a35 1
+         new node = entry.getValue()
+@
+
+
+1.24
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: jxref.java,v 1.9 2016-01-12 17:37:33-08 - - $
+d35 2
+a36 1
+         entry.getValue().print();
+@
+
+
+1.23
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: jxref.java,v 1.22 2016-02-02 00:49:31-08 - - $
+d32 2
+a33 2
+        // misc.trace ("STUB", entry,
+                   // entry.getKey(), entry.getValue());
+d35 1
+a35 3
+         //entry.getValue().print();
+         
+         
+@
+
+
+1.22
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: jxref.java,v 1.21 2016-02-02 00:46:52-08 - - $
+d36 1
+a36 1
+         misc.trace(word, linenr);
+@
+
+
+1.21
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: jxref.java,v 1.20 2016-02-02 00:45:53-08 - - $
+d22 1
+a22 1
+         //misc.trace (filename, linenr, line);
+d36 1
+@
+
+
+1.20
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: jxref.java,v 1.19 2016-02-02 00:45:21-08 - - $
+d22 1
+a22 1
+         misc.trace (filename, linenr, line);
+@
+
+
+1.19
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: jxref.java,v 1.18 2016-02-01 23:30:05-08 - - $
+d26 1
+a26 1
+            //misc.trace ("word", word);
+@
+
+
+1.18
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: jxref.java,v 1.17 2016-02-01 23:23:07-08 - - $
+d26 1
+a26 1
+            misc.trace ("word", word);
+@
+
+
+1.17
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: jxref.java,v 1.16 2016-02-01 23:22:26-08 - - $
+d32 2
+a33 2
+         misc.trace ("STUB", entry,
+                    entry.getKey(), entry.getValue());
+@
+
+
+1.16
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: jxref.java,v 1.15 2016-02-01 23:11:32-08 - - $
+d32 2
+a33 2
+        // misc.trace ("STUB", entry,
+                    // entry.getKey(), entry.getValue());
+@
+
+
+1.15
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: jxref.java,v 1.14 2016-02-01 23:10:43-08 - - $
+d32 2
+a33 2
+         misc.trace ("STUB", entry,
+                     entry.getKey(), entry.getValue());
+d36 1
+@
+
+
+1.14
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: jxref.java,v 1.9 2016-01-12 17:37:33-08 - - $
+d35 1
+a35 1
+         entry.getValue().print();
+@
+
+
+1.13
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: jxref.java,v 1.12 2016-02-01 19:35:15-08 - - $
+d27 2
+a28 2
+            //FIXME
+            map.insert (word, linenr);
+d35 1
+@
+
+
+1.12
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: jxref.java,v 1.11 2016-02-01 19:34:35-08 - - $
+d28 1
+a28 1
+            listmap.insert (word, linenr);
+@
+
+
+1.11
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: jxref.java,v 1.10 2016-02-01 19:11:52-08 - - $
+d28 1
+a28 1
+            listmap.insert (match, linenr);
+@
+
+
+1.10
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: jxref.java,v 1.9 2016-01-12 17:37:33-08 - - $
+d28 1
+a28 1
+            listmap.insert (match, liner);
+@
+
+
+1.9
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: jxref.java,v 1.8 2013-10-16 17:10:32-07 - - $
+d28 1
+@
+
+
+1.8
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: jxref.java,v 1.7 2013-10-11 19:24:18-07 - - $
+d37 1
+a37 1
+
+@
+
+
+1.7
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: jxref.java,v 1.6 2013-10-10 19:13:03-07 - - $
+d27 1
+d33 1
+@
+
+
+1.6
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: jxref.java,v 1.5 2013-01-24 19:40:36-08 - - $
+d15 1
+a15 1
+   private static final Pattern PATTERN = Pattern.compile (REGEX);
+d17 1
+a17 1
+   private static void xref_file (String filename, Scanner file) {
+d30 2
+a31 1
+         misc.trace ("STUB", entry, entry.getKey(), entry.getValue());
+d36 2
+a37 1
+   // For each filename, open the file, cross reference it, and print.
+@
+
+
+1.5
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: jxref.java,v 1.4 2013-01-24 19:22:48-08 - - $
+d34 1
+@
+
+
+1.4
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: jxref.java,v 1.3 2013-01-24 19:17:34-08 - - $
+a51 1
+         // No files specified on the command line.
+d54 2
+a55 3
+         // Iterate over each filename given on the command line.
+         for (int argi = 0; argi < args.length; ++argi) {
+            xref_filename (args[argi]);
+@
+
+
+1.3
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: jxref.java,v 1.2 2013-01-24 19:16:43-08 - - $
+d18 1
+a18 1
+      misc.note ("TRACE", "filename", filename);
+d22 1
+a22 1
+         misc.note ("TRACE", filename, linenr, line);
+d26 1
+a26 1
+            misc.note ("TRACE", "word", word);
+d30 1
+a30 1
+         misc.note ("STUB", entry, entry.getKey(), entry.getValue());
+@
+
+
+1.2
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: jxref.java,v 1.1 2013-01-24 19:05:09-08 - - $
+d44 1
+a44 2
+            misc.exit_status = EXIT_FAILURE;
+            misc.warn (JARNAME, error.getMessage());
+@
+
+
+1.1
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: jxref.java,v 1.11 2012-01-19 19:43:07-08 - - $
+a12 1
+   // Static program constants.
+d14 2
+a15 16
+   private static final String JARNAME = get_jarname();
+   private static final int EXIT_SUCCESS = 0;
+   private static final int EXIT_FAILURE = 1;
+
+   // Static exit status variable.
+   private static int exit_status = EXIT_SUCCESS;
+
+   // A basename is the final component of a pathname.
+   // If a java program is run from a jar, the classpath is the
+   // pathname of the jar.
+   private static String get_jarname() {
+      String jarpath = getProperty ("java.class.path");
+      int lastslash = jarpath.lastIndexOf ('/');
+      if (lastslash < 0) return jarpath;
+      return jarpath.substring (lastslash + 1);
+   }
+a16 4
+
+   private static final String WORD_REGEX = "\\w+([-'.:/]\\w+)*";
+   private static final Pattern WORD_PATTERN
+                      = Pattern.compile (WORD_REGEX);
+d18 1
+a18 1
+      err.printf ("TRACE: filename = %s%n", filename);
+d22 2
+a23 2
+         err.printf ("TRACE: %s: %4d: %s%n", filename, linenr, line);
+         Matcher match = WORD_PATTERN.matcher (line);
+d26 1
+a26 1
+            err.printf ("TRACE: word = %s%n", word);
+d30 1
+a30 2
+         err.printf ("STUB: %s (%s, %s)%n", entry,
+                     entry.getKey(), entry.getValue());
+d44 2
+a45 2
+            exit_status = EXIT_FAILURE;
+            err.printf ("%s: %s%n", JARNAME, error.getMessage());
+d61 1
+a61 1
+      exit (exit_status);
+@

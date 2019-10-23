@@ -1,0 +1,7 @@
+#!/bin/bash
+# $Id: testhello,v 1.2 2016-01-15 02:03:35-08 - - $
+# Michael Quan midquan
+hello >test1.out 2>test1.err
+echo $? >test1.status
+hello world >test2.out 2>test2.err
+echo $? >test2.status

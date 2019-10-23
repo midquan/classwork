@@ -1,0 +1,18 @@
+This program was completed using pair programming.
+
+Partner:  Michael Quan (midquan@ucsc.edu) 
+Partner:  Daniel Lung (dlung@ucsc.edu) 
+
+No more than 25% of each partner's time was spent working alone.
+All work done by a solitary programmer was review by his or her 
+partner.  Of the time spent working together, each partner drove 
+approximatley half the time.
+
+Michael Quan spent   __.25__   hours working alone. 
+Daniel Lung spent   __.25__   hours working alone.     
+We spent  __3__   hours working together. 
+Michael Quan spent  __1.25__  hours driving.       
+Daniel Lung spent  ___1.25_  hours driving.       
+                                                     
+The files to be graded for this project were submitted by Michael Quan (midquan@ucsc.edu).
+Daniel Lung (dlung@ucsc.edu) submitted only this PAIR file.   

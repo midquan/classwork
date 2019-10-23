@@ -1,0 +1,9 @@
+#!/bin/bash
+# $Id: mkhello,v 1.1 2016-01-15 01:45:38-08 - - $
+# Michael Quan midquan
+cid hello.java
+javac hello.java
+echo Main-class: hello >Manifest
+jar cvfm hello Manifest hello.class
+chmod +x hello
+rm Manifest hello.class

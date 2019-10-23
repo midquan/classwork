@@ -1,0 +1,201 @@
+Script started on Wed 10 Feb 2016 05:04:23 PM PST
+[?1034hbash-4.2$ mk list2.c
+CSOURCE=err2.c EXECBIN=err2
++ cid + err2.c
++ checksource err2.c
++ gcc -g -O0 -Wall -Wextra -std=gnu99 err2.c -o err2 -lm
++ tee err2.c.log
+err2.c: In function ‘main’:
+err2.c:6:14: warning: initialization makes pointer from integer without a cast
+    char *p = 20;
+              ^
++ set +x
+============================================================
+CSOURCE=err.c EXECBIN=err
++ cid + err.c
++ checksource err.c
++ gcc -g -O0 -Wall -Wextra -std=gnu99 err.c -o err -lm
++ tee err.c.log
+err.c: In function ‘foo’:
+err.c:6:9: warning: unused variable ‘p’ [-Wunused-variable]
+    int *p = &x;
+         ^
+err.c: In function ‘bar’:
+err.c:11:4: warning: ‘a’ is used uninitialized in this function [-Wuninitialized]
+    printf ("%d %p\n", a, p);
+    ^
+err.c:11:4: warning: ‘p’ is used uninitialized in this function [-Wuninitialized]
++ set +x
+============================================================
+CSOURCE=hello.c EXECBIN=hello
++ cid + hello.c
++ checksource hello.c
++ gcc -g -O0 -Wall -Wextra -std=gnu99 hello.c -o hello -lm
++ tee hello.c.log
++ set +x
+============================================================
+CSOURCE=list1.c EXECBIN=list1
++ cid + list1.c
++ checksource list1.c
++ gcc -g -O0 -Wall -Wextra -std=gnu99 list1.c -o list1 -lm
++ tee list1.c.log
+list1.c: In function ‘main’:
+list1.c:13:15: warning: unused parameter ‘argc’ [-Wunused-parameter]
+ int main (int argc, char **argv) {
+               ^
++ set +x
+============================================================
+CSOURCE=list2.c EXECBIN=list2
++ cid + list2.c
++ checksource list2.c
++ gcc -g -O0 -Wall -Wextra -std=gnu99 list2.c -o list2 -lm
++ tee list2.c.log
+list2.c: In function ‘main’:
+list2.c:12:15: warning: unused parameter ‘argc’ [-Wunused-parameter]
+ int main (int argc, char **argv) {
+               ^
++ set +x
+============================================================
+CSOURCE=malloc.c EXECBIN=malloc
++ cid + malloc.c
++ checksource malloc.c
++ gcc -g -O0 -Wall -Wextra -std=gnu99 malloc.c -o malloc -lm
++ tee malloc.c.log
+malloc.c: In function ‘main’:
+malloc.c:12:15: warning: unused parameter ‘argc’ [-Wunused-parameter]
+ int main (int argc, char **argv) {
+               ^
+malloc.c:12:28: warning: unused parameter ‘argv’ [-Wunused-parameter]
+ int main (int argc, char **argv) {
+                            ^
++ set +x
+============================================================
+CSOURCE=stacktrace.c EXECBIN=stacktrace
++ cid + stacktrace.c
++ checksource stacktrace.c
++ gcc -g -O0 -Wall -Wextra -std=gnu99 stacktrace.c -o stacktrace -lm
++ tee stacktrace.c.log
++ set +x
+============================================================
+CSOURCE=uninit.c EXECBIN=uninit
++ cid + uninit.c
++ checksource uninit.c
++ tee uninit.c.log
++ gcc -g -O0 -Wall -Wextra -std=gnu99 uninit.c -o uninit -lm
+uninit.c: In function ‘main’:
+uninit.c:6:15: warning: unused parameter ‘argc’ [-Wunused-parameter]
+ int main (int argc, char **argv) {
+               ^
+uninit.c:6:28: warning: unused parameter ‘argv’ [-Wunused-parameter]
+ int main (int argc, char **argv) {
+                            ^
+uninit.c:8:4: warning: ‘pointer’ is used uninitialized in this function [-Wuninitialized]
+    printf ("pointer=%p\n", pointer);
+    ^
+uninit.c:11:4: warning: ‘foo’ is used uninitialized in this function [-Wuninitialized]
+    printf ("foo=%d\n", foo);
+    ^
++ set +x
+============================================================
+bash-4.2$ valgrind list2 foo bar
+==333== Memcheck, a memory error detector
+==333== Copyright (C) 2002-2013, and GNU GPL'd, by Julian Seward et al.
+==333== Using Valgrind-3.10.1 and LibVEX; rerun with -h for copyright info
+==333== Command: list2 foo bar
+==333== 
+0x54f8180->node {word=0xffefffee9->[MANPATH=/opt/rh/devtoolset-3/root/usr/share/man:/opt/rh/rh-java-common/root/usr/share/man::/var/cfengine/share/man], link=0x54f8130}
+0x54f8130->node {word=(nil)->[(null)], link=0x54f80e0}
+0x54f80e0->node {word=0xffefffee5->[bar], link=0x54f8090}
+0x54f8090->node {word=0xffefffee1->[foo], link=0x54f8040}
+==333== Conditional jump or move depends on uninitialised value(s)
+==333==    at 0x400748: main (list2.c:21)
+==333== 
+==333== 
+==333== HEAP SUMMARY:
+==333==     in use at exit: 80 bytes in 5 blocks
+==333==   total heap usage: 5 allocs, 0 frees, 80 bytes allocated
+==333== 
+==333== LEAK SUMMARY:
+==333==    definitely lost: 16 bytes in 1 blocks
+==333==    indirectly lost: 64 bytes in 4 blocks
+==333==      possibly lost: 0 bytes in 0 blocks
+==333==    still reachable: 0 bytes in 0 blocks
+==333==         suppressed: 0 bytes in 0 blocks
+==333== Rerun with --leak-check=full to see details of leaked memory
+==333== 
+==333== For counts of detected and suppressed errors, rerun with: -v
+==333== Use --track-origins=yes to see where uninitialised values come from
+==333== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 1 from 1)
+bash-4.2$ gdb list2
+[?1034hGNU gdb (GDB) Red Hat Enterprise Linux 7.8.2-38.el7
+Copyright (C) 2014 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "x86_64-redhat-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+<http://www.gnu.org/software/gdb/documentation/>.
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from list2...done.
+(gdb) break 25
+Breakpoint 1 at 0x40074a: file list2.c, line 25.
+(gdb) run foo bar
+Starting program: /afs/cats.ucsc.edu/users/i/midquan/private/cmps012b/Labs/lab5/list2 foo bar
+Missing separate debuginfos, use: debuginfo-install glibc-2.17-106.el7_2.1.x86_64
+0x602090->node {word=0x7fffffffdf52->[MANPATH=/opt/rh/devtoolset-3/root/usr/share/man:/opt/rh/rh-java-common/root/usr/share/man::/var/cfengine/share/man], link=0x602070}
+0x602070->node {word=(nil)->[(null)], link=0x602050}
+0x602050->node {word=0x7fffffffdf4e->[bar], link=0x602030}
+0x602030->node {word=0x7fffffffdf4a->[foo], link=0x602010}
+
+Breakpoint 1, main (argc=3, argv=0x7fffffffdbe8) at list2.c:25
+25	   return 9;
+(gdb) where
+#0  main (argc=3, argv=0x7fffffffdbe8) at list2.c:25
+(gdb) list
+20	   }
+21	   for (node *curr = head; curr->link != NULL; curr = curr->link) {
+22	      printf ("%p->node {word=%p->[%s], link=%p}\n",
+23	              curr, curr->word, curr->word, curr->link);
+24	   }
+25	   return 9;
+26	}
+(gdb) list list2.c:23
+18	      node->link = head;
+19	      head = node;
+20	   }
+21	   for (node *curr = head; curr->link != NULL; curr = curr->link) {
+22	      printf ("%p->node {word=%p->[%s], link=%p}\n",
+23	              curr, curr->word, curr->word, curr->link);
+24	   }
+25	   return 9;
+26	}
+(gdb) print head
+$1 = (node *) 0x602090
+(gdb) bt
+#0  main (argc=3, argv=0x7fffffffdbe8) at list2.c:25
+(gdb) print head
+$2 = (node *) 0x602090
+(gdb) print *head
+$3 = {
+  word = 0x7fffffffdf52 "MANPATH=/opt/rh/devtoolset-3/root/usr/share/man:/opt/rh/rh-java-common/root/usr/share/man::/var/cfengine/share/man", link = 0x602070}
+(gdb) print *(head->word)
+$4 = 77 'M'
+(gdb) print head->link->link->link
+$5 = (node *) 0x602030
+(gdb) print head->link->link->link*head->link->link->link[C[C[C[C[C[C[C[C[C[C[C[C[C(head->link->link->link[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C)
+$6 = {word = 0x7fffffffdf4a "foo", link = 0x602010}
+(gdb) quit
+A debugging session is active.
+
+	Inferior 1 [process 428] will be killed.
+
+Quit anyway? (y or n) e yes
+bash-4.2$ exit
+exit
+
+Script done on Wed 10 Feb 2016 05:06:17 PM PST

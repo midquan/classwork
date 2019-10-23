@@ -1,0 +1,9 @@
+err.c: In function ‘foo’:
+err.c:6:9: warning: unused variable ‘p’ [-Wunused-variable]
+    int *p = &x;
+         ^
+err.c: In function ‘bar’:
+err.c:11:4: warning: ‘a’ is used uninitialized in this function [-Wuninitialized]
+    printf ("%d %p\n", a, p);
+    ^
+err.c:11:4: warning: ‘p’ is used uninitialized in this function [-Wuninitialized]

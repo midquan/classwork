@@ -1,0 +1,1399 @@
+head	1.55;
+access;
+symbols;
+locks;
+comment	@ * @;
+
+
+1.55
+date	2016.01.28.07.42.28;	author -;	state -;
+branches;
+next	1.54;
+
+1.54
+date	2016.01.28.04.08.14;	author -;	state -;
+branches;
+next	1.53;
+
+1.53
+date	2016.01.28.03.56.00;	author -;	state -;
+branches;
+next	1.52;
+
+1.52
+date	2016.01.28.03.55.39;	author -;	state -;
+branches;
+next	1.51;
+
+1.51
+date	2016.01.28.03.55.01;	author -;	state -;
+branches;
+next	1.50;
+
+1.50
+date	2016.01.28.03.54.07;	author -;	state -;
+branches;
+next	1.49;
+
+1.49
+date	2016.01.28.03.50.06;	author -;	state -;
+branches;
+next	1.48;
+
+1.48
+date	2016.01.28.03.43.25;	author -;	state -;
+branches;
+next	1.47;
+
+1.47
+date	2016.01.28.03.34.44;	author -;	state -;
+branches;
+next	1.46;
+
+1.46
+date	2016.01.28.03.27.21;	author -;	state -;
+branches;
+next	1.45;
+
+1.45
+date	2016.01.27.18.08.35;	author -;	state -;
+branches;
+next	1.44;
+
+1.44
+date	2016.01.27.18.07.13;	author -;	state -;
+branches;
+next	1.43;
+
+1.43
+date	2016.01.27.18.05.43;	author -;	state -;
+branches;
+next	1.42;
+
+1.42
+date	2016.01.27.18.04.52;	author -;	state -;
+branches;
+next	1.41;
+
+1.41
+date	2016.01.27.17.59.16;	author -;	state -;
+branches;
+next	1.40;
+
+1.40
+date	2016.01.27.17.05.09;	author -;	state -;
+branches;
+next	1.39;
+
+1.39
+date	2016.01.27.17.04.38;	author -;	state -;
+branches;
+next	1.38;
+
+1.38
+date	2016.01.27.16.59.57;	author -;	state -;
+branches;
+next	1.37;
+
+1.37
+date	2016.01.27.16.58.08;	author -;	state -;
+branches;
+next	1.36;
+
+1.36
+date	2016.01.27.16.57.15;	author -;	state -;
+branches;
+next	1.35;
+
+1.35
+date	2016.01.27.16.50.29;	author -;	state -;
+branches;
+next	1.34;
+
+1.34
+date	2016.01.27.04.42.35;	author -;	state -;
+branches;
+next	1.33;
+
+1.33
+date	2016.01.27.04.38.03;	author -;	state -;
+branches;
+next	1.32;
+
+1.32
+date	2016.01.27.04.25.44;	author -;	state -;
+branches;
+next	1.31;
+
+1.31
+date	2016.01.26.07.28.34;	author -;	state -;
+branches;
+next	1.30;
+
+1.30
+date	2016.01.25.18.02.55;	author -;	state -;
+branches;
+next	1.29;
+
+1.29
+date	2016.01.25.17.01.50;	author -;	state -;
+branches;
+next	1.28;
+
+1.28
+date	2014.04.08.22.23.19;	author -;	state -;
+branches;
+next	1.27;
+
+1.27
+date	2014.04.08.22.23.07;	author -;	state -;
+branches;
+next	1.26;
+
+1.26
+date	2014.04.08.22.22.44;	author -;	state -;
+branches;
+next	1.25;
+
+1.25
+date	2013.09.27.00.44.35;	author -;	state -;
+branches;
+next	1.24;
+
+1.24
+date	2013.09.25.23.44.02;	author -;	state -;
+branches;
+next	1.23;
+
+1.23
+date	2013.09.25.23.43.20;	author -;	state -;
+branches;
+next	1.22;
+
+1.22
+date	2013.09.25.23.43.07;	author -;	state -;
+branches;
+next	1.21;
+
+1.21
+date	2013.09.25.23.21.50;	author -;	state -;
+branches;
+next	1.20;
+
+1.20
+date	2013.04.12.00.34.02;	author -;	state -;
+branches;
+next	1.19;
+
+1.19
+date	2013.04.11.23.53.11;	author -;	state -;
+branches;
+next	1.18;
+
+1.18
+date	2013.04.11.23.45.24;	author -;	state -;
+branches;
+next	1.17;
+
+1.17
+date	2013.04.11.23.43.16;	author -;	state -;
+branches;
+next	1.16;
+
+1.16
+date	2013.04.10.03.55.43;	author -;	state -;
+branches;
+next	1.15;
+
+1.15
+date	2013.01.25.19.18.00;	author -;	state -;
+branches;
+next	1.14;
+
+1.14
+date	2013.01.25.00.16.51;	author -;	state -;
+branches;
+next	1.13;
+
+1.13
+date	2013.01.23.01.50.57;	author -;	state -;
+branches;
+next	1.12;
+
+1.12
+date	2013.01.23.01.50.28;	author -;	state -;
+branches;
+next	1.11;
+
+1.11
+date	2013.01.23.01.42.47;	author -;	state -;
+branches;
+next	1.10;
+
+1.10
+date	2013.01.23.01.42.15;	author -;	state -;
+branches;
+next	1.9;
+
+1.9
+date	2013.01.23.01.40.16;	author -;	state -;
+branches;
+next	1.8;
+
+1.8
+date	2013.01.23.01.39.50;	author -;	state -;
+branches;
+next	1.7;
+
+1.7
+date	2013.01.23.01.38.55;	author -;	state -;
+branches;
+next	1.6;
+
+1.6
+date	2013.01.23.01.35.41;	author -;	state -;
+branches;
+next	1.5;
+
+1.5
+date	2013.01.23.01.29.08;	author -;	state -;
+branches;
+next	1.4;
+
+1.4
+date	2013.01.23.01.23.57;	author -;	state -;
+branches;
+next	1.3;
+
+1.3
+date	2013.01.23.01.22.45;	author -;	state -;
+branches;
+next	1.2;
+
+1.2
+date	2013.01.23.01.21.48;	author -;	state -;
+branches;
+next	1.1;
+
+1.1
+date	2013.01.18.02.48.48;	author -;	state -;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.55
+log
+@-
+@
+text
+@// $Id: crpn.c,v 1.54 2016-01-27 20:08:14-08 - - $
+// Michael Quan midquan
+
+#include <assert.h>
+#include <libgen.h>
+#include <stdio.h>
+#include <stdlib.h>
+
+int exit_status = EXIT_SUCCESS;
+#define EMPTY (-1)
+#define SIZE 16
+
+struct stack {
+   int top ;
+   double numbers[SIZE];
+};
+
+void bad_operator (const char *oper) {
+   fflush (NULL);
+   fprintf (stderr, "\"%s\": invalid operator\n", oper);
+   fflush (NULL);
+   exit_status = EXIT_FAILURE;
+}
+
+void push (struct stack *the_stack, double number) {
+   if (the_stack->top >= SIZE - 1){
+      printf("%f: stack overflow\n", number);
+   }else{
+      the_stack->numbers[++the_stack->top] = number;
+   }   
+}
+
+void do_binop (struct stack *the_stack, char oper) {
+   if (the_stack->top < 1) {
+      printf ("'%c': stack underflow", oper);
+  }  else{
+      double right = the_stack->numbers[the_stack->top--];
+      double left = the_stack->numbers[the_stack->top--];
+      switch (oper){
+         case '+': push (the_stack, left + right); break;
+         case '-': push (the_stack, left - right); break;
+         case '*': push (the_stack, left * right); break;
+         case '/': push (the_stack, left / right); break;
+      }
+   }       
+}
+
+void do_print (struct stack *the_stack) {
+   if (the_stack->top == EMPTY){
+      printf ("stack is empty\n");
+   } else {
+      for (int pos = 0; pos <= the_stack->top; ++pos) {
+         printf ("%.15g\n", the_stack->numbers[pos]);
+      }
+   }
+}
+
+void do_clear (struct stack *the_stack) {
+   the_stack->top = EMPTY;
+}
+
+void do_operator (struct stack *the_stack, const char *oper) {
+   switch (oper[0]) {
+      case '+': do_binop (the_stack, '+'); break;
+      case '-': do_binop (the_stack, '-'); break; 
+      case '*': do_binop (the_stack, '*'); break;
+      case '/': do_binop (the_stack, '/'); break;
+      case ';': do_print (the_stack);      break;
+      case '@@': do_clear (the_stack);      break;
+      default : bad_operator (oper);       break;
+   }
+}
+
+
+int main (int argc, char **argv) {
+   if (argc != 1) {
+      fprintf (stderr, "Usage: %s\n", basename (argv[0]));
+      fflush (NULL);
+      exit (EXIT_FAILURE);
+   }
+   struct stack the_stack;
+   the_stack.top = EMPTY;
+   char buffer[1024];
+   for (;;) {
+      int scanrc = scanf ("%1023s", buffer);
+      if (scanrc == EOF) break;
+      assert (scanrc == 1);
+      if (buffer[0] == '#') {
+         scanrc = scanf ("%1023[^\n]", buffer);
+         continue;
+      }
+      char *endptr;
+      double number = strtod (buffer, &endptr);
+      if (*endptr == '\0') {
+         push (&the_stack, number);
+      }else if (buffer[1] != '\0') {
+         bad_operator (buffer);
+      }else {
+         do_operator (&the_stack, buffer);
+      }
+   }
+   return exit_status;
+}
+
+@
+
+
+1.54
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: crpn.c,v 1.53 2016-01-27 19:56:00-08 - - $
+a30 2
+   // printf ("the_stack=%p, top=%d, number=%.15g\n",
+         //  the_stack, the_stack->top, number);
+a45 2
+ // printf ("the_stack=%p, top=%d, oper='%c'\n",
+         //  the_stack, the_stack->top, oper);
+a55 1
+   //printf ("the_stack=%p, top=%d\n", the_stack, the_stack->top);
+a59 1
+   //  printf ("the_stack=%p, top=%d\n", the_stack, the_stack->top);
+a71 2
+   //printf ("the_stack=%p, top=%d, oper=\"%s\"\n",
+          // the_stack, the_stack->top, oper);
+@
+
+
+1.53
+log
+@-
+@
+text
+@d1 2
+a2 1
+// $Id: crpn.c,v 1.52 2016-01-27 19:55:39-08 - - $
+@
+
+
+1.52
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: crpn.c,v 1.51 2016-01-27 19:55:01-08 - - $
+d26 1
+a26 1
+      printf("%g: stack overflow\n", number);
+@
+
+
+1.51
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: crpn.c,v 1.50 2016-01-27 19:54:07-08 - - $
+d26 1
+a26 1
+      printf("%.15g: stack overflow\n", number);
+@
+
+
+1.50
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: crpn.c,v 1.49 2016-01-27 19:50:06-08 - - $
+d26 1
+a26 1
+      printf("%f: stack overflow\n", number);
+@
+
+
+1.49
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: crpn.c,v 1.48 2016-01-27 19:43:25-08 - - $
+d56 1
+a56 1
+         printf ("%.15g \n", the_stack->numbers[pos]);
+@
+
+
+1.48
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: crpn.c,v 1.47 2016-01-27 19:34:44-08 - - $
+d36 1
+a36 1
+      printf ("%c': stack underflow", oper);
+@
+
+
+1.47
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: crpn.c,v 1.46 2016-01-27 19:27:21-08 - - $
+d36 1
+a36 1
+      printf ("%d': stack underflow", oper);
+d56 1
+a56 1
+         printf ("%.15g\n", the_stack->numbers[pos]);
+@
+
+
+1.46
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: crpn.c,v 1.45 2016-01-27 10:08:35-08 - - $
+d19 1
+a19 1
+   fprintf (stderr, "oper=\"%s\"\n", oper);
+d36 1
+a36 1
+      printf ("%s': stack underflow", oper);
+@
+
+
+1.45
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: crpn.c,v 1.44 2016-01-27 10:07:13-08 - - $
+d36 1
+a36 1
+      printf ("%c': stack underflow", oper);
+@
+
+
+1.44
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: crpn.c,v 1.43 2016-01-27 10:05:43-08 - - $
+d25 1
+a25 1
+   if (the_stack >= (SIZE - 1)){
+@
+
+
+1.43
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: crpn.c,v 1.42 2016-01-27 10:04:52-08 - - $
+d25 1
+a25 1
+   if (the_stack >= SIZE - 1){
+@
+
+
+1.42
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: crpn.c,v 1.41 2016-01-27 09:59:16-08 - - $
+d26 1
+a26 1
+      printf("%d: stack overflow\n", number);
+@
+
+
+1.41
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: crpn.c,v 1.40 2016-01-27 09:05:09-08 - - $
+d26 1
+a26 1
+      printf("%s: stack overflow\n", number);
+d36 1
+a36 1
+      printf ("%s': stack underflow", oper);
+@
+
+
+1.40
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: crpn.c,v 1.39 2016-01-27 09:04:38-08 - - $
+d56 1
+a56 1
+         printf ("%s\n", the_stack->numbers[pos]);
+@
+
+
+1.39
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: crpn.c,v 1.38 2016-01-27 08:59:57-08 - - $
+d68 1
+a68 1
+   switch (oper[0])) {
+@
+
+
+1.38
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: crpn.c,v 1.37 2016-01-27 08:58:08-08 - - $
+d68 1
+a68 1
+   switch (oper.charAt(0)) {
+@
+
+
+1.37
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: crpn.c,v 1.36 2016-01-27 08:57:15-08 - - $
+d26 1
+a26 1
+      printf("%s: stack overflow%n", number);
+d53 1
+a53 1
+      printf ("stack is empty%n");
+d56 1
+a56 1
+         printf ("%s%n", the_stack->numbers[pos]);
+@
+
+
+1.36
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: crpn.c,v 1.35 2016-01-27 08:50:29-08 - - $
+d52 1
+a52 1
+   if (the_stack.top == EMPTY){
+@
+
+
+1.35
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: crpn.c,v 1.34 2016-01-26 20:42:35-08 - - $
+d13 1
+a13 1
+   int top = EMPTY;
+d28 1
+a28 1
+      the_stack.numbers[++the_stack.top] = number;
+d35 1
+a35 1
+   if (the_stack.top < 1) {
+d38 2
+a39 2
+      double right = the_stack.numbers[the_stack.top--];
+      double left = the_stack.numbers[the_stack.top--];
+d55 2
+a56 2
+      for (int pos = 0; pos <= the_stack.top; ++pos) {
+         printf ("%s%n", the_stack.numbers[pos]);
+d63 1
+a63 1
+   the_stack.top = EMPTY;
+@
+
+
+1.34
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: crpn.c,v 1.33 2016-01-26 20:38:03-08 - - $
+d13 1
+a13 1
+   int top;
+@
+
+
+1.33
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: crpn.c,v 1.32 2016-01-26 20:25:44-08 - - $
+d37 1
+a37 1
+   else{
+@
+
+
+1.32
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: crpn.c,v 1.31 2016-01-25 23:28:34-08 - - $
+d53 1
+a53 1
+      out.printf ("stack is empty%n");
+d56 1
+a56 1
+         out.printf ("%s%n", the_stack.numbers[pos]);
+d63 2
+a64 1
+   printf ("the_stack=%p, top=%d\n", the_stack, the_stack->top);
+d68 11
+a78 2
+   printf ("the_stack=%p, top=%d, oper=\"%s\"\n",
+           the_stack, the_stack->top, oper);
+@
+
+
+1.31
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: crpn.c,v 1.30 2016-01-25 10:02:55-08 - - $
+d52 8
+a59 1
+   printf ("the_stack=%p, top=%d\n", the_stack, the_stack->top);
+@
+
+
+1.30
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: crpn.c,v 1.29 2016-01-25 09:01:50-08 - - $
+d35 1
+a35 1
+   if (stack.top < 1) {
+d40 7
+a46 2
+      switch (oper)
+       
+@
+
+
+1.29
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: crpn.c,v 1.28 2014-04-08 15:23:19-07 - - $
+d35 9
+a43 2
+   printf ("the_stack=%p, top=%d, oper='%c'\n",
+           the_stack, the_stack->top, oper);
+@
+
+
+1.28
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: crpn.c,v 1.27 2014-04-08 15:23:07-07 - - $
+d25 7
+a31 2
+   printf ("the_stack=%p, top=%d, number=%.15g\n",
+           the_stack, the_stack->top, number);
+@
+
+
+1.27
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: crpn.c,v 1.26 2014-04-08 15:22:44-07 - - $
+d54 1
+a54 1
+   stack the_stack;
+@
+
+
+1.26
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: crpn.c,v 1.25 2013-09-26 17:44:35-07 - - $
+d24 1
+a24 1
+void push (stack *the_stack, double number) {
+d29 1
+a29 1
+void do_binop (stack *the_stack, char oper) {
+d34 1
+a34 1
+void do_print (stack *the_stack) {
+d38 1
+a38 1
+void do_clear (stack *the_stack) {
+d42 1
+a42 1
+void do_operator (stack *the_stack, const char *oper) {
+@
+
+
+1.25
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: crpn.c,v 1.24 2013-09-25 16:44:02-07 - - $
+a11 1
+typedef struct stack stack;
+@
+
+
+1.24
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: crpn.c,v 1.23 2013-09-25 16:43:20-07 - - $
+d18 1
+a18 1
+void bad_operator (char *oper) {
+d43 1
+a43 1
+void do_operator (stack *the_stack, char *oper) {
+@
+
+
+1.23
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: crpn.c,v 1.22 2013-09-25 16:43:07-07 - - $
+d10 1
+a10 1
+const int SIZE = 16;
+d19 4
+a22 1
+   printf ("oper=\"%s\"\n", oper);
+@
+
+
+1.22
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: crpn.c,v 1.21 2013-09-25 16:21:50-07 - - $
+d10 1
+a10 1
+const int SIZE 16;
+@
+
+
+1.21
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: crpn.c,v 1.20 2013-04-11 17:34:02-07 - - $
+d8 1
+d10 3
+a12 2
+#define SIZE 16
+typedef struct stack stack_t;
+d22 3
+a24 3
+void push (stack_t *stack, double number) {
+   printf ("stack=%p, top=%d, number=%.15g\n",
+           stack, stack->top, number);
+d27 3
+a29 3
+void do_binop (stack_t *stack, char oper) {
+   printf ("stack=%p, top=%d, oper='%c'\n",
+           stack, stack->top, oper);
+d32 2
+a33 2
+void do_print (stack_t *stack) {
+   printf ("stack=%p, top=%d\n", stack, stack->top);
+d36 2
+a37 2
+void do_clear (stack_t *stack) {
+   printf ("stack=%p, top=%d\n", stack, stack->top);
+d40 3
+a42 3
+void do_operator (stack_t *stack, char *oper) {
+   printf ("stack=%p, top=%d, oper=\"%s\"\n",
+           stack, stack->top, oper);
+d52 2
+a53 2
+   stack_t stack;
+   stack.top = EMPTY;
+d66 1
+a66 1
+         push (&stack, number);
+d70 1
+a70 1
+         do_operator (&stack, buffer);
+d73 1
+a73 1
+   return EXIT_SUCCESS;
+@
+
+
+1.20
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: crpn.c,v 1.19 2013-04-11 16:53:11-07 - - $
+d47 1
+@
+
+
+1.19
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: crpn.c,v 1.18 2013-04-11 16:45:24-07 - - $
+d17 1
+a17 1
+   printf ("oper=\"%s\"", oper);
+d21 1
+a21 1
+   printf ("stack=%p, top=%d, number=%.15g",
+d26 1
+a26 1
+   printf ("stack=%p, top=%d, oper='%c'",
+d31 1
+a31 1
+   printf ("stack=%p, top=%d", stack, stack->top);
+d35 1
+a35 1
+   printf ("stack=%p, top=%d", stack, stack->top);
+d39 1
+a39 1
+   printf ("stack=%p, top=%d, oper=\"%s\"",
+@
+
+
+1.18
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: crpn.c,v 1.17 2013-04-11 16:43:16-07 - - $
+a15 5
+#define DEBUG(FMT,...) { \
+           fprintf (stderr, "%s[%d]: %s (" FMT ")\n", \
+                    __FILE__, __LINE__, __func__, __VA_ARGS__); \
+        }
+
+d17 1
+a17 1
+   DEBUG ("operator='%s'", oper);
+d21 2
+a22 2
+   DEBUG ("stack=%p, top=%d, number=%.15g",
+          stack, stack->top, number);
+d25 3
+a27 3
+void do_binop (stack_t *stack, char operator) {
+   DEBUG ("stack=%p, top=%d, operator='%c'",
+          stack, stack->top, operator);
+d31 1
+a31 1
+   DEBUG ("stack=%p, top=%d", stack, stack->top);
+d35 1
+a35 1
+   DEBUG ("stack=%p, top=%d", stack, stack->top);
+d38 3
+a40 3
+void do_operator (stack_t *stack, char *operator) {
+   DEBUG ("stack=%p, top=%d, operator='%s'",
+          stack, stack->top, operator);
+@
+
+
+1.17
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: crpn.c,v 1.16 2013-04-09 20:55:43-07 - - $
+d22 1
+a22 1
+   DEBUG ("operator='%s'", err_oper);
+d70 1
+a70 1
+         err_operator (buffer);
+@
+
+
+1.16
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: crpn.c,v 1.15 2013-01-25 11:18:00-08 - - $
+d10 1
+a10 1
+typedef struct stack stack;
+d21 1
+a21 1
+void err_operator (char *err_oper) {
+d25 1
+a25 1
+void push (stack *stack, double number) {
+d30 1
+a30 1
+void do_binop (stack *stack, char operator) {
+d35 1
+a35 1
+void do_print (stack *stack) {
+d39 1
+a39 1
+void do_clear (stack *stack) {
+d43 1
+a43 1
+void do_operator (stack *stack, char *operator) {
+d54 1
+a54 1
+   stack stack;
+@
+
+
+1.15
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: crpn.c,v 1.14 2013-01-24 16:16:51-08 - - $
+d10 1
+d25 1
+a25 1
+void push (struct stack *stack_ptr, double number) {
+d27 1
+a27 1
+          stack_ptr, stack_ptr->top, number);
+d30 1
+a30 1
+void do_binop (struct stack *stack_ptr, char operator) {
+d32 1
+a32 1
+          stack_ptr, stack_ptr->top, operator);
+d35 2
+a36 2
+void do_print (struct stack *stack_ptr) {
+   DEBUG ("stack=%p, top=%d", stack_ptr, stack_ptr->top);
+d39 2
+a40 2
+void do_clear (struct stack *stack_ptr) {
+   DEBUG ("stack=%p, top=%d", stack_ptr, stack_ptr->top);
+d43 1
+a43 1
+void do_operator (struct stack *stack_ptr, char *operator) {
+d45 1
+a45 1
+          stack_ptr, stack_ptr->top, operator);
+d54 1
+a54 1
+   struct stack stack;
+@
+
+
+1.14
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: crpn.c,v 1.13 2013-01-22 17:50:57-08 - - $
+d43 1
+a43 1
+   DEBUG ("stack=%p, top=%d, operator='%c'",
+d71 1
+a71 1
+         do_operator (&stack, buffer[0]);
+@
+
+
+1.13
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: crpn.c,v 1.12 2013-01-22 17:50:28-08 - - $
+d42 1
+a42 1
+void do_operator (struct stack *stack_ptr, char operator) {
+@
+
+
+1.12
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: crpn.c,v 1.11 2013-01-22 17:42:47-08 - - $
+d67 1
+a67 1
+         push (stack, number);
+@
+
+
+1.11
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: crpn.c,v 1.10 2013-01-22 17:42:15-08 - - $
+d16 2
+a17 2
+        fprintf (stderr, "%s[%d]: %s (" FMT ")\n", \
+                 __FILE__, __LINE__, __func__, __VA_ARGS__); \
+d57 1
+a57 2
+      double number;
+      int scanrc = scanf ("%lg", &number);
+d59 11
+a69 2
+      if (scanrc == 1) {
+         push (&stack, number);
+d71 1
+a71 9
+         scanrc = scanf ("%1023s", buffer);
+         assert (scanrc == 1);
+         if (buffer[0] == '#') {
+            scanrc = scanf ("%1023[^\n]", buffer);
+         }else if (buffer[1] != '\0') {
+            err_operator (buffer);
+         }else {
+            do_operator (&stack, buffer[0]);
+         }
+@
+
+
+1.10
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: crpn.c,v 1.9 2013-01-22 17:40:16-08 - - $
+d15 4
+a18 3
+#define DEBUG(FMT,...) \
+        fprintf (stderr, "%s[%d]: %s (" FMT ")\n",
+                 __FILE__, __LINE__, __func__, __VA_ARGS__);
+@
+
+
+1.9
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: crpn.c,v 1.8 2013-01-22 17:39:50-08 - - $
+d16 2
+a17 1
+        printf ("%s (" FMT ")\n", __func__, __VA_ARGS__);
+@
+
+
+1.8
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: crpn.c,v 1.7 2013-01-22 17:38:55-08 - - $
+d66 1
+a66 1
+            err_operator (buffer[0]);
+d68 1
+a68 1
+            do_operator (&stack, buffer);
+@
+
+
+1.7
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: crpn.c,v 1.6 2013-01-22 17:35:41-08 - - $
+d29 1
+a29 1
+          stack_ptr, stack_ptr->top, number);
+d42 1
+a42 1
+          stack_ptr, stack_ptr->top, number);
+@
+
+
+1.6
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: crpn.c,v 1.2 2013-01-22 17:21:48-08 - - $
+d18 2
+a19 2
+void err_operator (char *operator) {
+   DEBUG ("operator='%s'", operator);
+d23 2
+a24 1
+   DEBUG ("stack=%p, number=%.15g", stack_ptr, number);
+d28 2
+d33 1
+d37 1
+d40 3
+a42 1
+void do_operator (struct stack *stack_ptr, char *operator) {
+d66 1
+a66 1
+            err_operator (buffer);
+@
+
+
+1.5
+log
+@-
+@
+text
+@d19 1
+a19 1
+   DEBUG ("operator='%c'", operator);
+@
+
+
+1.4
+log
+@-
+@
+text
+@d15 3
+d19 1
+d23 1
+@
+
+
+1.3
+log
+@-
+@
+text
+@d8 2
+a9 2
+const ssize_t EMPTY = -1;
+const size_t SIZE = 16;
+d11 1
+a11 1
+   ssize_t top;
+@
+
+
+1.2
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: crpn.c,v 1.1 2013-01-17 18:48:48-08 - - $
+a7 2
+//#define EMPTY (-1)
+////#define SIZE 16
+d9 1
+a9 1
+const ssize_t SIZE = 16;
+d11 1
+a11 1
+   int top;
+@
+
+
+1.1
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: crpn.c,v 1.12 2013-01-17 18:27:20-08 - - $
+d8 4
+a11 2
+#define EMPTY (-1)
+#define SIZE 16
+@

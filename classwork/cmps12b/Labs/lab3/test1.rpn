@@ -1,0 +1,7 @@
+# $Id: test1.rpn,v 1.2 2015-01-26 13:26:15-08 - - $
+# tests for simple operators
+# Note that # starts a comment to end of line.
+
+34 .3 + 23 8 * - ; @
+44 0 / ; @
+2 4 / ; @

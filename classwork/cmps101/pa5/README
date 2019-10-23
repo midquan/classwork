@@ -1,0 +1,24 @@
+Michael Quan 
+midquan
+Programing Assignment 5
+
+Makefile
+Makes the files and contains clean and dependencies.
+
+List.c
+List ADT reused for DFS
+
+List.h
+List ADT Header file to protect it
+
+Graph.h
+Graph ADT Header file to protect it
+
+Graph.c
+Graph ADT used for DFS and readded for DFS. Contains fields for color, discover, parent. Holds many functions that allow for DFS and help it work.
+
+GraphTest.c
+Tests Graph ADT and its functions to make sure it is working.
+
+FindComponents.c
+Contains the main function and does the input and output for Graph. Finds the strongly connected componenets and sees how it works.

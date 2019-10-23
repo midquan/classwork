@@ -1,0 +1,44 @@
+head	1.2;
+access;
+symbols;
+locks;
+comment	@# @;
+
+
+1.2
+date	2016.03.03.08.52.43;	author -;	state -;
+branches;
+next	1.1;
+
+1.1
+date	2016.03.03.08.51.22;	author -;	state -;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.2
+log
+@-
+@
+text
+@$Id$
+Name    : Michael Quan
+Username: midquan
+
+CS12B Lab 8
+
+mstat - a c program that gives stats from given file or itself
+@
+
+
+1.1
+log
+@-
+@
+text
+@d1 1
+@

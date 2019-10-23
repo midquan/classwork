@@ -1,0 +1,10 @@
+lrwxr-xr-x. 1 midquan 161563 39 Jan 15 02:25 /afs/cats.ucsc.edu/users/i/midquan/12b -> /afs/cats.ucsc.edu/courses/cmps012b-wm/
+  File: ‘/afs/cats.ucsc.edu/users/i/midquan/12b’ -> ‘/afs/cats.ucsc.edu/courses/cmps012b-wm/’
+  Size: 39        	Blocks: 2          IO Block: 4096   symbolic link
+Device: 26h/38d	Inode: 911409334   Links: 1
+Access: (0755/lrwxr-xr-x)  Uid: (210377/ midquan)   Gid: (161563/ UNKNOWN)
+Context: system_u:object_r:nfs_t:s0
+Access: 2016-01-15 02:25:08.000000000 -0800
+Modify: 2016-01-15 02:25:08.000000001 -0800
+Change: 2016-01-15 02:25:08.000000000 -0800
+ Birth: -

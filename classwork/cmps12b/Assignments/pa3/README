@@ -1,0 +1,11 @@
+$Id: README,v 1.2 2016-02-17 07:53:56-08 - - $
+Michael Quan midquan
+Program created to take in inputs of North American airports and
+compare them to the database.
+
+Notes: I was confused as to how to filter the inputs for comments.
+I was on a time crunch especially since I only found out about it at
+the last moment. 
+
+Thanks for grading my work.
+

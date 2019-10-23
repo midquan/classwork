@@ -1,0 +1,557 @@
+head	1.22;
+access;
+symbols;
+locks;
+comment	@# @;
+
+
+1.22
+date	2016.02.17.17.37.56;	author -;	state -;
+branches;
+next	1.21;
+
+1.21
+date	2016.02.17.17.36.51;	author -;	state -;
+branches;
+next	1.20;
+
+1.20
+date	2016.02.17.17.32.30;	author -;	state -;
+branches;
+next	1.19;
+
+1.19
+date	2016.02.17.17.31.41;	author -;	state -;
+branches;
+next	1.18;
+
+1.18
+date	2016.02.17.17.27.07;	author -;	state -;
+branches;
+next	1.17;
+
+1.17
+date	2016.02.17.17.25.14;	author -;	state -;
+branches;
+next	1.16;
+
+1.16
+date	2016.02.17.17.20.35;	author -;	state -;
+branches;
+next	1.15;
+
+1.15
+date	2016.02.17.16.39.06;	author -;	state -;
+branches;
+next	1.14;
+
+1.14
+date	2016.02.17.16.18.42;	author -;	state -;
+branches;
+next	1.13;
+
+1.13
+date	2016.02.17.16.16.31;	author -;	state -;
+branches;
+next	1.12;
+
+1.12
+date	2016.02.17.16.16.03;	author -;	state -;
+branches;
+next	1.11;
+
+1.11
+date	2016.02.17.15.53.56;	author -;	state -;
+branches;
+next	1.10;
+
+1.10
+date	2016.02.17.14.34.41;	author -;	state -;
+branches;
+next	1.9;
+
+1.9
+date	2016.02.17.14.32.38;	author -;	state -;
+branches;
+next	1.8;
+
+1.8
+date	2016.02.17.14.28.09;	author -;	state -;
+branches;
+next	1.7;
+
+1.7
+date	2016.02.17.14.26.02;	author -;	state -;
+branches;
+next	1.6;
+
+1.6
+date	2016.02.17.14.21.39;	author -;	state -;
+branches;
+next	1.5;
+
+1.5
+date	2016.02.17.14.20.43;	author -;	state -;
+branches;
+next	1.4;
+
+1.4
+date	2016.02.17.14.18.43;	author -;	state -;
+branches;
+next	1.3;
+
+1.3
+date	2016.02.17.14.16.24;	author -;	state -;
+branches;
+next	1.2;
+
+1.2
+date	2013.02.01.01.00.19;	author -;	state -;
+branches;
+next	1.1;
+
+1.1
+date	2012.02.07.23.43.17;	author -;	state -;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.22
+log
+@-
+@
+text
+@// $Id: airport.java,v 1.21 2016-02-17 09:36:51-08 - - $
+// Michael Quan midquan
+//
+// Based off of starter code given then added code to fit
+// specifications given by the assignment.
+//
+
+import java.io.*;
+import java.util.Scanner;
+import static java.lang.System.*;
+
+class airport {
+   private static final String STDIN_FILENAME = "-";
+
+   public static treemap load_database (String database_name) {
+      treemap tree = new treemap ();
+      try {
+         Scanner database = new Scanner (new File (database_name));
+         for (int linenr = 1; database.hasNextLine(); ++linenr) {
+            String line = database.nextLine();
+            if (line.matches ("^\\s*(#.*)?$")) continue;
+            String[] keyvalue = line.split (":");
+            if (keyvalue.length != 2) {
+               misc.warn (database_name, linenr, "invalid line");
+               continue;
+            }
+            tree.put (keyvalue[0], keyvalue[1]);
+         }
+         database.close();
+      }catch (IOException error) {
+         misc.warn (error.getMessage());
+      }
+      return tree;
+   } 
+
+   public static void main (String[] args) {
+      int args_count = 0;
+      boolean debug_opt = false;
+      //Try Catch for valid inputs
+      try{
+         if(args[0].substring(0,1).equals("-")){
+            if(args[args_count].equals("-d")){
+               debug_opt = true;
+            }
+            else{
+               misc.warn("airport not found");
+            }
+            args_count++;
+         }
+      }
+      //Exception and Exit if bad input
+      catch(Exception e){
+         misc.die("Usage: airport [-d] database");
+      }
+      treemap tree = load_database (args[args_count]);
+      
+      //Turns on Debug mode
+      if(debug_opt){ 
+         tree.debug_tree ();
+      }
+      //Searches for airports in database
+      else{
+         Scanner stdin = new Scanner (in);
+         while (stdin.hasNextLine()) {
+            String airport = stdin.nextLine().toUpperCase().trim();
+            String airport_name = tree.get (airport);
+            if (airport_name == null) {
+               misc.warn("airport not found");
+            }
+            else if(airport.matches ("^\\s*(#.*)?S")) continue;
+            else {
+               out.printf ("%s = %s%n", airport, airport_name);
+            }
+         }
+      }  
+      exit (misc.exit_status);
+   }
+}
+@
+
+
+1.21
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: airport.java,v 1.20 2016-02-17 09:32:30-08 - - $
+d70 1
+a70 1
+            else if(!airport.matches ("^\\s*(#.*)?S")) continue;
+@
+
+
+1.20
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: airport.java,v 1.19 2016-02-17 09:31:41-08 - - $
+d70 1
+a70 1
+            else if(airport.matches ("^\\s*(#.*)?S")) continue;
+@
+
+
+1.19
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: airport.java,v 1.18 2016-02-17 09:27:07-08 - - $
+d71 1
+a71 1
+            else if(!airport.substring(0,1).equals("#")){
+@
+
+
+1.18
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: airport.java,v 1.17 2016-02-17 09:25:14-08 - - $
+d70 1
+@
+
+
+1.17
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: airport.java,v 1.16 2016-02-17 09:20:35-08 - - $
+d70 1
+a70 3
+            else if(airport.substring(0,1).equals("#")){
+               continue;
+            }else {
+@
+
+
+1.16
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: airport.java,v 1.15 2016-02-17 08:39:06-08 - - $
+d69 3
+@
+
+
+1.15
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: airport.java,v 1.14 2016-02-17 08:18:42-08 - - $
+d56 2
+d61 1
+@
+
+
+1.14
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: airport.java,v 1.13 2016-02-17 08:16:31-08 - - $
+d56 3
+a58 1
+      if(debug_opt = true) tree.debug_tree ();
+@
+
+
+1.13
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: airport.java,v 1.12 2016-02-17 08:16:03-08 - - $
+d48 1
+a48 1
+         args_count++;
+a68 1
+      tree.debug_tree ();
+@
+
+
+1.12
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: airport.java,v 1.11 2016-02-17 07:53:56-08 - - $
+d41 1
+a41 1
+         if(args[0].substring(0,1).equals("-"){
+a71 1
+
+@
+
+
+1.11
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: airport.java,v 1.10 2016-02-17 06:34:41-08 - - $
+d41 8
+a48 2
+         if(args[args_count].equals("-d")){
+            debug_opt = true;
+a49 4
+         else{
+            misc.warn("airport not found");
+         }
+         args_count++;
+@
+
+
+1.10
+log
+@-
+@
+text
+@d1 2
+a2 2
+// $Id: airport.java,v 1.9 2016-02-17 06:32:38-08 - - $
+
+d4 2
+a5 1
+// Starter code for the airport utility.
+d39 1
+d49 1
+@
+
+
+1.9
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: airport.java,v 1.8 2016-02-17 06:28:09-08 - - $
+d43 1
+a43 1
+            misc.warn("airport does not exsist");
+a51 1
+      Scanner stdin = new Scanner (in);
+d53 1
+d58 1
+a58 1
+               out.printf ("%s: no such airport%n", airport);
+@
+
+
+1.8
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: airport.java,v 1.7 2016-02-17 06:26:02-08 - - $
+d50 2
+a51 1
+      treemap tree = load_database (args[0]);
+d53 9
+a61 7
+      while (stdin.hasNextLine()) {
+         String airport = stdin.nextLine().toUpperCase().trim();
+         String airport_name = tree.get (airport);
+         if (airport_name == null) {
+            out.printf ("%s: no such airport%n", airport);
+         }else {
+            out.printf ("%s = %s%n", airport, airport_name);
+d63 1
+a63 1
+      }
+@
+
+
+1.7
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: airport.java,v 1.6 2016-02-17 06:21:39-08 - - $
+d43 1
+a43 1
+            misc.die("Usage: airport [-d] database");
+@
+
+
+1.6
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: airport.java,v 1.5 2016-02-17 06:20:43-08 - - $
+d46 2
+a47 1
+      }catch(StringIndexOutofBoundsException e){
+@
+
+
+1.5
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: airport.java,v 1.4 2016-02-17 06:18:43-08 - - $
+d46 1
+a46 1
+      }catch(IndexOutofBoundsException error){
+@
+
+
+1.4
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: airport.java,v 1.3 2016-02-17 06:16:24-08 - - $
+d46 1
+a46 1
+      }catch(StringIndexOutofBoundsException error){
+@
+
+
+1.3
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: airport.java,v 1.2 2013-01-31 17:00:19-08 - - $
+d41 2
+a42 1
+         }else {
+d45 3
+@
+
+
+1.2
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: airport.java,v 1.1 2012-02-07 15:43:17-08 - - $
+d36 9
+@
+
+
+1.1
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: airport.java,v 1.1 2010-01-28 21:05:23-08 - - $
+a11 1
+   // Static program constants.
+a12 18
+   private static final String JARNAME = get_jarname();
+   private static final int EXIT_SUCCESS = 0;
+   private static final int EXIT_FAILURE = 1;
+
+   // Static exit status variable.
+   private static int exit_status = EXIT_SUCCESS;
+
+   // A basename is the final component of a pathname.
+   // If a java program is run from a jar, the classpath is the
+   // pathname of the jar.
+   private static String get_jarname() {
+      String jarpath = getProperty ("java.class.path");
+      int lastslash = jarpath.lastIndexOf ('/');
+      if (lastslash < 0) return jarpath;
+      return jarpath.substring (lastslash + 1);
+   }
+
+
+d23 1
+a23 3
+               exit_status = EXIT_FAILURE;
+               err.printf ("%s: %s:%d: invalid line", 
+                           JARNAME, database_name, linenr);
+d30 1
+a30 2
+         exit_status = EXIT_FAILURE;
+         err.printf ("%s: %s%n", JARNAME, error.getMessage());
+d48 1
+a48 1
+      exit (exit_status);
+@

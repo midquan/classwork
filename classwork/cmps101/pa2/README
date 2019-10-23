@@ -1,0 +1,22 @@
+Michael Quan
+midquan
+Programming Assignment 2
+
+List.c
+A doubly linked list used to create an Integer List ADT. Creates the basics for the Linked List.
+
+List.h
+Header file for the List ADT.
+
+ListClient.c
+Tests out the Lex and List functions of the program.
+
+Lex.c
+Parses info from the inputs and creates a linked list with the List program and also creates an organized list using their indices.
+
+Makefile
+Makes the file executable and able to be cleaned for ease of use.
+
+README
+Table of contents for the program.
+

@@ -1,0 +1,141 @@
+Script started on Wed 10 Feb 2016 08:50:18 AM PST
+[?1034hbash-4.2$ exitmk uninit.c[5Pvim mkcmatch.c[C[C[C[C[C[C[C[C[C[Cdir[Kcd lab4[K[K[K[K[K[K[Kmk uninit.c
+CSOURCE=err2.c EXECBIN=err2
++ cid + err2.c
++ checksource err2.c
++ gcc -g -O0 -Wall -Wextra -std=gnu99 err2.c -o err2 -lm
++ tee err2.c.log
+err2.c: In function ‘main’:
+err2.c:6:14: warning: initialization makes pointer from integer without a cast
+    char *p = 20;
+              ^
++ set +x
+============================================================
+CSOURCE=err.c EXECBIN=err
++ cid + err.c
++ checksource err.c
++ gcc -g -O0 -Wall -Wextra -std=gnu99 err.c -o err -lm
++ tee err.c.log
+err.c: In function ‘foo’:
+err.c:6:9: warning: unused variable ‘p’ [-Wunused-variable]
+    int *p = &x;
+         ^
+err.c: In function ‘bar’:
+err.c:11:4: warning: ‘a’ is used uninitialized in this function [-Wuninitialized]
+    printf ("%d %p\n", a, p);
+    ^
+err.c:11:4: warning: ‘p’ is used uninitialized in this function [-Wuninitialized]
++ set +x
+============================================================
+CSOURCE=hello.c EXECBIN=hello
++ cid + hello.c
++ checksource hello.c
++ gcc -g -O0 -Wall -Wextra -std=gnu99 hello.c -o hello -lm
++ tee hello.c.log
++ set +x
+============================================================
+CSOURCE=list1.c EXECBIN=list1
++ cid + list1.c
++ checksource list1.c
++ gcc -g -O0 -Wall -Wextra -std=gnu99 list1.c -o list1 -lm
++ tee list1.c.log
+list1.c: In function ‘main’:
+list1.c:15:7: warning: implicit declaration of function ‘malloc’ [-Wimplicit-function-declaration]
+       node *node = malloc (sizeof (struct node));
+       ^
+list1.c:15:20: warning: incompatible implicit declaration of built-in function ‘malloc’
+       node *node = malloc (sizeof (struct node));
+                    ^
+list1.c:12:15: warning: unused parameter ‘argc’ [-Wunused-parameter]
+ int main (int argc, char **argv) {
+               ^
++ set +x
+============================================================
+CSOURCE=malloc.c EXECBIN=malloc
++ cid + malloc.c
++ checksource malloc.c
++ gcc -g -O0 -Wall -Wextra -std=gnu99 malloc.c -o malloc -lm
++ tee malloc.c.log
+malloc.c: In function ‘main’:
+malloc.c:12:15: warning: unused parameter ‘argc’ [-Wunused-parameter]
+ int main (int argc, char **argv) {
+               ^
+malloc.c:12:28: warning: unused parameter ‘argv’ [-Wunused-parameter]
+ int main (int argc, char **argv) {
+                            ^
++ set +x
+============================================================
+CSOURCE=stacktrace.c EXECBIN=stacktrace
++ cid + stacktrace.c
++ checksource stacktrace.c
++ gcc -g -O0 -Wall -Wextra -std=gnu99 stacktrace.c -o stacktrace -lm
++ tee stacktrace.c.log
++ set +x
+============================================================
+CSOURCE=uninit.c EXECBIN=uninit
++ cid + uninit.c
++ checksource uninit.c
++ gcc -g -O0 -Wall -Wextra -std=gnu99 uninit.c -o uninit -lm
++ tee uninit.c.log
+uninit.c: In function ‘main’:
+uninit.c:6:15: warning: unused parameter ‘argc’ [-Wunused-parameter]
+ int main (int argc, char **argv) {
+               ^
+uninit.c:6:28: warning: unused parameter ‘argv’ [-Wunused-parameter]
+ int main (int argc, char **argv) {
+                            ^
+uninit.c:8:4: warning: ‘pointer’ is used uninitialized in this function [-Wuninitialized]
+    printf ("pointer=%p\n", pointer);
+    ^
+uninit.c:11:4: warning: ‘foo’ is used uninitialized in this function [-Wuninitialized]
+    printf ("foo=%d\n", foo);
+    ^
++ set +x
+============================================================
+bash-4.2$ valgrind uninit
+==31234== Memcheck, a memory error detector
+==31234== Copyright (C) 2002-2013, and GNU GPL'd, by Julian Seward et al.
+==31234== Using Valgrind-3.10.1 and LibVEX; rerun with -h for copyright info
+==31234== Command: uninit
+==31234== 
+==31234== Conditional jump or move depends on uninitialised value(s)
+==31234==    at 0x5181726: vfprintf (in /usr/lib64/libc-2.17.so)
+==31234==    by 0x5188C98: printf (in /usr/lib64/libc-2.17.so)
+==31234==    by 0x40060A: main (uninit.c:8)
+==31234== 
+pointer=(nil)
+==31234== Use of uninitialised value of size 8
+==31234==    at 0x40060F: main (uninit.c:9)
+==31234== 
+==31234== Invalid read of size 4
+==31234==    at 0x40060F: main (uninit.c:9)
+==31234==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
+==31234== 
+==31234== 
+==31234== Process terminating with default action of signal 11 (SIGSEGV)
+==31234==  Access not within mapped region at address 0x0
+==31234==    at 0x40060F: main (uninit.c:9)
+==31234==  If you believe this happened as a result of a stack
+==31234==  overflow in your program's main thread (unlikely but
+==31234==  possible), you can try to increase the size of the
+==31234==  main thread stack using the --main-stacksize= flag.
+==31234==  The main thread stack size used in this run was 8388608.
+==31234== 
+==31234== HEAP SUMMARY:
+==31234==     in use at exit: 0 bytes in 0 blocks
+==31234==   total heap usage: 0 allocs, 0 frees, 0 bytes allocated
+==31234== 
+==31234== All heap blocks were freed -- no leaks are possible
+==31234== 
+==31234== For counts of detected and suppressed errors, rerun with: -v
+==31234== Use --track-origins=yes to see where uninitialised values come from
+==31234== ERROR SUMMARY: 3 errors from 3 contexts (suppressed: 1 from 1)
+Segmentation fault (core dumped)
+bash-4.2$ echo $?
+139
+bash-4.2$ pstatus 139
+pstatus: 0x008B TERMINATED 11: Segmentation fault (core dumped)
+bash-4.2$ exit
+exit
+
+Script done on Wed 10 Feb 2016 08:50:59 AM PST

@@ -1,0 +1,333 @@
+1 ManchesterUnited
+b'Password: '
+b'Incorrect password, goodbye.\n'
+2 LeicesterCity
+b'Password: '
+b'Incorrect password, goodbye.\n'
+3 NewcastleUnited
+b'Password: '
+b'Incorrect password, goodbye.\n'
+4 TottenhamHotspur
+b'Password: '
+b'Incorrect password, goodbye.\n'
+5 AFCBournemouth
+b'Password: '
+b'Incorrect password, goodbye.\n'
+6 Bournemouth
+b'Password: '
+b'Incorrect password, goodbye.\n'
+7 CardiffCity
+b'Password: '
+b'Incorrect password, goodbye.\n'
+8 FulhamFC
+b'Password: '
+b'Incorrect password, goodbye.\n'
+9 FulhamFc
+b'Password: '
+b'Incorrect password, goodbye.\n'
+10 Fulham
+b'Password: '
+b'Incorrect password, goodbye.\n'
+11 CrystalPalace
+b'Password: '
+b'Incorrect password, goodbye.\n'
+12 HuddersfieldTown
+b'Password: '
+b'Incorrect password, goodbye.\n'
+13 ChelseaFC
+b'Password: '
+b'Incorrect password, goodbye.\n'
+14 ChelseaFc
+b'Password: '
+b'Incorrect password, goodbye.\n'
+15 Chelsea
+b'Password: '
+b'Incorrect password, goodbye.\n'
+16 WatfordFC
+b'Password: '
+b'Incorrect password, goodbye.\n'
+17 WatfordFc
+b'Password: '
+b'Incorrect password, goodbye.\n'
+18 Watford
+b'Password: '
+b'Incorrect password, goodbye.\n'
+19 Brighton&HoveAlbion
+b'Password: '
+b'Incorrect password, goodbye.\n'
+20 WolverhamptonWanderers
+b'Password: '
+b'Incorrect password, goodbye.\n'
+21 EvertonFC
+b'Password: '
+b'Incorrect password, goodbye.\n'
+22 EvertonFc
+b'Password: '
+b'Incorrect password, goodbye.\n'
+23 Everton
+b'Password: '
+b'Incorrect password, goodbye.\n'
+24 SouthamptonFC
+b'Password: '
+b'Incorrect password, goodbye.\n'
+25 SouthamptonFc
+b'Password: '
+b'Incorrect password, goodbye.\n'
+26 Southhampton
+b'Password: '
+b'Incorrect password, goodbye.\n'
+27 BurnleyFC
+b'Password: '
+b'Incorrect password, goodbye.\n'
+28 BurnleyFc
+b'Password: '
+b'Incorrect password, goodbye.\n'
+29 Burnley
+b'Password: '
+b'Incorrect password, goodbye.\n'
+30 LiverpoolFC
+b'Password: '
+b'Incorrect password, goodbye.\n'
+31 LiverpoolFc
+b'Password: '
+b'Incorrect password, goodbye.\n'
+32 Liverpool
+b'Password: '
+b'Incorrect password, goodbye.\n'
+33 WestHamUnited
+b'Password: '
+b'Incorrect password, goodbye.\n'
+34 ArsenalFC
+b'Password: '
+b'Incorrect password, goodbye.\n'
+35 ArsenalFc
+b'Password: '
+b'Incorrect password, goodbye.\n'
+36 Arsenal
+b'Password: '
+b'Incorrect password, goodbye.\n'
+37 ManchesterCity
+b'Password: '
+b'Incorrect password, goodbye.\n'
+38 NorwichCity
+b'Password: '
+b'Incorrect password, goodbye.\n'
+39 LeedsUnited
+b'Password: '
+b'Incorrect password, goodbye.\n'
+40 SheffieldUnited
+b'Password: '
+b'Incorrect password, goodbye.\n'
+41 WestBromwichAlbion
+b'Password: '
+b'Incorrect password, goodbye.\n'
+42 Middlesbrough
+b'Password: '
+b'Incorrect password, goodbye.\n'
+43 BristolCity
+b'Password: '
+b'Incorrect password, goodbye.\n'
+44 DerbyCounty
+b'Password: '
+b'Incorrect password, goodbye.\n'
+45 BirminghamCity
+b'Password: '
+b'Incorrect password, goodbye.\n'
+46 AstonVilla
+b'Password: '
+b'Incorrect password, goodbye.\n'
+47 HullCity
+b'Password: '
+b'Incorrect password, goodbye.\n'
+48 BlackburnRovers
+b'Password: '
+b'Incorrect password, goodbye.\n'
+49 NottinghamForest
+b'Password: '
+b'Incorrect password, goodbye.\n'
+50 SwanseaCity
+b'Password: '
+b'Incorrect password, goodbye.\n'
+51 QueensParkRangers
+b'Password: '
+b'Incorrect password, goodbye.\n'
+52 StokeCity
+b'Password: '
+b'Incorrect password, goodbye.\n'
+53 SheffieldWednesday
+b'Password: '
+b'Command: '
+54 Brentford
+b'Password: '
+b'Incorrect password, goodbye.\n'
+55 PrestonNorthEnd
+b'Password: '
+b'Incorrect password, goodbye.\n'
+56 WiganAthletic
+b'Password: '
+b'Incorrect password, goodbye.\n'
+57 Millwall
+b'Too many failed login attempts, account is locked for the next 600 seconds, goodbye.\n'
+b''
+58 RotherhamUnited
+b'Password: '
+b'Incorrect password, goodbye.\n'
+59 Reading
+b'Password: '
+b'Incorrect password, goodbye.\n'
+60 BoltonWanderers
+b'Password: '
+b'Incorrect password, goodbye.\n'
+61 IpswichTown
+b'Password: '
+b'Incorrect password, goodbye.\n'
+62 LutonTown
+b'Password: '
+b'Incorrect password, goodbye.\n'
+63 Barnsley
+b'Password: '
+b'Incorrect password, goodbye.\n'
+64 Portsmouth
+b'Password: '
+b'Incorrect password, goodbye.\n'
+65 Sunderland
+b'Password: '
+b'Incorrect password, goodbye.\n'
+66 CharltonAthletic
+b'Password: '
+b'Incorrect password, goodbye.\n'
+67 PeterboroughUnited
+b'Password: '
+b'Incorrect password, goodbye.\n'
+68 DoncasterRovers
+b'Password: '
+b'Incorrect password, goodbye.\n'
+69 Blackpool
+b'Password: '
+b'Incorrect password, goodbye.\n'
+70 WycombeWanderers
+b'Password: '
+b'Incorrect password, goodbye.\n'
+71 FleetwoodTown
+b'Password: '
+b'Incorrect password, goodbye.\n'
+72 CoventryCity
+b'Password: '
+b'Incorrect password, goodbye.\n'
+73 SouthendUnited
+b'Password: '
+b'Incorrect password, goodbye.\n'
+74 BurtonAlbion
+b'Password: '
+b'Incorrect password, goodbye.\n'
+75 ScunthorpeUnited
+b'Password: '
+b'Incorrect password, goodbye.\n'
+76 AccringtonStanley
+b'Password: '
+b'Incorrect password, goodbye.\n'
+77 PlymouthArgyle
+b'Password: '
+b'Incorrect password, goodbye.\n'
+78 Walsall
+b'Password: '
+b'Incorrect password, goodbye.\n'
+79 Rochdale
+b'Password: '
+b'Incorrect password, goodbye.\n'
+80 Gillingham
+b'Password: '
+b'Incorrect password, goodbye.\n'
+81 BristolRovers
+b'Password: '
+b'Incorrect password, goodbye.\n'
+82 OxfordUnited
+b'Password: '
+b'Incorrect password, goodbye.\n'
+83 BradfordCity
+b'Password: '
+b'Incorrect password, goodbye.\n'
+84 ShrewsburyTown
+b'Password: '
+b'Incorrect password, goodbye.\n'
+85 AFCWimbledon
+b'Password: '
+b'Incorrect password, goodbye.\n'
+86 Wimbledon
+b'Password: '
+b'Incorrect password, goodbye.\n'
+87 LincolnCity
+b'Password: '
+b'Incorrect password, goodbye.\n'
+88 MansfieldTown
+b'Password: '
+b'Incorrect password, goodbye.\n'
+89 Bury
+b'Password: '
+b'Incorrect password, goodbye.\n'
+90 ForestGreenRovers
+b'Password: '
+b'Incorrect password, goodbye.\n'
+91 CarlisleUnited
+b'Password: '
+b'Incorrect password, goodbye.\n'
+92 MKDons
+b'Password: '
+b'Incorrect password, goodbye.\n'
+93 Dons
+b'Password: '
+b'Incorrect password, goodbye.\n'
+94 ExeterCity
+b'Password: '
+b'Incorrect password, goodbye.\n'
+95 ColchesterUnited
+b'Password: '
+b'Incorrect password, goodbye.\n'
+96 Stevenage
+b'Password: '
+b'Incorrect password, goodbye.\n'
+97 TranmereRovers
+b'Password: '
+b'Incorrect password, goodbye.\n'
+98 CreweAlexandra
+b'Password: '
+b'Incorrect password, goodbye.\n'
+99 GrimsbyTown
+b'Password: '
+b'Incorrect password, goodbye.\n'
+100 SwindonTown
+b'Password: '
+b'Incorrect password, goodbye.\n'
+101 NewportCounty
+b'Password: '
+b'Incorrect password, goodbye.\n'
+102 OldhamAthletic
+b'Password: '
+b'Incorrect password, goodbye.\n'
+103 NorthamptonTown
+b'Password: '
+b'Incorrect password, goodbye.\n'
+104 CrawleyTown
+b'Password: '
+b'Incorrect password, goodbye.\n'
+105 CheltenhamTown
+b'Password: '
+b'Incorrect password, goodbye.\n'
+106 PortVale
+b'Password: '
+b'Incorrect password, goodbye.\n'
+107 CambridgeUnited
+b'Password: '
+b'Incorrect password, goodbye.\n'
+108 YeovilTown
+b'Password: '
+b'Incorrect password, goodbye.\n'
+109 Morecambe
+b'Password: '
+b'Incorrect password, goodbye.\n'
+110 MacclesfieldTown
+b'Password: '
+b'Incorrect password, goodbye.\n'
+111 NottsCounty
+b'Password: '
+b'Incorrect password, goodbye.\n'

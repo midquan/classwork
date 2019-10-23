@@ -1,0 +1,421 @@
+{{extend 'layout.html'}}
+
+{{block head}}
+<script src="{{=URL('static', 'js/vue.js')}}"></script>
+<script>
+    var get_user_cal_url = "{{=URL('api', 'get_user_cal')}}";
+    var set_cal_url = "{{=URL('api', 'set_cal', user_signature=True)}}";
+    var get_user_link_url = "{{=URL('api', 'get_user_link')}}";
+    var set_link_url = "{{=URL('api', 'set_link', user_signature=True)}}";
+    var get_user_memos_url = "{{=URL('api', 'get_user_memos')}}";
+    var get_memos_url = "{{=URL('api', 'get_memos')}}";
+    var add_memo_url = "{{=URL('api', 'add_memo', user_signature=True)}}";
+    var edit_memo_url = "{{=URL('api', 'edit_memo', user_signature=True)}}";
+    var del_memo_url = "{{=URL('api', 'delete_memo', user_signature=True)}}";
+    // images
+    var add_image_url = "{{=URL('api', 'add_image', user_signature=True)}}";
+    var user_images_url = "{{=URL('api', 'get_user_images')}}";
+    var user_url = "{{=URL('api', 'get_users', user_signature=True)}}";
+    var images_url = "{{=URL('api', 'get_images', user_signature=True)}}";
+
+    var emails_url = "{{=URL('api', 'get_emails')}}";
+    var add_email_url = "{{=URL('api', 'add_email')}}";
+    var del_email_url = "{{=URL('api', 'del_email')}}";
+    var get_user_link_url = "{{=URL('api', 'get_user_link')}}";
+
+    var get_spec_user_link_url = "{{=URL('api', 'get_spec_user_link')}}";
+    var get_spec_user_cal_url = "{{=URL('api', 'get_spec_user_cal')}}";
+
+</script>
+{{end}}
+
+<div class="main_content">
+    
+    <div id="vue-div" class="display:none">
+    {{if auth.user is not None:}}
+        <header class="black padded">
+          <div class="container middle max900">
+            <div class="fill middle">
+              <label class="ham padded fa fa-bars" for="menu"></label>
+              <div class="burger accordion menu_option">
+                <input type="checkbox" id="menu"/>
+                    <a v-on:click="go_home()">Home</a>
+                    <a v-on:click="goto_calendar()">Calendar</a>
+                    <a v-on:click="goto_membership()">Membership</a>
+                    <a v-on:click="goto_gallery()">Gallery</a>
+                    <a v-on:click="goto_social()">Social Media</a>
+                    <a v-on:click="goto_memos()">Announcements</a>
+                    <ul class="menu right">
+                      <li>
+                        {{=auth.navbar(mode='dropdown')}}
+                      </li>
+                    </ul>
+              </div>
+            </div>
+          </div>
+          </header> 
+        <div v-if="is_home" class="padded center compressible">
+            <div class="container padded center welcome_admin">
+                <p style="font-size: 400%">Welcome to the club organizer, on this website you can control your organizations page   </p>
+            </div>
+            <div class="home_button_bar center">
+                <a class="btn large rounded red" v-on:click="go_home()">Home</a>
+                <a class="btn large rounded orange" v-on:click="goto_calendar()">Calendar</a>
+                <a class="btn large rounded yellow" v-on:click="goto_membership()">Membership</a>
+                <a class="btn large rounded green" v-on:click="goto_gallery()">Gallery</a>
+                <a class="btn large rounded blue" v-on:click="goto_social()">Social Media</a>
+                <a class="btn large rounded purple" v-on:click="goto_memos()">Announcements</a>
+            </div>
+        </div>
+        <div class="calendar_page" v-if="calendar_pressed">
+            <div class="link" id="emb_link" class="center">
+                <input id="calendar_link" name="calendarURL" v-model="calendar_url" placeholder="Embed Google Calendar URL" type="url">
+            </div>
+            <div class="link_btn">
+                <button class="btn center large rounded" style="margin: auto"v-on:click="set_calendar(calendar_url)"><i class="fa fa-plus">     Set Calendar</i></button>
+            </div>
+            <div v-if="have_cal_url" id="calendar" class="center">
+        	   <iframe v-bind:src="calendar_url" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+            </div>
+        </div>
+        <div v-if="membership_pressed">
+            <!-- Form to display emails -->
+            <table class="center fill">
+                <thead>
+                    <tr><td></td><th>Name</th><th>Email</th><th>Core</th></tr>
+                </thead>
+                <tbody>
+                <tr v-for="cl in memberships">
+                    <th></th><td>${cl.name}</td><td>${cl.email}</td><td>${cl.core}</td><th></th>
+                </tr>
+                </tbody>
+            </table>    
+        </div>
+        <div class="social_space" v-if="social_pressed">
+            <div class="social">
+                <ul class="icon_list">
+                    <li>
+                      <div class="icon">
+                        <a v-bind:href="facebook_link" target="_blank" ><i class="fa fa-facebook-square"></i></a>
+                      </div>
+                        <input id="facebookLink" name="facebookURL" v-model="facebook_link" placeholder="Enter Facebook link" type="url">
+                    </li>
+                    <li>
+                      <div class="icon">
+                        <a v-bind:href='youtube_link' target="_blank" ><i class="fa fa-youtube-square"></i></a>
+                      </div>
+                      <input id="youtubeLink" name="youtubeURL" v-model="youtube_link" placeholder="Enter Youtube link" type="url">
+                    </li>
+                    <li>
+                      <div class="icon">
+                        <a v-bind:href='instagram_link' target="_blank" ><i class="fa fa-instagram"></i></a>
+                      </div>
+                      <input id="instagramLink" name="instagramURL" v-model="instagram_link" placeholder="Enter Instagram link" type="url">
+                    </li>
+                    <li>
+                      <div class="icon">
+                        <a v-bind:href='twitter_link' target="_blank" ><i class="fa fa-twitter-square"></i></a>
+                      </div>
+                      <input id="twitterLink" name="twitterURL" v-model="twitter_link" placeholder="Enter Twitter link" type="url">
+                    </li>
+                </ul>
+                <div class="set_link">
+                    <button class="btn center large rounded" style="margin: auto"v-on:click="set_links()"><i class="fa fa-plus"> Set links</i></button>
+                </div>
+            </div>
+        </div>
+        <div class="padded announcement_space" v-if="announcement_pressed">
+            <div class="add_btn" v-if="logged_in && !is_adding_memo">
+                <btn v-on:click="add_memo_button" class="btn green center"><i class="fa fa-plus"></i> Add Announcement</btn>
+            </div>
+
+            <div v-if="is_adding_memo">
+                <div class="adding_memo_title">
+                    <p>Title: </p>
+                    <input v-model="add_memo_title" placeholder="Add a title">
+                </div>
+                <div class="adding_memo_msg">
+                    <p>Message: </p>
+                    <textarea v-model="add_memo_text" placeholder="Add an announcement"></textarea>
+                </div>
+                <div class="adding_buttons">
+                    <btn v-on:click="add_memo" class="btn green rounded">Save</btn>
+                    <btn v-on:click="add_memo_button" class="btn red rounded">Cancel</btn>
+                </div>
+            </div>
+
+            <div v-for="memo in memos.slice().reverse()">
+                <btn v-on:click="delete_memo(memo.id)" class="btn red rounded">
+                            Delete announcement
+                        </btn>
+                <div class="memo" v-if="!memo.is_being_edited && memo.user_email == auth_email">
+
+                    <div class="padded container memo_text">
+                        <div class="memo_title">${memo.title}</div>
+                        <div>${memo.created_on}</div>
+                        <div class="memo_content">${memo.text}</div>
+                        <div v-if="memo.user_email == auth_email" class="buttons half">
+                    <div>
+
+                    </div>
+                </div>
+                 </div>
+            </div>
+        </div>
+    </div>
+        <div class="gallery_space" v-if="gallery_pressed">
+            <div class="image_space">
+                <div v-if="self_page">
+                    <div id="uploader_div" style="display:none">
+                        Upload an image file: <input id="file_input" type="file"v-on:change="upload_file" accept="image/jpeg">
+                    </div>
+
+                    <button v-if="!is_uploading" v-on:click="open_uploader"><i class="fa fa-plus"></i></button>
+                    <button v-if="is_uploading"  v-on:click="close_uploader">Cancel</button>
+                </div>
+
+                <div class="image_container">
+
+                    <ul class="container">
+                  
+                        <li v-for="image in user_images" class="card lifted padded quarter">
+                            <img v-if="image.user_email == '{{=auth.user.email}}'" v-bind:src="image.image_url" height="200px" width="200px" class="padded"/>
+                        </li> 
+                    </ul>
+                </div>
+            </div>
+        </div>
+    {{else:}}
+        <header class="black padded">
+          <div class="container middle max900">
+            <div class="fill middle">
+              <label class="ham padded fa fa-bars" for="menu"></label>
+              <div class="burger accordion menu_option">
+                <input type="checkbox" id="menu"/>
+                    <div v-if="org_selected">
+                        <a v-on:click="go_home()">Home</a>
+                        <a v-on:click="goto_calendar()">Calendar</a>
+                        <a v-on:click="goto_membership()">Membership</a>
+                        <a v-on:click="goto_gallery()">Gallery</a>
+                        <a v-on:click="goto_social()">Social Media</a>
+                        <a v-on:click="goto_memos()">Announcements</a>
+                        <ul class="menu right">
+                          <li>
+                            {{=auth.navbar(mode='dropdown')}}
+                          </li>
+                        </ul>
+                    </div>
+                    <div v-else>
+                        <a>Home</a>
+                        <a>Calendar</a>
+                        <a>Membership</a>
+                        <a>Gallery</a>
+                        <a>Social Media</a>
+                        <a>Announcements</a>
+                        <ul class="menu right">
+                          <li>
+                            {{=auth.navbar(mode='dropdown')}}
+                          </li>
+                        </ul>
+                    </div>
+
+              </div>
+            </div>
+          </div>
+          </header> 
+        <div v-if="is_home" class="padded compressible">
+            <div class="user_space center padded">
+        <!-- Right part of the page -->
+                <div v-if="!org_selected">
+                  <div class="large center"> Select which organizations page you wish to use</div>
+                  <br>         </br>
+                    <table class="fill" id="user_selector">
+                      <tbody>
+                        <tr v-for="users in user_list" class="user class">
+                          <td v-on:click="get_org_info(users.email)">
+                           ${users.first_name} 
+                         </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                </div>
+                <div v-else>
+                    <div class="center">
+                        Welcome to ${selected_user}'s page
+                        <br></br>
+                        Feel free to explore
+                    </div>
+                </div>
+            </div> 
+        </div>
+          <div v-if="gallery_pressed">
+            <div class="image_space">
+                <!-- Left part of the page -->
+
+                <div class="image_container">
+                  <!-- Put here the code to display the images -->
+
+                    <ul class="container">
+                  
+                        <li v-for="image in user_images.slice().reverse()" class="center padded">
+                            <img v-bind:src="image.image_url" height="auto" width="auto" class="padded"/>
+                        </li> 
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+        <div class="calendar_page"v-if="calendar_pressed">
+            <div id="calendar" class="center">
+                <iframe v-bind:src="calendar_url" style="border: 1" width="800" height="600" frameborder="1" scrolling="no"></iframe>
+            </div>
+        </div>
+        <div class="social_space center container compressible"v-if="social_pressed">
+            <div class="social">
+                <ul class="icon_list">
+                    <li>
+                      <div class="icon">
+                        <a v-bind:href="facebook_link" target="_blank" ><i class="fa fa-facebook-square"> Like us on Facebook!</i></a>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="icon">
+                        <a v-bind:href='youtube_link' target="_blank" ><i class="fa fa-youtube-square"> Subscribe to our Youtube!</i></a>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="icon">
+                        <a v-bind:href='instagram_link' target="_blank" ><i class="fa fa-instagram"> Follow us on Instagram!</i></a>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="icon">
+                        <a v-bind:href='twitter_link' target="_blank" ><i class="fa fa-twitter-square"> Follow us on Twitter!</i></a>
+                      </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="announcement_space"v-if="announcement_pressed">
+            <div v-for="memo in memos.slice().reverse()">
+                
+                <div class="memo padded" v-if="!memo.is_being_edited">
+                    <div class="memo_text">
+                      <div class="memo_title">${memo.title}</div>
+                      <div>${memo.created_on}</div>
+                      <div class="memo_content">${memo.text}</div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+        <div class=" padded large center" v-if="membership_pressed" class="button_bar">
+            <button v-if="!is_adding_email" class="btn large rounded"
+            v-on:click="add_email_button()">
+                <i class="fa fa-plus"></i> Sign-in
+            </button>
+            <button v-if="is_adding_email" class="btn rounded" v-on:click="add_email()">
+                <i class="fa fa-plus"></i> Submit
+            </button>
+            <button v-if="is_adding_email" class="btn rounded" v-on:click="cancel_add_email()">
+                <i class="fa fa-times"></i> Cancel
+            </button>
+        </div> 
+        <!-- Form to add emails -->
+        <div v-if="is_adding_email" id="add_email_div">
+            <form action="#" v-on:submit.prevent class="form-horizontal" enctype="multipart/form-data" method="post">
+                <div class="form-group" id="no_email_title__row">
+                    <div>
+                        <input class="form-control string" id="no_email_title" v-model="form_email" placeholder="Email" type="text" />
+                            <span class="help-block"></span>
+                    </div>
+                </div>
+                <div class="form-group" id="no_email_email__row">
+                    <div>
+                        <input class="form-control string" id="no_email_email" v-model="form_name" placeholder="Name" type="text" />
+                            <span class="help-block"></span>
+                    </div>
+                </div>        
+                <div class="form-check" id="no_email_meeting__row">
+                    <div>
+                        Meeting 1
+                        <input class="form-check input" id="no_email_meeting1" v-model="form_m1"  type="checkbox" />
+                            <span class="help-block"></span>
+                    </div>
+                </div>   
+                <div class="form-check" id="no_email_meeting__row">
+                    <div>
+                        Meeting 2
+                        <input class="form-check input" id="no_email_meeting2" v-model="form_m2"  type="checkbox" />
+                            <span class="help-block"></span>
+                    </div>
+                </div>      
+                <div class="form-check" id="no_email_meeting__row">
+                    <div>
+                        Meeting 3
+                        <input class="form-check input" id="no_email_meeting3" v-model="form_m3"  type="checkbox" />
+                            <span class="help-block"></span>
+                    </div>
+                </div> 
+                <div class="form-check" id="no_email_meeting__row">
+                    <div>
+                        Meeting 4
+                        <input class="form-check input" id="no_email_meeting4" v-model="form_m4"  type="checkbox" />
+                            <span class="help-block"></span>
+                    </div>
+                </div>   
+                <div class="form-check" id="no_email_meeting__row">
+                    <div>
+                        Meeting 5
+                        <input class="form-check input" id="no_email_meeting5" v-model="form_m5"  type="checkbox" />
+                            <span class="help-block"></span>
+                    </div>
+                </div>   
+                <div class="form-check" id="no_email_meeting__row">
+                    <div>
+                        Meeting 6
+                        <input class="form-check input" id="no_email_meeting6" v-model="form_m6"  type="checkbox" />
+                            <span class="help-block"></span>
+                    </div>
+                </div>   
+                <div class="form-check" id="no_email_meeting__row">
+                    <div>
+                        Meeting 7
+                        <input class="form-check input" id="no_email_meeting7" v-model="form_m7"  type="checkbox" />
+                            <span class="help-block"></span>
+                    </div>
+                </div>   
+                <div class="form-check" id="no_email_meeting__row">
+                    <div>
+                        Meeting 8
+                        <input class="form-check input" id="no_email_meeting8" v-model="form_m8"  type="checkbox" />
+                            <span class="help-block"></span>
+                    </div>
+                </div>   
+                <div class="form-check" id="no_email_meeting__row">
+                    <div>
+                        Meeting 9
+                        <input class="form-check input" id="no_email_meeting9" v-model="form_m9"  type="checkbox" />
+                            <span class="help-block"></span>
+                    </div>
+                </div>   
+                <div class="form-check" id="no_email_meeting__row">
+                    <div>
+                        Meeting 10
+                        <input class="form-check input" id="no_email_meeting10" v-model="form_m10"  type="checkbox" />
+                            <span class="help-block"></span>
+                    </div>
+                </div>                         
+            </form>
+        </div> 
+    {{pass}}
+    </div>
+</div>
+
+<script src="{{=URL('static', 'js/default_index.js')}}"></script>
+
+<!-- Test Calendars
+    https://calendar.google.com/calendar/embed?src=emg6e37ur4n0q4ftmvo3f3n61g%40group.calendar.google.com&ctz=America%2FLos_Angeles 
+
+  https://calendar.google.com/calendar/embed?src=ucsc.edu_lr1te53vbt5tgk7m794gkd7m7s%40group.calendar.google.com&ctz=America%2FLos_Angeles-->
